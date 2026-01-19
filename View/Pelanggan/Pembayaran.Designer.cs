@@ -37,6 +37,7 @@
             this.pnlP1 = new System.Windows.Forms.Panel();
             this.lblP1 = new System.Windows.Forms.Label();
             this.pnlP2 = new System.Windows.Forms.Panel();
+            this.btnRiwayat = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpTanggalBayar = new System.Windows.Forms.DateTimePicker();
@@ -51,7 +52,6 @@
             this.lblP3 = new System.Windows.Forms.Label();
             this.lblP2 = new System.Windows.Forms.Label();
             this.btnKonfirmasi = new System.Windows.Forms.Button();
-            this.btnRiwayat = new System.Windows.Forms.Button();
             this.pnlP3.SuspendLayout();
             this.pnlP1.SuspendLayout();
             this.pnlP2.SuspendLayout();
@@ -67,7 +67,7 @@
             this.pnlP3.Controls.Add(this.btnDashboard);
             this.pnlP3.Location = new System.Drawing.Point(0, 74);
             this.pnlP3.Name = "pnlP3";
-            this.pnlP3.Size = new System.Drawing.Size(241, 397);
+            this.pnlP3.Size = new System.Drawing.Size(230, 397);
             this.pnlP3.TabIndex = 4;
             // 
             // lblNama
@@ -169,6 +169,16 @@
             this.pnlP2.Name = "pnlP2";
             this.pnlP2.Size = new System.Drawing.Size(538, 332);
             this.pnlP2.TabIndex = 6;
+            // 
+            // btnRiwayat
+            // 
+            this.btnRiwayat.Location = new System.Drawing.Point(154, 247);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(217, 41);
+            this.btnRiwayat.TabIndex = 22;
+            this.btnRiwayat.Text = "Riwayat Pembayaran";
+            this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
             // 
             // label2
             // 
@@ -292,16 +302,6 @@
             this.btnKonfirmasi.Text = "Konfirmasi Pembayaran";
             this.btnKonfirmasi.UseVisualStyleBackColor = true;
             this.btnKonfirmasi.Click += new System.EventHandler(this.btnKonfirmasi_Click);
-            // 
-            // btnRiwayat
-            // 
-            this.btnRiwayat.Location = new System.Drawing.Point(154, 247);
-            this.btnRiwayat.Name = "btnRiwayat";
-            this.btnRiwayat.Size = new System.Drawing.Size(217, 41);
-            this.btnRiwayat.TabIndex = 22;
-            this.btnRiwayat.Text = "Riwayat Pembayaran";
-            this.btnRiwayat.UseVisualStyleBackColor = true;
-            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
             // 
             // Pembayaran
             // 

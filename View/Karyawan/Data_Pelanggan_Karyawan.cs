@@ -1,8 +1,10 @@
-﻿using AplikasiService.Model.Session;
+﻿using AplikasiService.Model.Context;
+using AplikasiService.Model.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,51 @@ namespace AplikasiService.View
         public Data_Pelanggan_Karyawan()
         {
             InitializeComponent();
+            SetupListView();
+            LoadData();
+        }
+        private void SetupListView()
+        {
+            lvwDataPelanggan.View = System.Windows.Forms.View.Details;
+            lvwDataPelanggan.FullRowSelect = true;
+            lvwDataPelanggan.GridLines = true;
+            lvwDataPelanggan.Columns.Clear();
+
+            lvwDataPelanggan.Columns.Add("ID", 50, HorizontalAlignment.Center);
+            lvwDataPelanggan.Columns.Add("Nama", 120, HorizontalAlignment.Center);
+            lvwDataPelanggan.Columns.Add("No. HP", 120, HorizontalAlignment.Center);
+            lvwDataPelanggan.Columns.Add("Alamat", 80, HorizontalAlignment.Center);
+        }
+        private void LoadData()
+        {
+            lvwDataPelanggan.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"
+                 SELECT
+                    p.Id,
+                    p.Nama,
+                    p.NoHP,
+                    p.Alamat
+                FROM Pelanggan p";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                using (SQLiteDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                        item.SubItems.Add(rd["Nama"].ToString());
+                        item.SubItems.Add(rd["NoHP"].ToString());
+                        item.SubItems.Add(rd["Alamat"].ToString());
+
+                        lvwDataPelanggan.Items.Add(item);
+                    }
+                }
+            }
         }
         private void btnDasboard_Click(object sender, EventArgs e)
         {

@@ -40,7 +40,7 @@
             this.pnldshk1 = new System.Windows.Forms.Panel();
             this.lbldsh = new System.Windows.Forms.Label();
             this.pnldshk2 = new System.Windows.Forms.Panel();
-            this.lvwDasboard = new System.Windows.Forms.ListView();
+            this.lvwDashboard = new System.Windows.Forms.ListView();
             this.pnldshk3.SuspendLayout();
             this.pnldshk1.SuspendLayout();
             this.pnldshk2.SuspendLayout();
@@ -175,20 +175,20 @@
             // pnldshk2
             // 
             this.pnldshk2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnldshk2.Controls.Add(this.lvwDasboard);
+            this.pnldshk2.Controls.Add(this.lvwDashboard);
             this.pnldshk2.Location = new System.Drawing.Point(293, 106);
             this.pnldshk2.Name = "pnldshk2";
             this.pnldshk2.Size = new System.Drawing.Size(538, 332);
             this.pnldshk2.TabIndex = 8;
             // 
-            // lvwDasboard
+            // lvwDashboard
             // 
-            this.lvwDasboard.HideSelection = false;
-            this.lvwDasboard.Location = new System.Drawing.Point(15, 14);
-            this.lvwDasboard.Name = "lvwDasboard";
-            this.lvwDasboard.Size = new System.Drawing.Size(511, 307);
-            this.lvwDasboard.TabIndex = 0;
-            this.lvwDasboard.UseCompatibleStateImageBehavior = false;
+            this.lvwDashboard.HideSelection = false;
+            this.lvwDashboard.Location = new System.Drawing.Point(15, 14);
+            this.lvwDashboard.Name = "lvwDashboard";
+            this.lvwDashboard.Size = new System.Drawing.Size(511, 307);
+            this.lvwDashboard.TabIndex = 0;
+            this.lvwDashboard.UseCompatibleStateImageBehavior = false;
             // 
             // Dashboard_Karyawan
             // 
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Panel pnldshk1;
         private System.Windows.Forms.Label lbldsh;
         private System.Windows.Forms.Panel pnldshk2;
-        private System.Windows.Forms.ListView lvwDasboard;
+        private System.Windows.Forms.ListView lvwDashboard;
         private System.Windows.Forms.Button btnDasboard;
     }
 }

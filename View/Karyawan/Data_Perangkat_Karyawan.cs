@@ -1,8 +1,10 @@
-﻿using AplikasiService.Model.Session;
+﻿using AplikasiService.Model.Context;
+using AplikasiService.Model.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,55 @@ namespace AplikasiService.View
         public Data_Perangkat_Karyawan()
         {
             InitializeComponent();
+            SetupListView();
+            LoadData();
+        }
+        private void SetupListView()
+        {
+            lvwPerangkat.View = System.Windows.Forms.View.Details;
+            lvwPerangkat.FullRowSelect = true;
+            lvwPerangkat.GridLines = true;
+            lvwPerangkat.Columns.Clear();
+
+            lvwPerangkat.Columns.Add("ID", 50, HorizontalAlignment.Center);
+            lvwPerangkat.Columns.Add("Pelanggan", 120, HorizontalAlignment.Center);
+            lvwPerangkat.Columns.Add("Jenis", 120, HorizontalAlignment.Center);
+            lvwPerangkat.Columns.Add("Merk", 80, HorizontalAlignment.Center);
+            lvwPerangkat.Columns.Add("Tipe", 80, HorizontalAlignment.Center);
+        }
+        private void LoadData()
+        {
+            lvwPerangkat.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"
+                 SELECT
+                    p.Id,
+                    pl.Nama,
+                    p.Jenis,
+                    p.Merk,
+                    p.Tipe
+                FROM Perangkat p
+                JOIN Pelanggan pl ON p.PelangganId = pl.Id";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                using (SQLiteDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                        item.SubItems.Add(rd["Nama"].ToString());
+                        item.SubItems.Add(rd["Jenis"].ToString());
+                        item.SubItems.Add(rd["Merk"].ToString());
+                        item.SubItems.Add(rd["Tipe"].ToString());
+
+                        lvwPerangkat.Items.Add(item);
+                    }
+                }
+            }
         }
         private void btnDasboard_Click(object sender, EventArgs e)
         {

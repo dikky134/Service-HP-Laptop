@@ -18,6 +18,56 @@ namespace AplikasiService.View
         public Dashboard_Karyawan()
         {
             InitializeComponent();
+            SetupListView();
+            LoadData();
+        }
+        private void SetupListView()
+        {
+            lvwDashboard.View = System.Windows.Forms.View.Details;
+            lvwDashboard.FullRowSelect = true;
+            lvwDashboard.GridLines = true;
+            lvwDashboard.Columns.Clear();
+
+            lvwDashboard.Columns.Add("ID", 50, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Pelanggan", 120, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Status", 70, HorizontalAlignment.Center);
+        }
+        private void LoadData()
+        {
+            lvwDashboard.Items.Clear();
+
+            using (var conn = DbContext.GetConnection()) 
+            {
+                conn.Open();
+
+                string sql = @"
+                SELECT
+                    s.Id,
+                    pl.Nama,
+                    p.Jenis || ' ' || p.Merk AS Perangkat,
+                    k.NamaKerusakan,
+                    s.Status
+                FROM Servis s
+                JOIN Pelanggan pl ON s.PelangganId = pl.Id
+                JOIN Perangkat p ON s.PerangkatId = p.Id
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                using (SQLiteDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                        item.SubItems.Add(rd["Nama"].ToString());
+                        item.SubItems.Add(rd["Perangkat"].ToString());
+                        item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                        item.SubItems.Add(rd["Status"].ToString());
+
+                        lvwDashboard.Items.Add(item);
+                    }
+                }
+            }
         }
         private void btnDasboard_Click(object sender, EventArgs e)
         {
