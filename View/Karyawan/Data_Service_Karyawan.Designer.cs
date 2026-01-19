@@ -39,8 +39,11 @@
             this.BtnDataPerangkat = new System.Windows.Forms.Button();
             this.BtnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDSK2 = new System.Windows.Forms.Panel();
+            this.lvwService = new System.Windows.Forms.ListView();
+            this.btnDasboard = new System.Windows.Forms.Button();
             this.pnlDSK1.SuspendLayout();
             this.pnlDSK3.SuspendLayout();
+            this.pnlDSK2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDSK1
@@ -65,6 +68,7 @@
             // 
             // pnlDSK3
             // 
+            this.pnlDSK3.Controls.Add(this.btnDasboard);
             this.pnlDSK3.Controls.Add(this.btnPembayaran);
             this.pnlDSK3.Controls.Add(this.btnKerusakan);
             this.pnlDSK3.Controls.Add(this.TxtDSK1);
@@ -80,7 +84,7 @@
             // btnPembayaran
             // 
             this.btnPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPembayaran.Location = new System.Drawing.Point(0, 209);
+            this.btnPembayaran.Location = new System.Drawing.Point(-1, 234);
             this.btnPembayaran.Name = "btnPembayaran";
             this.btnPembayaran.Size = new System.Drawing.Size(230, 43);
             this.btnPembayaran.TabIndex = 7;
@@ -92,7 +96,7 @@
             // btnKerusakan
             // 
             this.btnKerusakan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKerusakan.Location = new System.Drawing.Point(0, 166);
+            this.btnKerusakan.Location = new System.Drawing.Point(-1, 191);
             this.btnKerusakan.Name = "btnKerusakan";
             this.btnKerusakan.Size = new System.Drawing.Size(230, 43);
             this.btnKerusakan.TabIndex = 6;
@@ -103,9 +107,9 @@
             // 
             // TxtDSK1
             // 
-            this.TxtDSK1.Location = new System.Drawing.Point(2, 5);
+            this.TxtDSK1.Location = new System.Drawing.Point(-1, 5);
             this.TxtDSK1.Name = "TxtDSK1";
-            this.TxtDSK1.Size = new System.Drawing.Size(227, 22);
+            this.TxtDSK1.Size = new System.Drawing.Size(231, 22);
             this.TxtDSK1.TabIndex = 5;
             // 
             // BtnlogoutDSK
@@ -123,7 +127,7 @@
             // 
             this.btnDataService.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(0, 123);
+            this.btnDataService.Location = new System.Drawing.Point(-1, 148);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -135,7 +139,7 @@
             // BtnDataPerangkat
             // 
             this.BtnDataPerangkat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDataPerangkat.Location = new System.Drawing.Point(0, 83);
+            this.BtnDataPerangkat.Location = new System.Drawing.Point(-1, 108);
             this.BtnDataPerangkat.Name = "BtnDataPerangkat";
             this.BtnDataPerangkat.Size = new System.Drawing.Size(230, 43);
             this.BtnDataPerangkat.TabIndex = 1;
@@ -147,7 +151,7 @@
             // BtnDataPelanggan
             // 
             this.BtnDataPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDataPelanggan.Location = new System.Drawing.Point(0, 42);
+            this.BtnDataPelanggan.Location = new System.Drawing.Point(-1, 67);
             this.BtnDataPelanggan.Name = "BtnDataPelanggan";
             this.BtnDataPelanggan.Size = new System.Drawing.Size(230, 43);
             this.BtnDataPelanggan.TabIndex = 0;
@@ -159,10 +163,31 @@
             // pnlDSK2
             // 
             this.pnlDSK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlDSK2.Controls.Add(this.lvwService);
             this.pnlDSK2.Location = new System.Drawing.Point(278, 110);
             this.pnlDSK2.Name = "pnlDSK2";
             this.pnlDSK2.Size = new System.Drawing.Size(569, 323);
             this.pnlDSK2.TabIndex = 14;
+            // 
+            // lvwService
+            // 
+            this.lvwService.HideSelection = false;
+            this.lvwService.Location = new System.Drawing.Point(0, 3);
+            this.lvwService.Name = "lvwService";
+            this.lvwService.Size = new System.Drawing.Size(569, 319);
+            this.lvwService.TabIndex = 0;
+            this.lvwService.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnDasboard
+            // 
+            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDasboard.Location = new System.Drawing.Point(-1, 27);
+            this.btnDasboard.Name = "btnDasboard";
+            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDasboard.TabIndex = 8;
+            this.btnDasboard.Text = "Dasboard";
+            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDasboard.UseVisualStyleBackColor = true;
             // 
             // Data_Service_Karyawan
             // 
@@ -179,6 +204,7 @@
             this.pnlDSK1.PerformLayout();
             this.pnlDSK3.ResumeLayout(false);
             this.pnlDSK3.PerformLayout();
+            this.pnlDSK2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,5 +222,7 @@
         private System.Windows.Forms.Button BtnDataPerangkat;
         private System.Windows.Forms.Button BtnDataPelanggan;
         private System.Windows.Forms.Panel pnlDSK2;
+        private System.Windows.Forms.ListView lvwService;
+        private System.Windows.Forms.Button btnDasboard;
     }
 }

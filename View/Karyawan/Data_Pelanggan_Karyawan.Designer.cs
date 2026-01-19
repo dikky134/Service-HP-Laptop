@@ -39,11 +39,11 @@
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.btnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDP3 = new System.Windows.Forms.Panel();
-            this.BtnlogoutPP3 = new System.Windows.Forms.Button();
-            this.BtnlogoutPP2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtnBatal = new System.Windows.Forms.Button();
+            this.BtnSimpan = new System.Windows.Forms.Button();
+            this.BoxAlamat = new System.Windows.Forms.TextBox();
+            this.BoxNoHP = new System.Windows.Forms.TextBox();
+            this.boxNama = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,9 +52,12 @@
             this.lblNamaDp = new System.Windows.Forms.Label();
             this.lblTPDP = new System.Windows.Forms.Label();
             this.pnlDP4 = new System.Windows.Forms.Panel();
+            this.lvwDataPelanggan = new System.Windows.Forms.ListView();
+            this.btnDasboard = new System.Windows.Forms.Button();
             this.pnlDP1.SuspendLayout();
             this.pnlDP2.SuspendLayout();
             this.pnlDP3.SuspendLayout();
+            this.pnlDP4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDP1
@@ -79,6 +82,7 @@
             // 
             // pnlDP2
             // 
+            this.pnlDP2.Controls.Add(this.btnDasboard);
             this.pnlDP2.Controls.Add(this.btnPembayaran);
             this.pnlDP2.Controls.Add(this.btnKerusakan);
             this.pnlDP2.Controls.Add(this.TxtDPP);
@@ -94,7 +98,7 @@
             // btnPembayaran
             // 
             this.btnPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPembayaran.Location = new System.Drawing.Point(0, 209);
+            this.btnPembayaran.Location = new System.Drawing.Point(0, 227);
             this.btnPembayaran.Name = "btnPembayaran";
             this.btnPembayaran.Size = new System.Drawing.Size(230, 43);
             this.btnPembayaran.TabIndex = 7;
@@ -106,7 +110,7 @@
             // btnKerusakan
             // 
             this.btnKerusakan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKerusakan.Location = new System.Drawing.Point(0, 166);
+            this.btnKerusakan.Location = new System.Drawing.Point(0, 184);
             this.btnKerusakan.Name = "btnKerusakan";
             this.btnKerusakan.Size = new System.Drawing.Size(230, 43);
             this.btnKerusakan.TabIndex = 6;
@@ -136,7 +140,7 @@
             // btnDataService
             // 
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(0, 123);
+            this.btnDataService.Location = new System.Drawing.Point(0, 141);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -148,7 +152,7 @@
             // btnDataPerangkat
             // 
             this.btnDataPerangkat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPerangkat.Location = new System.Drawing.Point(0, 83);
+            this.btnDataPerangkat.Location = new System.Drawing.Point(0, 101);
             this.btnDataPerangkat.Name = "btnDataPerangkat";
             this.btnDataPerangkat.Size = new System.Drawing.Size(230, 43);
             this.btnDataPerangkat.TabIndex = 1;
@@ -161,7 +165,7 @@
             // 
             this.btnDataPelanggan.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDataPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPelanggan.Location = new System.Drawing.Point(0, 42);
+            this.btnDataPelanggan.Location = new System.Drawing.Point(0, 60);
             this.btnDataPelanggan.Name = "btnDataPelanggan";
             this.btnDataPelanggan.Size = new System.Drawing.Size(230, 43);
             this.btnDataPelanggan.TabIndex = 0;
@@ -172,11 +176,11 @@
             // pnlDP3
             // 
             this.pnlDP3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlDP3.Controls.Add(this.BtnlogoutPP3);
-            this.pnlDP3.Controls.Add(this.BtnlogoutPP2);
-            this.pnlDP3.Controls.Add(this.textBox3);
-            this.pnlDP3.Controls.Add(this.textBox2);
-            this.pnlDP3.Controls.Add(this.textBox1);
+            this.pnlDP3.Controls.Add(this.BtnBatal);
+            this.pnlDP3.Controls.Add(this.BtnSimpan);
+            this.pnlDP3.Controls.Add(this.BoxAlamat);
+            this.pnlDP3.Controls.Add(this.BoxNoHP);
+            this.pnlDP3.Controls.Add(this.boxNama);
             this.pnlDP3.Controls.Add(this.label8);
             this.pnlDP3.Controls.Add(this.label7);
             this.pnlDP3.Controls.Add(this.label6);
@@ -189,44 +193,44 @@
             this.pnlDP3.Size = new System.Drawing.Size(538, 172);
             this.pnlDP3.TabIndex = 10;
             // 
-            // BtnlogoutPP3
+            // BtnBatal
             // 
-            this.BtnlogoutPP3.Location = new System.Drawing.Point(269, 139);
-            this.BtnlogoutPP3.Name = "BtnlogoutPP3";
-            this.BtnlogoutPP3.Size = new System.Drawing.Size(75, 23);
-            this.BtnlogoutPP3.TabIndex = 11;
-            this.BtnlogoutPP3.Text = "Batal";
-            this.BtnlogoutPP3.UseVisualStyleBackColor = true;
+            this.BtnBatal.Location = new System.Drawing.Point(269, 139);
+            this.BtnBatal.Name = "BtnBatal";
+            this.BtnBatal.Size = new System.Drawing.Size(75, 23);
+            this.BtnBatal.TabIndex = 11;
+            this.BtnBatal.Text = "Batal";
+            this.BtnBatal.UseVisualStyleBackColor = true;
             // 
-            // BtnlogoutPP2
+            // BtnSimpan
             // 
-            this.BtnlogoutPP2.Location = new System.Drawing.Point(130, 139);
-            this.BtnlogoutPP2.Name = "BtnlogoutPP2";
-            this.BtnlogoutPP2.Size = new System.Drawing.Size(75, 23);
-            this.BtnlogoutPP2.TabIndex = 10;
-            this.BtnlogoutPP2.Text = "Simpan";
-            this.BtnlogoutPP2.UseVisualStyleBackColor = true;
+            this.BtnSimpan.Location = new System.Drawing.Point(130, 139);
+            this.BtnSimpan.Name = "BtnSimpan";
+            this.BtnSimpan.Size = new System.Drawing.Size(75, 23);
+            this.BtnSimpan.TabIndex = 10;
+            this.BtnSimpan.Text = "Simpan";
+            this.BtnSimpan.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // BoxAlamat
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 9;
+            this.BoxAlamat.Location = new System.Drawing.Point(126, 99);
+            this.BoxAlamat.Name = "BoxAlamat";
+            this.BoxAlamat.Size = new System.Drawing.Size(100, 22);
+            this.BoxAlamat.TabIndex = 9;
             // 
-            // textBox2
+            // BoxNoHP
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 8;
+            this.BoxNoHP.Location = new System.Drawing.Point(126, 71);
+            this.BoxNoHP.Name = "BoxNoHP";
+            this.BoxNoHP.Size = new System.Drawing.Size(100, 22);
+            this.BoxNoHP.TabIndex = 8;
             // 
-            // textBox1
+            // boxNama
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 7;
+            this.boxNama.Location = new System.Drawing.Point(126, 44);
+            this.boxNama.Name = "boxNama";
+            this.boxNama.Size = new System.Drawing.Size(100, 22);
+            this.boxNama.TabIndex = 7;
             // 
             // label8
             // 
@@ -294,10 +298,31 @@
             // pnlDP4
             // 
             this.pnlDP4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlDP4.Controls.Add(this.lvwDataPelanggan);
             this.pnlDP4.Location = new System.Drawing.Point(279, 301);
             this.pnlDP4.Name = "pnlDP4";
             this.pnlDP4.Size = new System.Drawing.Size(538, 172);
             this.pnlDP4.TabIndex = 12;
+            // 
+            // lvwDataPelanggan
+            // 
+            this.lvwDataPelanggan.HideSelection = false;
+            this.lvwDataPelanggan.Location = new System.Drawing.Point(3, 3);
+            this.lvwDataPelanggan.Name = "lvwDataPelanggan";
+            this.lvwDataPelanggan.Size = new System.Drawing.Size(532, 166);
+            this.lvwDataPelanggan.TabIndex = 0;
+            this.lvwDataPelanggan.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnDasboard
+            // 
+            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDasboard.Location = new System.Drawing.Point(0, 22);
+            this.btnDasboard.Name = "btnDasboard";
+            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDasboard.TabIndex = 8;
+            this.btnDasboard.Text = "Dasboard";
+            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDasboard.UseVisualStyleBackColor = true;
             // 
             // Data_Pelanggan_Karyawan
             // 
@@ -317,6 +342,7 @@
             this.pnlDP2.PerformLayout();
             this.pnlDP3.ResumeLayout(false);
             this.pnlDP3.PerformLayout();
+            this.pnlDP4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -338,14 +364,16 @@
         private System.Windows.Forms.Label lblNHDp;
         private System.Windows.Forms.Label lblNamaDp;
         private System.Windows.Forms.Label lblTPDP;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox BoxAlamat;
+        private System.Windows.Forms.TextBox BoxNoHP;
+        private System.Windows.Forms.TextBox boxNama;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button BtnlogoutPP3;
-        private System.Windows.Forms.Button BtnlogoutPP2;
+        private System.Windows.Forms.Button BtnBatal;
+        private System.Windows.Forms.Button BtnSimpan;
         private System.Windows.Forms.Panel pnlDP4;
+        private System.Windows.Forms.ListView lvwDataPelanggan;
+        private System.Windows.Forms.Button btnDasboard;
     }
 }
