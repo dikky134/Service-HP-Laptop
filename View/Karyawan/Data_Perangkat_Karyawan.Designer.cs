@@ -39,8 +39,11 @@
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.btnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDPK3 = new System.Windows.Forms.Panel();
+            this.lvwPerangkat = new System.Windows.Forms.ListView();
+            this.btnDasboard = new System.Windows.Forms.Button();
             this.pnlDPK1.SuspendLayout();
             this.pnlDPK2.SuspendLayout();
+            this.pnlDPK3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDPK1
@@ -65,6 +68,7 @@
             // 
             // pnlDPK2
             // 
+            this.pnlDPK2.Controls.Add(this.btnDasboard);
             this.pnlDPK2.Controls.Add(this.btnPembayaran);
             this.pnlDPK2.Controls.Add(this.btnKerusakan);
             this.pnlDPK2.Controls.Add(this.TxtDPK1);
@@ -80,7 +84,7 @@
             // btnPembayaran
             // 
             this.btnPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPembayaran.Location = new System.Drawing.Point(0, 209);
+            this.btnPembayaran.Location = new System.Drawing.Point(0, 231);
             this.btnPembayaran.Name = "btnPembayaran";
             this.btnPembayaran.Size = new System.Drawing.Size(230, 43);
             this.btnPembayaran.TabIndex = 7;
@@ -92,7 +96,7 @@
             // btnKerusakan
             // 
             this.btnKerusakan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKerusakan.Location = new System.Drawing.Point(0, 166);
+            this.btnKerusakan.Location = new System.Drawing.Point(0, 188);
             this.btnKerusakan.Name = "btnKerusakan";
             this.btnKerusakan.Size = new System.Drawing.Size(230, 43);
             this.btnKerusakan.TabIndex = 6;
@@ -122,7 +126,7 @@
             // btnDataService
             // 
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(0, 123);
+            this.btnDataService.Location = new System.Drawing.Point(0, 145);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -135,7 +139,7 @@
             // 
             this.btnDataPerangkat.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDataPerangkat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPerangkat.Location = new System.Drawing.Point(0, 83);
+            this.btnDataPerangkat.Location = new System.Drawing.Point(0, 105);
             this.btnDataPerangkat.Name = "btnDataPerangkat";
             this.btnDataPerangkat.Size = new System.Drawing.Size(230, 43);
             this.btnDataPerangkat.TabIndex = 1;
@@ -147,7 +151,7 @@
             // btnDataPelanggan
             // 
             this.btnDataPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPelanggan.Location = new System.Drawing.Point(0, 42);
+            this.btnDataPelanggan.Location = new System.Drawing.Point(0, 64);
             this.btnDataPelanggan.Name = "btnDataPelanggan";
             this.btnDataPelanggan.Size = new System.Drawing.Size(230, 43);
             this.btnDataPelanggan.TabIndex = 0;
@@ -159,10 +163,31 @@
             // pnlDPK3
             // 
             this.pnlDPK3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlDPK3.Controls.Add(this.lvwPerangkat);
             this.pnlDPK3.Location = new System.Drawing.Point(251, 92);
             this.pnlDPK3.Name = "pnlDPK3";
             this.pnlDPK3.Size = new System.Drawing.Size(610, 360);
             this.pnlDPK3.TabIndex = 12;
+            // 
+            // lvwPerangkat
+            // 
+            this.lvwPerangkat.HideSelection = false;
+            this.lvwPerangkat.Location = new System.Drawing.Point(3, 5);
+            this.lvwPerangkat.Name = "lvwPerangkat";
+            this.lvwPerangkat.Size = new System.Drawing.Size(606, 354);
+            this.lvwPerangkat.TabIndex = 0;
+            this.lvwPerangkat.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnDasboard
+            // 
+            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDasboard.Location = new System.Drawing.Point(0, 21);
+            this.btnDasboard.Name = "btnDasboard";
+            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDasboard.TabIndex = 8;
+            this.btnDasboard.Text = "Dasboard";
+            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDasboard.UseVisualStyleBackColor = true;
             // 
             // Data_Perangkat_Karyawan
             // 
@@ -179,6 +204,7 @@
             this.pnlDPK1.PerformLayout();
             this.pnlDPK2.ResumeLayout(false);
             this.pnlDPK2.PerformLayout();
+            this.pnlDPK3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,5 +222,7 @@
         private System.Windows.Forms.Button btnDataPerangkat;
         private System.Windows.Forms.Button btnDataPelanggan;
         private System.Windows.Forms.Panel pnlDPK3;
+        private System.Windows.Forms.ListView lvwPerangkat;
+        private System.Windows.Forms.Button btnDasboard;
     }
 }

@@ -39,11 +39,10 @@
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.btnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlJK2 = new System.Windows.Forms.Panel();
-            this.textJK4 = new System.Windows.Forms.TextBox();
-            this.textJK3 = new System.Windows.Forms.TextBox();
-            this.textJK2 = new System.Windows.Forms.TextBox();
-            this.textJK1 = new System.Windows.Forms.TextBox();
-            this.btnTJK = new System.Windows.Forms.Button();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.txtBiaya = new System.Windows.Forms.TextBox();
+            this.txtKerusakan = new System.Windows.Forms.TextBox();
+            this.txtIdService = new System.Windows.Forms.TextBox();
             this.lblJK10 = new System.Windows.Forms.Label();
             this.lblJK9 = new System.Windows.Forms.Label();
             this.lblJK8 = new System.Windows.Forms.Label();
@@ -53,6 +52,10 @@
             this.lblJK4 = new System.Windows.Forms.Label();
             this.lblJK3 = new System.Windows.Forms.Label();
             this.lblJK2 = new System.Windows.Forms.Label();
+            this.btnTambah = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.lvwKerusakan = new System.Windows.Forms.ListView();
             this.pnlJK1.SuspendLayout();
             this.pnlJK3.SuspendLayout();
             this.pnlJK2.SuspendLayout();
@@ -174,11 +177,14 @@
             // pnlJK2
             // 
             this.pnlJK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlJK2.Controls.Add(this.textJK4);
-            this.pnlJK2.Controls.Add(this.textJK3);
-            this.pnlJK2.Controls.Add(this.textJK2);
-            this.pnlJK2.Controls.Add(this.textJK1);
-            this.pnlJK2.Controls.Add(this.btnTJK);
+            this.pnlJK2.Controls.Add(this.lvwKerusakan);
+            this.pnlJK2.Controls.Add(this.btnHapus);
+            this.pnlJK2.Controls.Add(this.btnEdit);
+            this.pnlJK2.Controls.Add(this.btnTambah);
+            this.pnlJK2.Controls.Add(this.txtStatus);
+            this.pnlJK2.Controls.Add(this.txtBiaya);
+            this.pnlJK2.Controls.Add(this.txtKerusakan);
+            this.pnlJK2.Controls.Add(this.txtIdService);
             this.pnlJK2.Controls.Add(this.lblJK10);
             this.pnlJK2.Controls.Add(this.lblJK9);
             this.pnlJK2.Controls.Add(this.lblJK8);
@@ -190,50 +196,41 @@
             this.pnlJK2.Controls.Add(this.lblJK2);
             this.pnlJK2.Location = new System.Drawing.Point(279, 109);
             this.pnlJK2.Name = "pnlJK2";
-            this.pnlJK2.Size = new System.Drawing.Size(569, 323);
+            this.pnlJK2.Size = new System.Drawing.Size(569, 341);
             this.pnlJK2.TabIndex = 16;
             // 
-            // textJK4
+            // txtStatus
             // 
-            this.textJK4.Location = new System.Drawing.Point(193, 174);
-            this.textJK4.Name = "textJK4";
-            this.textJK4.Size = new System.Drawing.Size(100, 22);
-            this.textJK4.TabIndex = 14;
+            this.txtStatus.Location = new System.Drawing.Point(160, 120);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(100, 22);
+            this.txtStatus.TabIndex = 14;
             // 
-            // textJK3
+            // txtBiaya
             // 
-            this.textJK3.Location = new System.Drawing.Point(193, 145);
-            this.textJK3.Name = "textJK3";
-            this.textJK3.Size = new System.Drawing.Size(100, 22);
-            this.textJK3.TabIndex = 13;
+            this.txtBiaya.Location = new System.Drawing.Point(160, 91);
+            this.txtBiaya.Name = "txtBiaya";
+            this.txtBiaya.Size = new System.Drawing.Size(100, 22);
+            this.txtBiaya.TabIndex = 13;
             // 
-            // textJK2
+            // txtKerusakan
             // 
-            this.textJK2.Location = new System.Drawing.Point(193, 118);
-            this.textJK2.Name = "textJK2";
-            this.textJK2.Size = new System.Drawing.Size(100, 22);
-            this.textJK2.TabIndex = 12;
+            this.txtKerusakan.Location = new System.Drawing.Point(160, 64);
+            this.txtKerusakan.Name = "txtKerusakan";
+            this.txtKerusakan.Size = new System.Drawing.Size(100, 22);
+            this.txtKerusakan.TabIndex = 12;
             // 
-            // textJK1
+            // txtIdService
             // 
-            this.textJK1.Location = new System.Drawing.Point(193, 91);
-            this.textJK1.Name = "textJK1";
-            this.textJK1.Size = new System.Drawing.Size(100, 22);
-            this.textJK1.TabIndex = 11;
-            // 
-            // btnTJK
-            // 
-            this.btnTJK.Location = new System.Drawing.Point(85, 243);
-            this.btnTJK.Name = "btnTJK";
-            this.btnTJK.Size = new System.Drawing.Size(131, 34);
-            this.btnTJK.TabIndex = 9;
-            this.btnTJK.Text = "Tambah";
-            this.btnTJK.UseVisualStyleBackColor = true;
+            this.txtIdService.Location = new System.Drawing.Point(160, 37);
+            this.txtIdService.Name = "txtIdService";
+            this.txtIdService.Size = new System.Drawing.Size(100, 22);
+            this.txtIdService.TabIndex = 11;
             // 
             // lblJK10
             // 
             this.lblJK10.AutoSize = true;
-            this.lblJK10.Location = new System.Drawing.Point(177, 180);
+            this.lblJK10.Location = new System.Drawing.Point(144, 126);
             this.lblJK10.Name = "lblJK10";
             this.lblJK10.Size = new System.Drawing.Size(10, 16);
             this.lblJK10.TabIndex = 8;
@@ -242,7 +239,7 @@
             // lblJK9
             // 
             this.lblJK9.AutoSize = true;
-            this.lblJK9.Location = new System.Drawing.Point(177, 151);
+            this.lblJK9.Location = new System.Drawing.Point(144, 97);
             this.lblJK9.Name = "lblJK9";
             this.lblJK9.Size = new System.Drawing.Size(10, 16);
             this.lblJK9.TabIndex = 7;
@@ -251,7 +248,7 @@
             // lblJK8
             // 
             this.lblJK8.AutoSize = true;
-            this.lblJK8.Location = new System.Drawing.Point(177, 124);
+            this.lblJK8.Location = new System.Drawing.Point(144, 70);
             this.lblJK8.Name = "lblJK8";
             this.lblJK8.Size = new System.Drawing.Size(10, 16);
             this.lblJK8.TabIndex = 6;
@@ -260,7 +257,7 @@
             // lblJK7
             // 
             this.lblJK7.AutoSize = true;
-            this.lblJK7.Location = new System.Drawing.Point(177, 94);
+            this.lblJK7.Location = new System.Drawing.Point(144, 40);
             this.lblJK7.Name = "lblJK7";
             this.lblJK7.Size = new System.Drawing.Size(10, 16);
             this.lblJK7.TabIndex = 5;
@@ -269,7 +266,7 @@
             // lblJK6
             // 
             this.lblJK6.AutoSize = true;
-            this.lblJK6.Location = new System.Drawing.Point(42, 180);
+            this.lblJK6.Location = new System.Drawing.Point(9, 126);
             this.lblJK6.Name = "lblJK6";
             this.lblJK6.Size = new System.Drawing.Size(44, 16);
             this.lblJK6.TabIndex = 4;
@@ -278,7 +275,7 @@
             // lblJK5
             // 
             this.lblJK5.AutoSize = true;
-            this.lblJK5.Location = new System.Drawing.Point(42, 151);
+            this.lblJK5.Location = new System.Drawing.Point(9, 97);
             this.lblJK5.Name = "lblJK5";
             this.lblJK5.Size = new System.Drawing.Size(42, 16);
             this.lblJK5.TabIndex = 3;
@@ -287,7 +284,7 @@
             // lblJK4
             // 
             this.lblJK4.AutoSize = true;
-            this.lblJK4.Location = new System.Drawing.Point(42, 124);
+            this.lblJK4.Location = new System.Drawing.Point(9, 70);
             this.lblJK4.Name = "lblJK4";
             this.lblJK4.Size = new System.Drawing.Size(106, 16);
             this.lblJK4.TabIndex = 2;
@@ -296,7 +293,7 @@
             // lblJK3
             // 
             this.lblJK3.AutoSize = true;
-            this.lblJK3.Location = new System.Drawing.Point(42, 94);
+            this.lblJK3.Location = new System.Drawing.Point(9, 40);
             this.lblJK3.Name = "lblJK3";
             this.lblJK3.Size = new System.Drawing.Size(69, 16);
             this.lblJK3.TabIndex = 1;
@@ -305,11 +302,47 @@
             // lblJK2
             // 
             this.lblJK2.AutoSize = true;
-            this.lblJK2.Location = new System.Drawing.Point(42, 68);
+            this.lblJK2.Location = new System.Drawing.Point(9, 14);
             this.lblJK2.Name = "lblJK2";
             this.lblJK2.Size = new System.Drawing.Size(188, 16);
             this.lblJK2.TabIndex = 0;
             this.lblJK2.Text = "Tambahkan Detail Kerusakan:";
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.Location = new System.Drawing.Point(28, 157);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(75, 23);
+            this.btnTambah.TabIndex = 15;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(109, 157);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(190, 157);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(75, 23);
+            this.btnHapus.TabIndex = 17;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            // 
+            // lvwKerusakan
+            // 
+            this.lvwKerusakan.HideSelection = false;
+            this.lvwKerusakan.Location = new System.Drawing.Point(3, 189);
+            this.lvwKerusakan.Name = "lvwKerusakan";
+            this.lvwKerusakan.Size = new System.Drawing.Size(563, 149);
+            this.lvwKerusakan.TabIndex = 18;
+            this.lvwKerusakan.UseCompatibleStateImageBehavior = false;
             // 
             // Jenis_Kerusakan
             // 
@@ -350,14 +383,17 @@
         private System.Windows.Forms.Label lblJK4;
         private System.Windows.Forms.Label lblJK3;
         private System.Windows.Forms.Label lblJK2;
-        private System.Windows.Forms.TextBox textJK4;
-        private System.Windows.Forms.TextBox textJK3;
-        private System.Windows.Forms.TextBox textJK2;
-        private System.Windows.Forms.TextBox textJK1;
-        private System.Windows.Forms.Button btnTJK;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.TextBox txtBiaya;
+        private System.Windows.Forms.TextBox txtKerusakan;
+        private System.Windows.Forms.TextBox txtIdService;
         private System.Windows.Forms.Label lblJK10;
         private System.Windows.Forms.Label lblJK9;
         private System.Windows.Forms.Label lblJK8;
         private System.Windows.Forms.Label lblJK7;
+        private System.Windows.Forms.ListView lvwKerusakan;
+        private System.Windows.Forms.Button btnHapus;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnTambah;
     }
 }
