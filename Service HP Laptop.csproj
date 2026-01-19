@@ -144,10 +144,10 @@
     <Compile Include="View\Karyawan\Pembayaran_Karyawan.Designer.cs">
       <DependentUpon>Pembayaran_Karyawan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Riwayat Pembayaran.cs">
+    <Compile Include="View\Pelanggan\Riwayat Pembayaran.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Riwayat Pembayaran.Designer.cs">
+    <Compile Include="View\Pelanggan\Riwayat Pembayaran.Designer.cs">
       <DependentUpon>Riwayat Pembayaran.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Sparepart.cs">
@@ -208,7 +208,7 @@
     <EmbeddedResource Include="View\Karyawan\Pembayaran_Karyawan.resx">
       <DependentUpon>Pembayaran_Karyawan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Riwayat Pembayaran.resx">
+    <EmbeddedResource Include="View\Pelanggan\Riwayat Pembayaran.resx">
       <DependentUpon>Riwayat Pembayaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Sparepart.resx">

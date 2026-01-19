@@ -130,7 +130,12 @@ namespace AplikasiService.View
                 return result != null ? result.ToString() : "-";
             }
         }
-
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            Riwayat_Pembayaran riwayat = new Riwayat_Pembayaran();
+            riwayat.Show();
+            this.Close();
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             Dashboard_Pelanggan dashboard = new Dashboard_Pelanggan();
@@ -173,7 +178,5 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
-
-        
     }
 }

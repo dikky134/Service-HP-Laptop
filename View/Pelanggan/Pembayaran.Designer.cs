@@ -51,6 +51,7 @@
             this.lblP3 = new System.Windows.Forms.Label();
             this.lblP2 = new System.Windows.Forms.Label();
             this.btnKonfirmasi = new System.Windows.Forms.Button();
+            this.btnRiwayat = new System.Windows.Forms.Button();
             this.pnlP3.SuspendLayout();
             this.pnlP1.SuspendLayout();
             this.pnlP2.SuspendLayout();
@@ -149,6 +150,7 @@
             // pnlP2
             // 
             this.pnlP2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlP2.Controls.Add(this.btnRiwayat);
             this.pnlP2.Controls.Add(this.label2);
             this.pnlP2.Controls.Add(this.label1);
             this.pnlP2.Controls.Add(this.dtpTanggalBayar);
@@ -283,13 +285,23 @@
             // 
             // btnKonfirmasi
             // 
-            this.btnKonfirmasi.Location = new System.Drawing.Point(154, 225);
+            this.btnKonfirmasi.Location = new System.Drawing.Point(154, 194);
             this.btnKonfirmasi.Name = "btnKonfirmasi";
             this.btnKonfirmasi.Size = new System.Drawing.Size(217, 41);
             this.btnKonfirmasi.TabIndex = 0;
             this.btnKonfirmasi.Text = "Konfirmasi Pembayaran";
             this.btnKonfirmasi.UseVisualStyleBackColor = true;
             this.btnKonfirmasi.Click += new System.EventHandler(this.btnKonfirmasi_Click);
+            // 
+            // btnRiwayat
+            // 
+            this.btnRiwayat.Location = new System.Drawing.Point(154, 247);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(217, 41);
+            this.btnRiwayat.TabIndex = 22;
+            this.btnRiwayat.Text = "Riwayat Pembayaran";
+            this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
             // 
             // Pembayaran
             // 
@@ -337,5 +349,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpTanggalBayar;
         private System.Windows.Forms.ComboBox cmbMetode;
+        private System.Windows.Forms.Button btnRiwayat;
     }
 }
