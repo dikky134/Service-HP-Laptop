@@ -9,8 +9,8 @@ namespace AplikasiService.Model.Entity
     public class Servis
     {
         public int Id { get; set; }
-        public string Perangkat { get; set; }
-        public string JenisKerusakan { get; set; }
+        public int PerangkatId { get; set; }
+        public int KerusakanId { get; set; }
         public string Status { get; set; }
         public int Biaya { get; set; }
 

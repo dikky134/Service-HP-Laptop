@@ -12,6 +12,7 @@ namespace AplikasiService.Model.Entity
         public int ServisId { get; set; }
         public string TanggalBayar { get; set; }
         public int Total { get; set; }
+        public string Metode { get; set; }
         public string Status { get; set; }
 
     }

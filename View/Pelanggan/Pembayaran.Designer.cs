@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlP3 = new System.Windows.Forms.Panel();
+            this.lblNama = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnDataPerangkat = new System.Windows.Forms.Button();
@@ -36,21 +37,20 @@
             this.pnlP1 = new System.Windows.Forms.Panel();
             this.lblP1 = new System.Windows.Forms.Label();
             this.pnlP2 = new System.Windows.Forms.Panel();
-            this.lblP8 = new System.Windows.Forms.Label();
-            this.TxtP4 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpTanggalBayar = new System.Windows.Forms.DateTimePicker();
+            this.cmbMetode = new System.Windows.Forms.ComboBox();
+            this.btnCek = new System.Windows.Forms.Button();
             this.lblP5 = new System.Windows.Forms.Label();
             this.lblP4 = new System.Windows.Forms.Label();
-            this.TxtP3 = new System.Windows.Forms.TextBox();
-            this.TxtP2 = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtTotalBiaya = new System.Windows.Forms.TextBox();
+            this.txtServiceId = new System.Windows.Forms.TextBox();
             this.lblP7 = new System.Windows.Forms.Label();
             this.lblP6 = new System.Windows.Forms.Label();
             this.lblP3 = new System.Windows.Forms.Label();
             this.lblP2 = new System.Windows.Forms.Label();
-            this.btnP4 = new System.Windows.Forms.Button();
-            this.lblNama = new System.Windows.Forms.Label();
+            this.btnKonfirmasi = new System.Windows.Forms.Button();
             this.pnlP3.SuspendLayout();
             this.pnlP1.SuspendLayout();
             this.pnlP2.SuspendLayout();
@@ -68,6 +68,15 @@
             this.pnlP3.Name = "pnlP3";
             this.pnlP3.Size = new System.Drawing.Size(241, 397);
             this.pnlP3.TabIndex = 4;
+            // 
+            // lblNama
+            // 
+            this.lblNama.AutoSize = true;
+            this.lblNama.Location = new System.Drawing.Point(12, 13);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(82, 16);
+            this.lblNama.TabIndex = 5;
+            this.lblNama.Text = "Pelanggan : ";
             // 
             // btnLogOut
             // 
@@ -140,45 +149,73 @@
             // pnlP2
             // 
             this.pnlP2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlP2.Controls.Add(this.lblP8);
-            this.pnlP2.Controls.Add(this.TxtP4);
+            this.pnlP2.Controls.Add(this.label2);
+            this.pnlP2.Controls.Add(this.label1);
+            this.pnlP2.Controls.Add(this.dtpTanggalBayar);
+            this.pnlP2.Controls.Add(this.cmbMetode);
+            this.pnlP2.Controls.Add(this.btnCek);
             this.pnlP2.Controls.Add(this.lblP5);
             this.pnlP2.Controls.Add(this.lblP4);
-            this.pnlP2.Controls.Add(this.TxtP3);
-            this.pnlP2.Controls.Add(this.TxtP2);
-            this.pnlP2.Controls.Add(this.checkBox3);
-            this.pnlP2.Controls.Add(this.checkBox2);
-            this.pnlP2.Controls.Add(this.checkBox1);
+            this.pnlP2.Controls.Add(this.txtTotalBiaya);
+            this.pnlP2.Controls.Add(this.txtServiceId);
             this.pnlP2.Controls.Add(this.lblP7);
             this.pnlP2.Controls.Add(this.lblP6);
             this.pnlP2.Controls.Add(this.lblP3);
             this.pnlP2.Controls.Add(this.lblP2);
-            this.pnlP2.Controls.Add(this.btnP4);
+            this.pnlP2.Controls.Add(this.btnKonfirmasi);
             this.pnlP2.Location = new System.Drawing.Point(292, 124);
             this.pnlP2.Name = "pnlP2";
             this.pnlP2.Size = new System.Drawing.Size(538, 332);
             this.pnlP2.TabIndex = 6;
             // 
-            // lblP8
+            // label2
             // 
-            this.lblP8.AutoSize = true;
-            this.lblP8.Location = new System.Drawing.Point(151, 237);
-            this.lblP8.Name = "lblP8";
-            this.lblP8.Size = new System.Drawing.Size(10, 16);
-            this.lblP8.TabIndex = 16;
-            this.lblP8.Text = ":";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(169, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(10, 16);
+            this.label2.TabIndex = 21;
+            this.label2.Text = ":";
             // 
-            // TxtP4
+            // label1
             // 
-            this.TxtP4.Location = new System.Drawing.Point(167, 234);
-            this.TxtP4.Name = "TxtP4";
-            this.TxtP4.Size = new System.Drawing.Size(100, 22);
-            this.TxtP4.TabIndex = 15;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(169, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = ":";
+            // 
+            // dtpTanggalBayar
+            // 
+            this.dtpTanggalBayar.Enabled = false;
+            this.dtpTanggalBayar.Location = new System.Drawing.Point(185, 139);
+            this.dtpTanggalBayar.Name = "dtpTanggalBayar";
+            this.dtpTanggalBayar.Size = new System.Drawing.Size(250, 22);
+            this.dtpTanggalBayar.TabIndex = 19;
+            // 
+            // cmbMetode
+            // 
+            this.cmbMetode.FormattingEnabled = true;
+            this.cmbMetode.Location = new System.Drawing.Point(185, 104);
+            this.cmbMetode.Name = "cmbMetode";
+            this.cmbMetode.Size = new System.Drawing.Size(137, 24);
+            this.cmbMetode.TabIndex = 18;
+            // 
+            // btnCek
+            // 
+            this.btnCek.Location = new System.Drawing.Point(325, 30);
+            this.btnCek.Name = "btnCek";
+            this.btnCek.Size = new System.Drawing.Size(97, 22);
+            this.btnCek.TabIndex = 17;
+            this.btnCek.Text = "Cari Service";
+            this.btnCek.UseVisualStyleBackColor = true;
+            this.btnCek.Click += new System.EventHandler(this.btnCek_Click);
             // 
             // lblP5
             // 
             this.lblP5.AutoSize = true;
-            this.lblP5.Location = new System.Drawing.Point(151, 70);
+            this.lblP5.Location = new System.Drawing.Point(169, 70);
             this.lblP5.Name = "lblP5";
             this.lblP5.Size = new System.Drawing.Size(10, 16);
             this.lblP5.TabIndex = 14;
@@ -187,60 +224,31 @@
             // lblP4
             // 
             this.lblP4.AutoSize = true;
-            this.lblP4.Location = new System.Drawing.Point(151, 36);
+            this.lblP4.Location = new System.Drawing.Point(169, 36);
             this.lblP4.Name = "lblP4";
             this.lblP4.Size = new System.Drawing.Size(10, 16);
             this.lblP4.TabIndex = 13;
             this.lblP4.Text = ":";
             // 
-            // TxtP3
+            // txtTotalBiaya
             // 
-            this.TxtP3.Location = new System.Drawing.Point(167, 67);
-            this.TxtP3.Name = "TxtP3";
-            this.TxtP3.Size = new System.Drawing.Size(100, 22);
-            this.TxtP3.TabIndex = 12;
+            this.txtTotalBiaya.Location = new System.Drawing.Point(185, 67);
+            this.txtTotalBiaya.Name = "txtTotalBiaya";
+            this.txtTotalBiaya.ReadOnly = true;
+            this.txtTotalBiaya.Size = new System.Drawing.Size(100, 22);
+            this.txtTotalBiaya.TabIndex = 12;
             // 
-            // TxtP2
+            // txtServiceId
             // 
-            this.TxtP2.Location = new System.Drawing.Point(167, 30);
-            this.TxtP2.Name = "TxtP2";
-            this.TxtP2.Size = new System.Drawing.Size(100, 22);
-            this.TxtP2.TabIndex = 11;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(31, 193);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(63, 20);
-            this.checkBox3.TabIndex = 10;
-            this.checkBox3.Text = "Tunai";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(31, 167);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(53, 20);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Qris";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(31, 141);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 20);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Tranfer Bank";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtServiceId.Location = new System.Drawing.Point(185, 30);
+            this.txtServiceId.Name = "txtServiceId";
+            this.txtServiceId.Size = new System.Drawing.Size(100, 22);
+            this.txtServiceId.TabIndex = 11;
             // 
             // lblP7
             // 
             this.lblP7.AutoSize = true;
-            this.lblP7.Location = new System.Drawing.Point(51, 237);
+            this.lblP7.Location = new System.Drawing.Point(29, 144);
             this.lblP7.Name = "lblP7";
             this.lblP7.Size = new System.Drawing.Size(97, 16);
             this.lblP7.TabIndex = 7;
@@ -249,16 +257,16 @@
             // lblP6
             // 
             this.lblP6.AutoSize = true;
-            this.lblP6.Location = new System.Drawing.Point(28, 122);
+            this.lblP6.Location = new System.Drawing.Point(29, 107);
             this.lblP6.Name = "lblP6";
-            this.lblP6.Size = new System.Drawing.Size(115, 16);
+            this.lblP6.Size = new System.Drawing.Size(123, 16);
             this.lblP6.TabIndex = 3;
-            this.lblP6.Text = "Mode Pembayarn";
+            this.lblP6.Text = "Mode Pembayaran";
             // 
             // lblP3
             // 
             this.lblP3.AutoSize = true;
-            this.lblP3.Location = new System.Drawing.Point(51, 73);
+            this.lblP3.Location = new System.Drawing.Point(29, 73);
             this.lblP3.Name = "lblP3";
             this.lblP3.Size = new System.Drawing.Size(91, 16);
             this.lblP3.TabIndex = 2;
@@ -267,29 +275,21 @@
             // lblP2
             // 
             this.lblP2.AutoSize = true;
-            this.lblP2.Location = new System.Drawing.Point(51, 33);
+            this.lblP2.Location = new System.Drawing.Point(29, 33);
             this.lblP2.Name = "lblP2";
             this.lblP2.Size = new System.Drawing.Size(69, 16);
             this.lblP2.TabIndex = 1;
             this.lblP2.Text = "ID Service";
             // 
-            // btnP4
+            // btnKonfirmasi
             // 
-            this.btnP4.Location = new System.Drawing.Point(154, 290);
-            this.btnP4.Name = "btnP4";
-            this.btnP4.Size = new System.Drawing.Size(217, 23);
-            this.btnP4.TabIndex = 0;
-            this.btnP4.Text = "Konfirmasi Pembayaran";
-            this.btnP4.UseVisualStyleBackColor = true;
-            // 
-            // lblNama
-            // 
-            this.lblNama.AutoSize = true;
-            this.lblNama.Location = new System.Drawing.Point(12, 13);
-            this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(82, 16);
-            this.lblNama.TabIndex = 5;
-            this.lblNama.Text = "Pelanggan : ";
+            this.btnKonfirmasi.Location = new System.Drawing.Point(154, 225);
+            this.btnKonfirmasi.Name = "btnKonfirmasi";
+            this.btnKonfirmasi.Size = new System.Drawing.Size(217, 41);
+            this.btnKonfirmasi.TabIndex = 0;
+            this.btnKonfirmasi.Text = "Konfirmasi Pembayaran";
+            this.btnKonfirmasi.UseVisualStyleBackColor = true;
+            this.btnKonfirmasi.Click += new System.EventHandler(this.btnKonfirmasi_Click);
             // 
             // Pembayaran
             // 
@@ -302,7 +302,6 @@
             this.Name = "Pembayaran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pembayaran";
-            this.Load += new System.EventHandler(this.Nama_Pelanggan_Load);
             this.pnlP3.ResumeLayout(false);
             this.pnlP3.PerformLayout();
             this.pnlP1.ResumeLayout(false);
@@ -323,20 +322,20 @@
         private System.Windows.Forms.Panel pnlP1;
         private System.Windows.Forms.Label lblP1;
         private System.Windows.Forms.Panel pnlP2;
-        private System.Windows.Forms.Button btnP4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnKonfirmasi;
         private System.Windows.Forms.Label lblP7;
         private System.Windows.Forms.Label lblP6;
         private System.Windows.Forms.Label lblP3;
         private System.Windows.Forms.Label lblP2;
-        private System.Windows.Forms.TextBox TxtP3;
-        private System.Windows.Forms.TextBox TxtP2;
-        private System.Windows.Forms.Label lblP8;
-        private System.Windows.Forms.TextBox TxtP4;
+        private System.Windows.Forms.TextBox txtTotalBiaya;
+        private System.Windows.Forms.TextBox txtServiceId;
         private System.Windows.Forms.Label lblP5;
         private System.Windows.Forms.Label lblP4;
         private System.Windows.Forms.Label lblNama;
+        private System.Windows.Forms.Button btnCek;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpTanggalBayar;
+        private System.Windows.Forms.ComboBox cmbMetode;
     }
 }

@@ -23,8 +23,8 @@ namespace AplikasiService.Model.Repository
                 VALUES (@pid,@jkid,@tgl,@status, @biaya)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@pid", s.Perangkat);
-                cmd.Parameters.AddWithValue("@jkid", s.JenisKerusakan);
+                cmd.Parameters.AddWithValue("@pid", s.PerangkatId);
+                cmd.Parameters.AddWithValue("@jkid", s.KerusakanId);
                 cmd.Parameters.AddWithValue("@status", s.Status);
                 cmd.Parameters.AddWithValue("@biaya", s.Biaya);
 
@@ -54,8 +54,8 @@ namespace AplikasiService.Model.Repository
                     list.Add(new Servis
                     {
                         Id = int.Parse(rd["Id"].ToString()),
-                        Perangkat = rd["PerangkatId"].ToString(),
-                        JenisKerusakan = rd["JenisKerusakanId"].ToString(),
+                        PerangkatId = int.Parse(rd["PerangkatId"].ToString()),
+                        KerusakanId = int.Parse(rd["KerusakanId"].ToString()),
                         Status = rd["Status"].ToString(),
                         Biaya = int.Parse(rd["Biaya"].ToString())
                     });

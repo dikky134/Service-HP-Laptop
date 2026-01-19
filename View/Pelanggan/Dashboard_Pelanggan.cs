@@ -66,8 +66,8 @@ namespace AplikasiService.View
                     s.Status,
                     s.Biaya
                 FROM Servis s
-                JOIN Perangkat p ON s.Perangkat = p.Id
-                JOIN JenisKerusakan k ON s.JenisKerusakan = k.Id
+                JOIN Perangkat p ON s.PerangkatId = p.Id
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
                 WHERE s.PelangganId = @pid";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
