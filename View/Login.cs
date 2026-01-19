@@ -75,7 +75,7 @@ namespace AplikasiService.View
         {
             SignUp signup = new SignUp();
             signup.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

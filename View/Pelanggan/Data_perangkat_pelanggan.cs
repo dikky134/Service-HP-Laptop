@@ -173,6 +173,19 @@ namespace AplikasiService.View
                 LoadData();
             }
         }
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            if (lvwPerangkat.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Pilih perangkat terlebih dahulu");
+                return;
+            }
+
+            int perangkatId = int.Parse(lvwPerangkat.SelectedItems[0].Text);
+
+            Detail_service_pelanggan detail = new Detail_service_pelanggan(perangkatId);
+            detail.Show();
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             Dashboard_Pelanggan dashboard = new Dashboard_Pelanggan();
@@ -215,7 +228,5 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
-
-        
     }
 }

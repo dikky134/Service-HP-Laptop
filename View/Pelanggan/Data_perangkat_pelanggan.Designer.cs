@@ -300,6 +300,7 @@
             this.btnDetail.TabIndex = 25;
             this.btnDetail.Text = "Detail";
             this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // Data_perangkat_pelanggan
             // 

@@ -174,7 +174,6 @@
             this.Name = "Dashboard_Karyawan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard_Karyawan";
-            this.Load += new System.EventHandler(this.Dashboard_Karyawan_Load);
             this.pnldshk3.ResumeLayout(false);
             this.pnldshk3.PerformLayout();
             this.pnldshk1.ResumeLayout(false);

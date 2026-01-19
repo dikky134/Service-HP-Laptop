@@ -96,7 +96,7 @@ namespace AplikasiService.View
         {
             Login login = new Login();
             login.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
