@@ -114,12 +114,6 @@
     <Compile Include="View\Karyawan\Data_Service_Karyawan.Designer.cs">
       <DependentUpon>Data_Service_Karyawan.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Karyawan\Detail Service_Karyawan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Karyawan\Detail Service_Karyawan.Designer.cs">
-      <DependentUpon>Detail Service_Karyawan.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Pelanggan\Detail_service_pelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Karyawan\Data_Service_Karyawan.resx">
       <DependentUpon>Data_Service_Karyawan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Karyawan\Detail Service_Karyawan.resx">
-      <DependentUpon>Detail Service_Karyawan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Pelanggan\Detail_service_pelanggan.resx">
       <DependentUpon>Detail_service_pelanggan.cs</DependentUpon>

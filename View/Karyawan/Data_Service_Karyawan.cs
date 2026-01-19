@@ -17,6 +17,12 @@ namespace AplikasiService.View
         {
             InitializeComponent();
         }
+        private void btnDasboard_Click(object sender, EventArgs e)
+        {
+            Dashboard_Karyawan dashboard = new Dashboard_Karyawan();
+            dashboard.Show();
+            this.Close();
+        }
         private void btnDataPelanggan_Click(object sender, EventArgs e)
         {
             Data_Pelanggan_Karyawan dataPelanggan = new Data_Pelanggan_Karyawan();
@@ -72,11 +78,6 @@ namespace AplikasiService.View
 
                 this.Close();
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -31,6 +31,7 @@
             this.pnlDSK1 = new System.Windows.Forms.Panel();
             this.lblDSK = new System.Windows.Forms.Label();
             this.pnlDSK3 = new System.Windows.Forms.Panel();
+            this.btnDasboard = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnKerusakan = new System.Windows.Forms.Button();
             this.TxtDSK1 = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.BtnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDSK2 = new System.Windows.Forms.Panel();
             this.lvwService = new System.Windows.Forms.ListView();
-            this.btnDasboard = new System.Windows.Forms.Button();
             this.pnlDSK1.SuspendLayout();
             this.pnlDSK3.SuspendLayout();
             this.pnlDSK2.SuspendLayout();
@@ -80,6 +80,18 @@
             this.pnlDSK3.Name = "pnlDSK3";
             this.pnlDSK3.Size = new System.Drawing.Size(230, 405);
             this.pnlDSK3.TabIndex = 12;
+            // 
+            // btnDasboard
+            // 
+            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDasboard.Location = new System.Drawing.Point(-1, 27);
+            this.btnDasboard.Name = "btnDasboard";
+            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDasboard.TabIndex = 8;
+            this.btnDasboard.Text = "Dasboard";
+            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDasboard.UseVisualStyleBackColor = true;
+            this.btnDasboard.Click += new System.EventHandler(this.btnDasboard_Click);
             // 
             // btnPembayaran
             // 
@@ -177,17 +189,6 @@
             this.lvwService.Size = new System.Drawing.Size(569, 319);
             this.lvwService.TabIndex = 0;
             this.lvwService.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnDasboard
-            // 
-            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDasboard.Location = new System.Drawing.Point(-1, 27);
-            this.btnDasboard.Name = "btnDasboard";
-            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
-            this.btnDasboard.TabIndex = 8;
-            this.btnDasboard.Text = "Dasboard";
-            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDasboard.UseVisualStyleBackColor = true;
             // 
             // Data_Service_Karyawan
             // 

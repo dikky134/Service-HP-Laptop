@@ -31,6 +31,7 @@
             this.pnlDP1 = new System.Windows.Forms.Panel();
             this.lblDPP = new System.Windows.Forms.Label();
             this.pnlDP2 = new System.Windows.Forms.Panel();
+            this.btnDasboard = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnKerusakan = new System.Windows.Forms.Button();
             this.TxtDPP = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.lblTPDP = new System.Windows.Forms.Label();
             this.pnlDP4 = new System.Windows.Forms.Panel();
             this.lvwDataPelanggan = new System.Windows.Forms.ListView();
-            this.btnDasboard = new System.Windows.Forms.Button();
             this.pnlDP1.SuspendLayout();
             this.pnlDP2.SuspendLayout();
             this.pnlDP3.SuspendLayout();
@@ -94,6 +94,18 @@
             this.pnlDP2.Name = "pnlDP2";
             this.pnlDP2.Size = new System.Drawing.Size(230, 405);
             this.pnlDP2.TabIndex = 8;
+            // 
+            // btnDasboard
+            // 
+            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDasboard.Location = new System.Drawing.Point(0, 22);
+            this.btnDasboard.Name = "btnDasboard";
+            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDasboard.TabIndex = 8;
+            this.btnDasboard.Text = "Dasboard";
+            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDasboard.UseVisualStyleBackColor = true;
+            this.btnDasboard.Click += new System.EventHandler(this.btnDasboard_Click);
             // 
             // btnPembayaran
             // 
@@ -312,17 +324,6 @@
             this.lvwDataPelanggan.Size = new System.Drawing.Size(532, 166);
             this.lvwDataPelanggan.TabIndex = 0;
             this.lvwDataPelanggan.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnDasboard
-            // 
-            this.btnDasboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDasboard.Location = new System.Drawing.Point(0, 22);
-            this.btnDasboard.Name = "btnDasboard";
-            this.btnDasboard.Size = new System.Drawing.Size(230, 43);
-            this.btnDasboard.TabIndex = 8;
-            this.btnDasboard.Text = "Dasboard";
-            this.btnDasboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDasboard.UseVisualStyleBackColor = true;
             // 
             // Data_Pelanggan_Karyawan
             // 

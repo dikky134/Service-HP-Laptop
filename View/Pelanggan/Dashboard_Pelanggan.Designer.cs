@@ -31,13 +31,13 @@
             this.pnldshP1 = new System.Windows.Forms.Panel();
             this.lbldsh = new System.Windows.Forms.Label();
             this.pnldshP2 = new System.Windows.Forms.Panel();
+            this.lvwDashboard = new System.Windows.Forms.ListView();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnPerangkat = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.pnldshP3 = new System.Windows.Forms.Panel();
             this.lblNama = new System.Windows.Forms.Label();
-            this.lvwdasboard = new System.Windows.Forms.ListView();
             this.pnldshP1.SuspendLayout();
             this.pnldshP2.SuspendLayout();
             this.pnldshP3.SuspendLayout();
@@ -66,11 +66,20 @@
             // pnldshP2
             // 
             this.pnldshP2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnldshP2.Controls.Add(this.lvwdasboard);
+            this.pnldshP2.Controls.Add(this.lvwDashboard);
             this.pnldshP2.Location = new System.Drawing.Point(294, 105);
             this.pnldshP2.Name = "pnldshP2";
             this.pnldshP2.Size = new System.Drawing.Size(644, 341);
             this.pnldshP2.TabIndex = 11;
+            // 
+            // lvwDashboard
+            // 
+            this.lvwDashboard.HideSelection = false;
+            this.lvwDashboard.Location = new System.Drawing.Point(20, 21);
+            this.lvwDashboard.Name = "lvwDashboard";
+            this.lvwDashboard.Size = new System.Drawing.Size(606, 302);
+            this.lvwDashboard.TabIndex = 0;
+            this.lvwDashboard.UseCompatibleStateImageBehavior = false;
             // 
             // btnDashboard
             // 
@@ -141,15 +150,6 @@
             this.lblNama.TabIndex = 0;
             this.lblNama.Text = "Pelanggan : ";
             // 
-            // lvwdasboard
-            // 
-            this.lvwdasboard.HideSelection = false;
-            this.lvwdasboard.Location = new System.Drawing.Point(20, 21);
-            this.lvwdasboard.Name = "lvwdasboard";
-            this.lvwdasboard.Size = new System.Drawing.Size(606, 302);
-            this.lvwdasboard.TabIndex = 0;
-            this.lvwdasboard.UseCompatibleStateImageBehavior = false;
-            // 
             // Dashboard_Pelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -180,6 +180,6 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Panel pnldshP3;
         private System.Windows.Forms.Label lblNama;
-        private System.Windows.Forms.ListView lvwdasboard;
+        private System.Windows.Forms.ListView lvwDashboard;
     }
 }

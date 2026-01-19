@@ -23,16 +23,16 @@ namespace AplikasiService.View
         }
         private void SetupListView()
         {
-            lvwService.View = System.Windows.Forms.View.Details;
-            lvwService.FullRowSelect = true;
-            lvwService.GridLines = true;
-            lvwService.Columns.Clear();
+            lvwDashboard.View = System.Windows.Forms.View.Details;
+            lvwDashboard.FullRowSelect = true;
+            lvwDashboard.GridLines = true;
+            lvwDashboard.Columns.Clear();
 
-            lvwService.Columns.Add("ID", 50, HorizontalAlignment.Center);
-            lvwService.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
-            lvwService.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
-            lvwService.Columns.Add("Status", 80, HorizontalAlignment.Center);
-            lvwService.Columns.Add("Total", 100, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("ID", 50, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Status", 80, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Total", 100, HorizontalAlignment.Center);
         }
 
         private string GetNamaPelanggan()
@@ -52,7 +52,7 @@ namespace AplikasiService.View
         private void LoadData()
         {
             lblNama.Text = "Pelanggan : " + GetNamaPelanggan();
-            lvwService.Items.Clear();
+            lvwDashboard.Items.Clear();
 
             using (var conn = DbContext.GetConnection())
             {
@@ -84,7 +84,7 @@ namespace AplikasiService.View
                             item.SubItems.Add(rd["Status"].ToString());
                             item.SubItems.Add("Rp " + rd["Biaya"].ToString());
 
-                            lvwService.Items.Add(item);
+                            lvwDashboard.Items.Add(item);
                         }
                     }
                 }
