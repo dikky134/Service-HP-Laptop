@@ -177,21 +177,21 @@ namespace AplikasiService.View
         {
             Dashboard_Pelanggan dashboard = new Dashboard_Pelanggan();
             dashboard.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnDataPerangkat_Click(object sender, EventArgs e)
         {
             Data_perangkat_pelanggan dataPerangkat = new Data_perangkat_pelanggan();
             dataPerangkat.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPembayaran_Click(object sender, EventArgs e)
         {
             Pembayaran pembayaran = new Pembayaran();
             pembayaran.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void BtnlogoutDPP_Click(object sender, EventArgs e)

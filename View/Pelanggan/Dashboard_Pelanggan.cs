@@ -59,29 +59,34 @@ namespace AplikasiService.View
                 conn.Open();
 
                 string sql = @"
-        SELECT 
-            s.Id,
-            s.Perangkat,
-            s.JenisKerusakan,
-            s.Status,
-            s.Biaya
-        FROM Servis s
-        JOIN Pelanggan p ON s.PelangganId = p.Id
-        WHERE p.UserId = @uid";
+                SELECT 
+                    s.Id,
+                    p.Jenis || ' ' || p.Merk AS Perangkat,
+                    k.NamaKerusakan,
+                    s.Status,
+                    s.Biaya
+                FROM Servis s
+                JOIN Perangkat p ON s.Perangkat = p.Id
+                JOIN JenisKerusakan k ON s.JenisKerusakan = k.Id
+                WHERE s.PelangganId = @pid";
 
-                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@uid", Session.UserId);
-
-                SQLiteDataReader rd = cmd.ExecuteReader();
-                while (rd.Read())
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
                 {
-                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
-                    item.SubItems.Add(rd["Perangkat"].ToString());
-                    item.SubItems.Add(rd["JenisKerusakan"].ToString());
-                    item.SubItems.Add(rd["Status"].ToString());
-                    item.SubItems.Add("Rp. " + rd["Biaya"].ToString());
+                    cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
 
-                    lvwService.Items.Add(item);
+                    using (SQLiteDataReader rd = cmd.ExecuteReader())
+                    {
+                        while (rd.Read())
+                        {
+                            ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                            item.SubItems.Add(rd["Perangkat"].ToString());
+                            item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                            item.SubItems.Add(rd["Status"].ToString());
+                            item.SubItems.Add("Rp " + rd["Biaya"].ToString());
+
+                            lvwService.Items.Add(item);
+                        }
+                    }
                 }
             }
         }
@@ -90,21 +95,21 @@ namespace AplikasiService.View
         {
             Dashboard_Pelanggan dashboard = new Dashboard_Pelanggan();
             dashboard.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPerangkat_Click(object sender, EventArgs e)
         {
             Data_perangkat_pelanggan dataPerangkat = new Data_perangkat_pelanggan();
             dataPerangkat.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnPembayaran_Click(object sender, EventArgs e)
         {
             Pembayaran pembayaran = new Pembayaran();
             pembayaran.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnLogOut_Click_1(object sender, EventArgs e)
