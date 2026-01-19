@@ -1,0 +1,62 @@
+﻿using AplikasiService.Model.Context;
+using AplikasiService.Model.Entity;
+using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AplikasiService.Model.Repository
+{
+    public class PembayaranRepository
+    {
+        public void Insert(Pembayaran p)
+        {
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"INSERT INTO Pembayaran
+                (ServisId, TanggalBayar, Total, Status)
+                VALUES (@sid,@tgl,@total,@status)";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@sid", p.ServisId);
+                cmd.Parameters.AddWithValue("@tgl", p.TanggalBayar);
+                cmd.Parameters.AddWithValue("@total", p.Total);
+                cmd.Parameters.AddWithValue("@status", p.Status);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public Pembayaran GetByServis(int servisId)
+        {
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"SELECT * FROM Pembayaran
+                               WHERE ServisId=@sid";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@sid", servisId);
+
+                SQLiteDataReader rd = cmd.ExecuteReader();
+                if (rd.Read())
+                {
+                    return new Pembayaran
+                    {
+                        Id = int.Parse(rd["Id"].ToString()),
+                        ServisId = int.Parse(rd["ServisId"].ToString()),
+                        TanggalBayar = rd["TanggalBayar"].ToString(),
+                        Total = int.Parse(rd["Total"].ToString()),
+                        Status = rd["Status"].ToString()
+                    };
+                }
+            }
+            return null;
+        }
+    }
+}
