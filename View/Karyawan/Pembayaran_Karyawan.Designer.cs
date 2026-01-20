@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.btnPembayaran = new System.Windows.Forms.Button();
-            this.TxtPK4 = new System.Windows.Forms.TextBox();
-            this.TxtPK3 = new System.Windows.Forms.TextBox();
-            this.TxtPK2 = new System.Windows.Forms.TextBox();
-            this.BtnPK6 = new System.Windows.Forms.Button();
+            this.txtHargaJasa = new System.Windows.Forms.TextBox();
+            this.txtTotalHarga = new System.Windows.Forms.TextBox();
+            this.txtIdServis = new System.Windows.Forms.TextBox();
             this.lblPK8 = new System.Windows.Forms.Label();
             this.TxtPK1 = new System.Windows.Forms.TextBox();
             this.BtnlogoutPK = new System.Windows.Forms.Button();
@@ -50,6 +49,9 @@
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.pnlPK2 = new System.Windows.Forms.Panel();
             this.pnlPK3 = new System.Windows.Forms.Panel();
+            this.lvwPembayaran = new System.Windows.Forms.ListView();
+            this.btnTambah = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.pnlPK1.SuspendLayout();
             this.pnlPK2.SuspendLayout();
             this.pnlPK3.SuspendLayout();
@@ -68,40 +70,31 @@
             this.btnPembayaran.UseVisualStyleBackColor = false;
             this.btnPembayaran.Click += new System.EventHandler(this.btnPembayaran_Click);
             // 
-            // TxtPK4
+            // txtHargaJasa
             // 
-            this.TxtPK4.Location = new System.Drawing.Point(186, 107);
-            this.TxtPK4.Name = "TxtPK4";
-            this.TxtPK4.Size = new System.Drawing.Size(100, 22);
-            this.TxtPK4.TabIndex = 13;
+            this.txtHargaJasa.Location = new System.Drawing.Point(166, 89);
+            this.txtHargaJasa.Name = "txtHargaJasa";
+            this.txtHargaJasa.Size = new System.Drawing.Size(100, 22);
+            this.txtHargaJasa.TabIndex = 13;
             // 
-            // TxtPK3
+            // txtTotalHarga
             // 
-            this.TxtPK3.Location = new System.Drawing.Point(186, 80);
-            this.TxtPK3.Name = "TxtPK3";
-            this.TxtPK3.Size = new System.Drawing.Size(100, 22);
-            this.TxtPK3.TabIndex = 12;
+            this.txtTotalHarga.Location = new System.Drawing.Point(166, 62);
+            this.txtTotalHarga.Name = "txtTotalHarga";
+            this.txtTotalHarga.Size = new System.Drawing.Size(100, 22);
+            this.txtTotalHarga.TabIndex = 12;
             // 
-            // TxtPK2
+            // txtIdServis
             // 
-            this.TxtPK2.Location = new System.Drawing.Point(186, 53);
-            this.TxtPK2.Name = "TxtPK2";
-            this.TxtPK2.Size = new System.Drawing.Size(100, 22);
-            this.TxtPK2.TabIndex = 11;
-            // 
-            // BtnPK6
-            // 
-            this.BtnPK6.Location = new System.Drawing.Point(92, 154);
-            this.BtnPK6.Name = "BtnPK6";
-            this.BtnPK6.Size = new System.Drawing.Size(131, 34);
-            this.BtnPK6.TabIndex = 9;
-            this.BtnPK6.Text = "Tambah";
-            this.BtnPK6.UseVisualStyleBackColor = true;
+            this.txtIdServis.Location = new System.Drawing.Point(166, 35);
+            this.txtIdServis.Name = "txtIdServis";
+            this.txtIdServis.Size = new System.Drawing.Size(100, 22);
+            this.txtIdServis.TabIndex = 11;
             // 
             // lblPK8
             // 
             this.lblPK8.AutoSize = true;
-            this.lblPK8.Location = new System.Drawing.Point(170, 113);
+            this.lblPK8.Location = new System.Drawing.Point(150, 95);
             this.lblPK8.Name = "lblPK8";
             this.lblPK8.Size = new System.Drawing.Size(10, 16);
             this.lblPK8.TabIndex = 7;
@@ -140,7 +133,7 @@
             // lblPK7
             // 
             this.lblPK7.AutoSize = true;
-            this.lblPK7.Location = new System.Drawing.Point(170, 86);
+            this.lblPK7.Location = new System.Drawing.Point(150, 68);
             this.lblPK7.Name = "lblPK7";
             this.lblPK7.Size = new System.Drawing.Size(10, 16);
             this.lblPK7.TabIndex = 6;
@@ -149,7 +142,7 @@
             // lblPK6
             // 
             this.lblPK6.AutoSize = true;
-            this.lblPK6.Location = new System.Drawing.Point(170, 56);
+            this.lblPK6.Location = new System.Drawing.Point(150, 38);
             this.lblPK6.Name = "lblPK6";
             this.lblPK6.Size = new System.Drawing.Size(10, 16);
             this.lblPK6.TabIndex = 5;
@@ -170,11 +163,11 @@
             // lblPK5
             // 
             this.lblPK5.AutoSize = true;
-            this.lblPK5.Location = new System.Drawing.Point(35, 113);
+            this.lblPK5.Location = new System.Drawing.Point(15, 95);
             this.lblPK5.Name = "lblPK5";
-            this.lblPK5.Size = new System.Drawing.Size(92, 16);
+            this.lblPK5.Size = new System.Drawing.Size(78, 16);
             this.lblPK5.TabIndex = 3;
-            this.lblPK5.Text = "Harga service";
+            this.lblPK5.Text = "Harga Jasa";
             // 
             // btnDataPelanggan
             // 
@@ -191,7 +184,7 @@
             // lblPK4
             // 
             this.lblPK4.AutoSize = true;
-            this.lblPK4.Location = new System.Drawing.Point(35, 86);
+            this.lblPK4.Location = new System.Drawing.Point(15, 68);
             this.lblPK4.Name = "lblPK4";
             this.lblPK4.Size = new System.Drawing.Size(123, 16);
             this.lblPK4.TabIndex = 2;
@@ -220,7 +213,7 @@
             // lblPK3
             // 
             this.lblPK3.AutoSize = true;
-            this.lblPK3.Location = new System.Drawing.Point(35, 56);
+            this.lblPK3.Location = new System.Drawing.Point(15, 38);
             this.lblPK3.Name = "lblPK3";
             this.lblPK3.Size = new System.Drawing.Size(69, 16);
             this.lblPK3.TabIndex = 1;
@@ -229,7 +222,7 @@
             // lblPK2
             // 
             this.lblPK2.AutoSize = true;
-            this.lblPK2.Location = new System.Drawing.Point(35, 30);
+            this.lblPK2.Location = new System.Drawing.Point(15, 12);
             this.lblPK2.Name = "lblPK2";
             this.lblPK2.Size = new System.Drawing.Size(188, 16);
             this.lblPK2.TabIndex = 0;
@@ -250,10 +243,12 @@
             // pnlPK2
             // 
             this.pnlPK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlPK2.Controls.Add(this.TxtPK4);
-            this.pnlPK2.Controls.Add(this.TxtPK3);
-            this.pnlPK2.Controls.Add(this.TxtPK2);
-            this.pnlPK2.Controls.Add(this.BtnPK6);
+            this.pnlPK2.Controls.Add(this.btnEdit);
+            this.pnlPK2.Controls.Add(this.btnTambah);
+            this.pnlPK2.Controls.Add(this.lvwPembayaran);
+            this.pnlPK2.Controls.Add(this.txtHargaJasa);
+            this.pnlPK2.Controls.Add(this.txtTotalHarga);
+            this.pnlPK2.Controls.Add(this.txtIdServis);
             this.pnlPK2.Controls.Add(this.lblPK8);
             this.pnlPK2.Controls.Add(this.lblPK7);
             this.pnlPK2.Controls.Add(this.lblPK6);
@@ -280,6 +275,33 @@
             this.pnlPK3.Size = new System.Drawing.Size(230, 405);
             this.pnlPK3.TabIndex = 20;
             // 
+            // lvwPembayaran
+            // 
+            this.lvwPembayaran.HideSelection = false;
+            this.lvwPembayaran.Location = new System.Drawing.Point(0, 170);
+            this.lvwPembayaran.Name = "lvwPembayaran";
+            this.lvwPembayaran.Size = new System.Drawing.Size(568, 152);
+            this.lvwPembayaran.TabIndex = 14;
+            this.lvwPembayaran.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.Location = new System.Drawing.Point(99, 136);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(75, 23);
+            this.btnTambah.TabIndex = 15;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(333, 136);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
             // Pembayaran_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,10 +326,9 @@
         #endregion
 
         private System.Windows.Forms.Button btnPembayaran;
-        private System.Windows.Forms.TextBox TxtPK4;
-        private System.Windows.Forms.TextBox TxtPK3;
-        private System.Windows.Forms.TextBox TxtPK2;
-        private System.Windows.Forms.Button BtnPK6;
+        private System.Windows.Forms.TextBox txtHargaJasa;
+        private System.Windows.Forms.TextBox txtTotalHarga;
+        private System.Windows.Forms.TextBox txtIdServis;
         private System.Windows.Forms.Label lblPK8;
         private System.Windows.Forms.TextBox TxtPK1;
         private System.Windows.Forms.Button BtnlogoutPK;
@@ -325,5 +346,8 @@
         private System.Windows.Forms.Button btnDataPerangkat;
         private System.Windows.Forms.Panel pnlPK2;
         private System.Windows.Forms.Panel pnlPK3;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnTambah;
+        private System.Windows.Forms.ListView lvwPembayaran;
     }
 }
