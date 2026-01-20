@@ -32,47 +32,6 @@ namespace AplikasiService.View
             txtTotalBiaya.ReadOnly = true;
             btnKonfirmasi.Enabled = false;
         }
-        private void btnCek_Click(object sender, EventArgs e)
-        {
-            serviceValid = false;
-            btnKonfirmasi.Enabled = false;
-
-            if (!int.TryParse(txtServiceId.Text, out serviceId))
-            {
-                MessageBox.Show("ID Service tidak valid");
-                txtTotalBiaya.Clear();
-                return;
-            }
-
-            using (var conn = DbContext.GetConnection())
-            {
-                conn.Open();
-
-                string sql = @"SELECT Biaya
-                       FROM Servis
-                       WHERE Id=@id AND PelangganId=@pid";
-
-                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", serviceId);
-                cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
-
-                object result = cmd.ExecuteScalar();
-
-                if (result == null)
-                {
-                    MessageBox.Show("ID Service tidak ditemukan");
-                    txtTotalBiaya.Clear();
-                    return;
-                }
-
-                totalBiaya = Convert.ToInt32(result);
-                txtTotalBiaya.Text = totalBiaya.ToString("N0");
-
-                // 👉 SERVICE VALID
-                serviceValid = true;
-                btnKonfirmasi.Enabled = true;
-            }
-        }
         private void btnKonfirmasi_Click(object sender, EventArgs e)
         {
             if (serviceId == 0)
@@ -111,7 +70,6 @@ namespace AplikasiService.View
 
             MessageBox.Show("Pembayaran berhasil");
 
-            txtServiceId.Clear();
             txtTotalBiaya.Clear();
             serviceId = 0;
             totalBiaya = 0;
