@@ -178,5 +178,10 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
+
+        private void cmbIdPembayaran_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

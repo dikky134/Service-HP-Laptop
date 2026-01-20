@@ -46,12 +46,12 @@
             this.lblP5 = new System.Windows.Forms.Label();
             this.lblP4 = new System.Windows.Forms.Label();
             this.txtTotalBiaya = new System.Windows.Forms.TextBox();
-            this.txtServiceId = new System.Windows.Forms.TextBox();
             this.lblP7 = new System.Windows.Forms.Label();
             this.lblP6 = new System.Windows.Forms.Label();
             this.lblP3 = new System.Windows.Forms.Label();
             this.lblP2 = new System.Windows.Forms.Label();
             this.btnKonfirmasi = new System.Windows.Forms.Button();
+            this.cmbIdPembayaran = new System.Windows.Forms.ComboBox();
             this.pnlP3.SuspendLayout();
             this.pnlP1.SuspendLayout();
             this.pnlP2.SuspendLayout();
@@ -150,6 +150,7 @@
             // pnlP2
             // 
             this.pnlP2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlP2.Controls.Add(this.cmbIdPembayaran);
             this.pnlP2.Controls.Add(this.btnRiwayat);
             this.pnlP2.Controls.Add(this.label2);
             this.pnlP2.Controls.Add(this.label1);
@@ -159,7 +160,6 @@
             this.pnlP2.Controls.Add(this.lblP5);
             this.pnlP2.Controls.Add(this.lblP4);
             this.pnlP2.Controls.Add(this.txtTotalBiaya);
-            this.pnlP2.Controls.Add(this.txtServiceId);
             this.pnlP2.Controls.Add(this.lblP7);
             this.pnlP2.Controls.Add(this.lblP6);
             this.pnlP2.Controls.Add(this.lblP3);
@@ -216,7 +216,7 @@
             // 
             // btnCek
             // 
-            this.btnCek.Location = new System.Drawing.Point(325, 30);
+            this.btnCek.Location = new System.Drawing.Point(338, 30);
             this.btnCek.Name = "btnCek";
             this.btnCek.Size = new System.Drawing.Size(97, 22);
             this.btnCek.TabIndex = 17;
@@ -250,13 +250,6 @@
             this.txtTotalBiaya.Size = new System.Drawing.Size(100, 22);
             this.txtTotalBiaya.TabIndex = 12;
             // 
-            // txtServiceId
-            // 
-            this.txtServiceId.Location = new System.Drawing.Point(185, 30);
-            this.txtServiceId.Name = "txtServiceId";
-            this.txtServiceId.Size = new System.Drawing.Size(100, 22);
-            this.txtServiceId.TabIndex = 11;
-            // 
             // lblP7
             // 
             this.lblP7.AutoSize = true;
@@ -289,9 +282,9 @@
             this.lblP2.AutoSize = true;
             this.lblP2.Location = new System.Drawing.Point(29, 33);
             this.lblP2.Name = "lblP2";
-            this.lblP2.Size = new System.Drawing.Size(69, 16);
+            this.lblP2.Size = new System.Drawing.Size(101, 16);
             this.lblP2.TabIndex = 1;
-            this.lblP2.Text = "ID Service";
+            this.lblP2.Text = "ID Pembayaran";
             // 
             // btnKonfirmasi
             // 
@@ -302,6 +295,15 @@
             this.btnKonfirmasi.Text = "Konfirmasi Pembayaran";
             this.btnKonfirmasi.UseVisualStyleBackColor = true;
             this.btnKonfirmasi.Click += new System.EventHandler(this.btnKonfirmasi_Click);
+            // 
+            // cmbIdPembayaran
+            // 
+            this.cmbIdPembayaran.FormattingEnabled = true;
+            this.cmbIdPembayaran.Location = new System.Drawing.Point(185, 30);
+            this.cmbIdPembayaran.Name = "cmbIdPembayaran";
+            this.cmbIdPembayaran.Size = new System.Drawing.Size(147, 24);
+            this.cmbIdPembayaran.TabIndex = 23;
+            this.cmbIdPembayaran.SelectedIndexChanged += new System.EventHandler(this.cmbIdPembayaran_SelectedIndexChanged);
             // 
             // Pembayaran
             // 
@@ -340,7 +342,6 @@
         private System.Windows.Forms.Label lblP3;
         private System.Windows.Forms.Label lblP2;
         private System.Windows.Forms.TextBox txtTotalBiaya;
-        private System.Windows.Forms.TextBox txtServiceId;
         private System.Windows.Forms.Label lblP5;
         private System.Windows.Forms.Label lblP4;
         private System.Windows.Forms.Label lblNama;
@@ -350,5 +351,6 @@
         private System.Windows.Forms.DateTimePicker dtpTanggalBayar;
         private System.Windows.Forms.ComboBox cmbMetode;
         private System.Windows.Forms.Button btnRiwayat;
+        private System.Windows.Forms.ComboBox cmbIdPembayaran;
     }
 }
