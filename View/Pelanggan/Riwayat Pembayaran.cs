@@ -19,6 +19,7 @@ namespace AplikasiService.View
         {
             InitializeComponent();
             lblNama.Text = "Pelanggan : " + GetNamaPelanggan();
+            LoadData();
             SetupListView();
         }
         private string GetNamaPelanggan()
@@ -37,17 +38,61 @@ namespace AplikasiService.View
         }
         private void SetupListView()
         {
-            lvwRiwayatPembayaran.View = System.Windows.Forms.View.Details;
-            lvwRiwayatPembayaran.FullRowSelect = true;
-            lvwRiwayatPembayaran.GridLines = true;
-            lvwRiwayatPembayaran.Columns.Clear();
+            lvwRiwayat.View = System.Windows.Forms.View.Details;
+            lvwRiwayat.FullRowSelect = true;
+            lvwRiwayat.GridLines = true;
+            lvwRiwayat.Columns.Clear();
 
-            lvwRiwayatPembayaran.Columns.Add("ID", 50, HorizontalAlignment.Center);
-            lvwRiwayatPembayaran.Columns.Add("Tanggal", 120, HorizontalAlignment.Center);
-            lvwRiwayatPembayaran.Columns.Add("Total", 120, HorizontalAlignment.Center);
-            lvwRiwayatPembayaran.Columns.Add("Metode", 70, HorizontalAlignment.Center);
-            lvwRiwayatPembayaran.Columns.Add("Status", 70, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("ID", 50);
+            lvwRiwayat.Columns.Add("Perangkat", 150);
+            lvwRiwayat.Columns.Add("Kerusakan", 120);
+            lvwRiwayat.Columns.Add("Total", 100);
+            lvwRiwayat.Columns.Add("Metode", 100);
+            lvwRiwayat.Columns.Add("Tanggal", 120);
+            lvwRiwayat.Columns.Add("Status", 80);
         }
+        private void LoadData()
+        {
+            lvwRiwayat.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"
+                SELECT pb.Id,
+                    p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+                    jk.NamaKerusakan,
+                    pb.Total,
+                    pb.Metode,
+                    pb.TanggalBayar,
+                    pb.Status
+                FROM Pembayaran pb
+                JOIN Servis s ON pb.ServisId = s.Id
+                JOIN JenisKerusakan jk ON s.KerusakanId = jk.Id
+                JOIN Perangkat p ON jk.PerangkatId = p.Id
+                WHERE pb.PelangganId = @pid
+                ORDER BY pb.Id DESC";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
+
+                SQLiteDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                    item.SubItems.Add(rd["Perangkat"].ToString());
+                    item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                    item.SubItems.Add("Rp " + rd["Total"].ToString());
+                    item.SubItems.Add(rd["Metode"].ToString());
+                    item.SubItems.Add(rd["TanggalBayar"].ToString());
+                    item.SubItems.Add(rd["Status"].ToString());
+
+                    lvwRiwayat.Items.Add(item);
+                }
+            }
+        }
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             Dashboard_Pelanggan dashboard = new Dashboard_Pelanggan();

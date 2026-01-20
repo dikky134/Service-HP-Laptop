@@ -1,16 +1,17 @@
-﻿using System;
+﻿using AplikasiService.Controller;
+using AplikasiService.Model.Context;
+using AplikasiService.Model.Entity;
+using AplikasiService.Model.Session;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AplikasiService.Controller;
-using AplikasiService.Model.Session;
-using AplikasiService.Model.Context;
-using AplikasiService.Model.Entity;
 
 namespace AplikasiService.View
 {
@@ -19,15 +20,219 @@ namespace AplikasiService.View
         public Pembayaran_Karyawan()
         {
             InitializeComponent();
+            SetupListView();
+            LoadServis();
+            LoadPembayaran();
+            dtpTanggal.Value = DateTime.Now;
         }
+        private void SetupListView()
+        {
+            lvwPembayaran.View = System.Windows.Forms.View.Details;
+            lvwPembayaran.FullRowSelect = true;
+            lvwPembayaran.GridLines = true;
+            lvwPembayaran.Columns.Clear();
 
+            lvwPembayaran.Columns.Add("ID", 50);
+            lvwPembayaran.Columns.Add("Perangkat", 160);
+            lvwPembayaran.Columns.Add("Kerusakan", 120);
+            lvwPembayaran.Columns.Add("Biaya Service", 100);
+            lvwPembayaran.Columns.Add("Harga Jasa", 100);
+            lvwPembayaran.Columns.Add("Total", 100);
+        }
+        private void LoadServis()
+        {
+            cmbServis.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+            SELECT s.Id,
+                   p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+                   k.NamaKerusakan,
+                   k.Biaya
+            FROM Servis s
+            JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+            JOIN Perangkat p ON k.PerangkatId = p.Id
+            WHERE s.Id NOT IN (SELECT ServisId FROM Pembayaran)";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    cmbServis.Items.Add(new ComboItem
+                    {
+                        Text = rd["Perangkat"] + " - " + rd["NamaKerusakan"],
+                        Value = Convert.ToInt32(rd["Id"]),     
+                        Extra = Convert.ToInt32(rd["Biaya"])  
+                    });
+                }
+            }
+
+            if (cmbServis.Items.Count > 0)
+                cmbServis.SelectedIndex = 0;
+        }
+        private void LoadData()
+        {
+            lvwPembayaran.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+                SELECT pb.Id,
+                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe,
+                       k.NamaKerusakan,
+                       k.Biaya,
+                       pb.HargaJasa,
+                       pb.Total
+                FROM Pembayaran pb
+                JOIN Servis s ON pb.ServisId = s.Id
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                JOIN Perangkat p ON k.PerangkatId = p.Id";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                    item.SubItems.Add(rd[1].ToString());
+                    item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                    item.SubItems.Add(rd["Biaya"].ToString());
+                    item.SubItems.Add(rd["HargaJasa"].ToString());
+                    item.SubItems.Add(rd["Total"].ToString());
+                    lvwPembayaran.Items.Add(item);
+                }
+            }
+        }
+        private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbServis.SelectedItem == null) return;
+
+            var item = (ComboItem)cmbServis.SelectedItem;
+
+            txtHargaService.Text = item.Extra.ToString();
+
+            HitungTotal();
+        }
+        private void txtHargaJasa_TextChanged(object sender, EventArgs e)
+        {
+            HitungTotal();
+        }
+        private void HitungTotal()
+        {
+            int hargaService = 0;
+            int hargaJasa = 0;
+
+            int.TryParse(txtHargaService.Text, out hargaService);
+            int.TryParse(txtHargaJasa.Text, out hargaJasa);
+
+            txtTotal.Text = (hargaService + hargaJasa).ToString();
+        }
         private void btnDataPelanggan_Click(object sender, EventArgs e)
         {
             Data_Pelanggan_Karyawan dataPelanggan = new Data_Pelanggan_Karyawan();
             dataPelanggan.Show();
             this.Close();
         }
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            if (cmbServis.SelectedItem == null) return;
 
+            var servis = (ComboItem)cmbServis.SelectedItem;
+            decimal hargaJasa = Convert.ToDecimal(txtHargaJasa.Text);
+            decimal total = Convert.ToDecimal(txtTotal.Text);
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string qPelanggan = @"
+                SELECT p.PelangganId
+                FROM Servis s
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                JOIN Perangkat p ON k.PerangkatId = p.Id
+                WHERE s.Id = @sid";
+
+                SQLiteCommand c1 = new SQLiteCommand(qPelanggan, conn);
+                c1.Parameters.AddWithValue("@sid", servis.Value);
+                int servisId = ((ComboItem)cmbServis.SelectedItem).Value;
+                int pelangganId = GetPelangganIdByServis(servisId);
+
+                string sql = @"
+                INSERT INTO Pembayaran
+                (ServisId, PelangganId, Total, Status)
+                VALUES (@sid, @pid, @t, 'Menunggu')";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@sid", servisId);
+                cmd.Parameters.AddWithValue("@pid", pelangganId);
+                cmd.Parameters.AddWithValue("@t", total);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Pembayaran berhasil ditambahkan");
+                LoadData();
+            }
+        }
+        private int GetPelangganIdByServis(int servisId)
+        {
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+            SELECT pl.Id
+            FROM Servis s
+            JOIN JenisKerusakan jk ON s.KerusakanId = jk.Id
+            JOIN Perangkat p ON jk.PerangkatId = p.Id
+            JOIN Pelanggan pl ON p.PelangganId = pl.Id
+            WHERE s.Id = @sid";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@sid", servisId);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
+        }
+
+        private void LoadPembayaran()
+        {
+            lvwPembayaran.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+                    SELECT p.Id,
+                           pr.Jenis || ' ' || pr.Merk || ' ' || pr.Tipe AS Perangkat,
+                           k.NamaKerusakan,
+                           p.HargaService,
+                           p.HargaJasa,
+                           p.Total
+                    FROM Pembayaran p
+                    JOIN Servis s ON p.ServisId = s.Id
+                    JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                    JOIN Perangkat pr ON k.PerangkatId = pr.Id
+                    ORDER BY p.Id DESC";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                    item.SubItems.Add(rd["Perangkat"].ToString());
+                    item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                    item.SubItems.Add(rd["HargaService"].ToString());
+                    item.SubItems.Add(rd["HargaJasa"].ToString());
+                    item.SubItems.Add(rd["Total"].ToString());
+
+                    lvwPembayaran.Items.Add(item);
+                }
+            }
+        }
         private void btnDataPerangkat_Click(object sender, EventArgs e)
         {
             Data_Perangkat_Karyawan dataPerangkat = new Data_Perangkat_Karyawan();

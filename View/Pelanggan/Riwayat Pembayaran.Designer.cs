@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlRP3 = new System.Windows.Forms.Panel();
+            this.lblNama = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnDataPerangkat = new System.Windows.Forms.Button();
@@ -36,8 +37,7 @@
             this.pnlRP1 = new System.Windows.Forms.Panel();
             this.lblRP1 = new System.Windows.Forms.Label();
             this.pnlRP2 = new System.Windows.Forms.Panel();
-            this.lblNama = new System.Windows.Forms.Label();
-            this.lvwRiwayatPembayaran = new System.Windows.Forms.ListView();
+            this.lvwRiwayat = new System.Windows.Forms.ListView();
             this.pnlRP3.SuspendLayout();
             this.pnlRP1.SuspendLayout();
             this.pnlRP2.SuspendLayout();
@@ -55,6 +55,15 @@
             this.pnlRP3.Name = "pnlRP3";
             this.pnlRP3.Size = new System.Drawing.Size(241, 397);
             this.pnlRP3.TabIndex = 5;
+            // 
+            // lblNama
+            // 
+            this.lblNama.AutoSize = true;
+            this.lblNama.Location = new System.Drawing.Point(9, 12);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(82, 16);
+            this.lblNama.TabIndex = 8;
+            this.lblNama.Text = "Pelanggan : ";
             // 
             // btnLogOut
             // 
@@ -127,29 +136,20 @@
             // pnlRP2
             // 
             this.pnlRP2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlRP2.Controls.Add(this.lvwRiwayatPembayaran);
+            this.pnlRP2.Controls.Add(this.lvwRiwayat);
             this.pnlRP2.Location = new System.Drawing.Point(283, 114);
             this.pnlRP2.Name = "pnlRP2";
             this.pnlRP2.Size = new System.Drawing.Size(590, 332);
             this.pnlRP2.TabIndex = 7;
             // 
-            // lblNama
+            // lvwRiwayat
             // 
-            this.lblNama.AutoSize = true;
-            this.lblNama.Location = new System.Drawing.Point(9, 12);
-            this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(82, 16);
-            this.lblNama.TabIndex = 8;
-            this.lblNama.Text = "Pelanggan : ";
-            // 
-            // lvwRiwayatPembayaran
-            // 
-            this.lvwRiwayatPembayaran.HideSelection = false;
-            this.lvwRiwayatPembayaran.Location = new System.Drawing.Point(3, 3);
-            this.lvwRiwayatPembayaran.Name = "lvwRiwayatPembayaran";
-            this.lvwRiwayatPembayaran.Size = new System.Drawing.Size(584, 326);
-            this.lvwRiwayatPembayaran.TabIndex = 0;
-            this.lvwRiwayatPembayaran.UseCompatibleStateImageBehavior = false;
+            this.lvwRiwayat.HideSelection = false;
+            this.lvwRiwayat.Location = new System.Drawing.Point(3, 3);
+            this.lvwRiwayat.Name = "lvwRiwayat";
+            this.lvwRiwayat.Size = new System.Drawing.Size(584, 326);
+            this.lvwRiwayat.TabIndex = 0;
+            this.lvwRiwayat.UseCompatibleStateImageBehavior = false;
             // 
             // Riwayat_Pembayaran
             // 
@@ -182,6 +182,6 @@
         private System.Windows.Forms.Label lblRP1;
         private System.Windows.Forms.Panel pnlRP2;
         private System.Windows.Forms.Label lblNama;
-        private System.Windows.Forms.ListView lvwRiwayatPembayaran;
+        private System.Windows.Forms.ListView lvwRiwayat;
     }
 }

@@ -10,6 +10,7 @@ namespace AplikasiService.Model.Entity
     {
         public string Text { get; set; }
         public int Value { get; set; }
+        public object Extra { get; set; }
 
         public override string ToString()
         {

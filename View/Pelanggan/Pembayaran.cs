@@ -1,4 +1,5 @@
 ﻿using AplikasiService.Model.Context;
+using AplikasiService.Model.Entity;
 using AplikasiService.Model.Session;
 using System;
 using System.Collections.Generic;
@@ -15,106 +16,114 @@ namespace AplikasiService.View
 {
     public partial class Pembayaran : Form
     {
-        int serviceId = 0;
-        int totalBiaya = 0;
-        bool serviceValid = false;
         public Pembayaran()
         {
             InitializeComponent();
             lblNama.Text = "Pelanggan : " + GetNamaPelanggan();
+            LoadPembayaran();
+            SetupModePembayaran();
+
             dtpTanggalBayar.Value = DateTime.Now;
             dtpTanggalBayar.Enabled = false;
-            cmbMetode.Items.Add("Tunai");
-            cmbMetode.Items.Add("Transfer");
-            cmbMetode.Items.Add("QRIS");
-            cmbMetode.SelectedIndex = 0;
-
-            txtTotalBiaya.ReadOnly = true;
-            btnKonfirmasi.Enabled = false;
         }
-        private void btnCek_Click(object sender, EventArgs e)
+        private void LoadPembayaran()
         {
-            serviceValid = false;
-            btnKonfirmasi.Enabled = false;
-
-            if (!int.TryParse(txtServiceId.Text, out serviceId))
-            {
-                MessageBox.Show("ID Service tidak valid");
-                txtTotalBiaya.Clear();
-                return;
-            }
+            cmbPembayaran.Items.Clear();
 
             using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
-
-                string sql = @"SELECT Biaya
-                       FROM Servis
-                       WHERE Id=@id AND PelangganId=@pid";
+                string sql = @"
+            SELECT Id, Total
+            FROM Pembayaran
+            WHERE PelangganId = @pid
+              AND Status = 'Menunggu'";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", serviceId);
                 cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
 
-                object result = cmd.ExecuteScalar();
-
-                if (result == null)
+                SQLiteDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
                 {
-                    MessageBox.Show("ID Service tidak ditemukan");
-                    txtTotalBiaya.Clear();
-                    return;
+                    cmbPembayaran.Items.Add(new ComboItem
+                    {
+                        Value = Convert.ToInt32(rd["Id"]),
+                        Text = "Pembayaran #" + rd["Id"] + " - Rp " + rd["Total"]
+                    });
                 }
-
-                totalBiaya = Convert.ToInt32(result);
-                txtTotalBiaya.Text = totalBiaya.ToString("N0");
-
-                // 👉 SERVICE VALID
-                serviceValid = true;
-                btnKonfirmasi.Enabled = true;
             }
+
+            if (cmbPembayaran.Items.Count > 0)
+                cmbPembayaran.SelectedIndex = 0;
+        }
+        private void cmbIdPembayaran_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbPembayaran.SelectedItem == null) return;
+
+            int pembayaranId = ((ComboItem)cmbPembayaran.SelectedItem).Value;
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = "SELECT Total FROM Pembayaran WHERE Id = @id";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", pembayaranId);
+
+                object result = cmd.ExecuteScalar();
+                txtTotal.Text = result.ToString();
+            }
+        }
+        private void SetupModePembayaran()
+        {
+            cmbMetode.Items.Add("Tunai");
+            cmbMetode.Items.Add("Transfer");
+            cmbMetode.Items.Add("QRIS");
+            cmbMetode.SelectedIndex = 0;
         }
         private void btnKonfirmasi_Click(object sender, EventArgs e)
         {
-            if (serviceId == 0)
+            if (cmbPembayaran.SelectedItem == null)
             {
-                MessageBox.Show("Cek ID Service terlebih dahulu");
+                MessageBox.Show("Pilih pembayaran");
                 return;
             }
 
+            if (cmbMetode.SelectedItem == null)
+            {
+                MessageBox.Show("Pilih metode pembayaran");
+                return;
+            }
+
+            int pembayaranId = ((ComboItem)cmbPembayaran.SelectedItem).Value;
             string metode = cmbMetode.Text;
 
             using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
 
-                // INSERT PEMBAYARAN
-                string insert = @"INSERT INTO Pembayaran
-                                  (ServisId, TanggalBayar, Metode, Total)
-                                  VALUES (@sid, @tgl, @mtd, @total)";
+                string sql = @"
+            UPDATE Pembayaran
+            SET Metode = @m,
+                Status = 'Dibayar',
+                TanggalBayar = @tgl
+            WHERE Id = @id";
 
-                SQLiteCommand cmd = new SQLiteCommand(insert, conn);
-                cmd.Parameters.AddWithValue("@sid", serviceId);
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@m", metode);
                 cmd.Parameters.AddWithValue("@tgl", DateTime.Now.ToString("yyyy-MM-dd"));
-                cmd.Parameters.AddWithValue("@mtd", metode);
-                cmd.Parameters.AddWithValue("@total", totalBiaya);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@id", pembayaranId);
 
-                // UPDATE STATUS SERVICE
-                string update = @"UPDATE Servis
-                                  SET Status='Lunas' 
-                                  WHERE Id=@id";
+                int rows = cmd.ExecuteNonQuery();
 
-                SQLiteCommand cmdUpdate = new SQLiteCommand(update, conn);
-                cmdUpdate.Parameters.AddWithValue("@id", serviceId);
-                cmdUpdate.ExecuteNonQuery();
+                if (rows == 0)
+                {
+                    MessageBox.Show("Data pembayaran tidak ditemukan");
+                    return;
+                }
             }
 
             MessageBox.Show("Pembayaran berhasil");
-
-            txtServiceId.Clear();
-            txtTotalBiaya.Clear();
-            serviceId = 0;
-            totalBiaya = 0;
+            LoadPembayaran();
         }
         private string GetNamaPelanggan()
         {

@@ -30,8 +30,7 @@
         {
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.txtHargaJasa = new System.Windows.Forms.TextBox();
-            this.txtTotalHarga = new System.Windows.Forms.TextBox();
-            this.txtIdServis = new System.Windows.Forms.TextBox();
+            this.txtHargaService = new System.Windows.Forms.TextBox();
             this.lblPK8 = new System.Windows.Forms.Label();
             this.TxtPK1 = new System.Windows.Forms.TextBox();
             this.BtnlogoutPK = new System.Windows.Forms.Button();
@@ -48,10 +47,17 @@
             this.lblPK2 = new System.Windows.Forms.Label();
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.pnlPK2 = new System.Windows.Forms.Panel();
-            this.pnlPK3 = new System.Windows.Forms.Panel();
+            this.btnSimpan = new System.Windows.Forms.Button();
             this.lvwPembayaran = new System.Windows.Forms.ListView();
-            this.btnTambah = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.pnlPK3 = new System.Windows.Forms.Panel();
+            this.cmbServis = new System.Windows.Forms.ComboBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlPK1.SuspendLayout();
             this.pnlPK2.SuspendLayout();
             this.pnlPK3.SuspendLayout();
@@ -74,22 +80,17 @@
             // 
             this.txtHargaJasa.Location = new System.Drawing.Point(166, 89);
             this.txtHargaJasa.Name = "txtHargaJasa";
-            this.txtHargaJasa.Size = new System.Drawing.Size(100, 22);
+            this.txtHargaJasa.Size = new System.Drawing.Size(229, 22);
             this.txtHargaJasa.TabIndex = 13;
+            this.txtHargaJasa.TextChanged += new System.EventHandler(this.txtHargaJasa_TextChanged);
             // 
-            // txtTotalHarga
+            // txtHargaService
             // 
-            this.txtTotalHarga.Location = new System.Drawing.Point(166, 62);
-            this.txtTotalHarga.Name = "txtTotalHarga";
-            this.txtTotalHarga.Size = new System.Drawing.Size(100, 22);
-            this.txtTotalHarga.TabIndex = 12;
-            // 
-            // txtIdServis
-            // 
-            this.txtIdServis.Location = new System.Drawing.Point(166, 35);
-            this.txtIdServis.Name = "txtIdServis";
-            this.txtIdServis.Size = new System.Drawing.Size(100, 22);
-            this.txtIdServis.TabIndex = 11;
+            this.txtHargaService.Location = new System.Drawing.Point(166, 62);
+            this.txtHargaService.Name = "txtHargaService";
+            this.txtHargaService.ReadOnly = true;
+            this.txtHargaService.Size = new System.Drawing.Size(229, 22);
+            this.txtHargaService.TabIndex = 12;
             // 
             // lblPK8
             // 
@@ -243,12 +244,18 @@
             // pnlPK2
             // 
             this.pnlPK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlPK2.Controls.Add(this.btnEdit);
-            this.pnlPK2.Controls.Add(this.btnTambah);
+            this.pnlPK2.Controls.Add(this.label5);
+            this.pnlPK2.Controls.Add(this.label3);
+            this.pnlPK2.Controls.Add(this.label4);
+            this.pnlPK2.Controls.Add(this.dtpTanggal);
+            this.pnlPK2.Controls.Add(this.txtTotal);
+            this.pnlPK2.Controls.Add(this.label1);
+            this.pnlPK2.Controls.Add(this.label2);
+            this.pnlPK2.Controls.Add(this.cmbServis);
+            this.pnlPK2.Controls.Add(this.btnSimpan);
             this.pnlPK2.Controls.Add(this.lvwPembayaran);
             this.pnlPK2.Controls.Add(this.txtHargaJasa);
-            this.pnlPK2.Controls.Add(this.txtTotalHarga);
-            this.pnlPK2.Controls.Add(this.txtIdServis);
+            this.pnlPK2.Controls.Add(this.txtHargaService);
             this.pnlPK2.Controls.Add(this.lblPK8);
             this.pnlPK2.Controls.Add(this.lblPK7);
             this.pnlPK2.Controls.Add(this.lblPK6);
@@ -258,8 +265,27 @@
             this.pnlPK2.Controls.Add(this.lblPK2);
             this.pnlPK2.Location = new System.Drawing.Point(276, 109);
             this.pnlPK2.Name = "pnlPK2";
-            this.pnlPK2.Size = new System.Drawing.Size(569, 323);
+            this.pnlPK2.Size = new System.Drawing.Size(569, 395);
             this.pnlPK2.TabIndex = 22;
+            // 
+            // btnSimpan
+            // 
+            this.btnSimpan.Location = new System.Drawing.Point(99, 197);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(75, 23);
+            this.btnSimpan.TabIndex = 15;
+            this.btnSimpan.Text = "Tambah";
+            this.btnSimpan.UseVisualStyleBackColor = true;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
+            // 
+            // lvwPembayaran
+            // 
+            this.lvwPembayaran.HideSelection = false;
+            this.lvwPembayaran.Location = new System.Drawing.Point(0, 241);
+            this.lvwPembayaran.Name = "lvwPembayaran";
+            this.lvwPembayaran.Size = new System.Drawing.Size(568, 152);
+            this.lvwPembayaran.TabIndex = 14;
+            this.lvwPembayaran.UseCompatibleStateImageBehavior = false;
             // 
             // pnlPK3
             // 
@@ -275,38 +301,80 @@
             this.pnlPK3.Size = new System.Drawing.Size(230, 405);
             this.pnlPK3.TabIndex = 20;
             // 
-            // lvwPembayaran
+            // cmbServis
             // 
-            this.lvwPembayaran.HideSelection = false;
-            this.lvwPembayaran.Location = new System.Drawing.Point(0, 170);
-            this.lvwPembayaran.Name = "lvwPembayaran";
-            this.lvwPembayaran.Size = new System.Drawing.Size(568, 152);
-            this.lvwPembayaran.TabIndex = 14;
-            this.lvwPembayaran.UseCompatibleStateImageBehavior = false;
+            this.cmbServis.FormattingEnabled = true;
+            this.cmbServis.Location = new System.Drawing.Point(166, 32);
+            this.cmbServis.Name = "cmbServis";
+            this.cmbServis.Size = new System.Drawing.Size(229, 24);
+            this.cmbServis.TabIndex = 17;
+            this.cmbServis.TextChanged += new System.EventHandler(this.cmbServis_SelectedIndexChanged);
             // 
-            // btnTambah
+            // txtTotal
             // 
-            this.btnTambah.Location = new System.Drawing.Point(99, 136);
-            this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(75, 23);
-            this.btnTambah.TabIndex = 15;
-            this.btnTambah.Text = "Tambah";
-            this.btnTambah.UseVisualStyleBackColor = true;
+            this.txtTotal.Location = new System.Drawing.Point(166, 117);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(229, 22);
+            this.txtTotal.TabIndex = 20;
             // 
-            // btnEdit
+            // label1
             // 
-            this.btnEdit.Location = new System.Drawing.Point(333, 136);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(-47, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = ":";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Total Harga";
+            // 
+            // dtpTanggal
+            // 
+            this.dtpTanggal.Location = new System.Drawing.Point(166, 145);
+            this.dtpTanggal.Name = "dtpTanggal";
+            this.dtpTanggal.Size = new System.Drawing.Size(229, 22);
+            this.dtpTanggal.TabIndex = 21;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(150, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 16);
+            this.label3.TabIndex = 23;
+            this.label3.Text = ":";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Tanggal";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(150, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(10, 16);
+            this.label5.TabIndex = 24;
+            this.label5.Text = ":";
             // 
             // Pembayaran_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 471);
+            this.ClientSize = new System.Drawing.Size(884, 544);
             this.Controls.Add(this.pnlPK1);
             this.Controls.Add(this.pnlPK2);
             this.Controls.Add(this.pnlPK3);
@@ -327,8 +395,7 @@
 
         private System.Windows.Forms.Button btnPembayaran;
         private System.Windows.Forms.TextBox txtHargaJasa;
-        private System.Windows.Forms.TextBox txtTotalHarga;
-        private System.Windows.Forms.TextBox txtIdServis;
+        private System.Windows.Forms.TextBox txtHargaService;
         private System.Windows.Forms.Label lblPK8;
         private System.Windows.Forms.TextBox TxtPK1;
         private System.Windows.Forms.Button BtnlogoutPK;
@@ -346,8 +413,15 @@
         private System.Windows.Forms.Button btnDataPerangkat;
         private System.Windows.Forms.Panel pnlPK2;
         private System.Windows.Forms.Panel pnlPK3;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnTambah;
+        private System.Windows.Forms.Button btnSimpan;
         private System.Windows.Forms.ListView lvwPembayaran;
+        private System.Windows.Forms.ComboBox cmbServis;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpTanggal;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

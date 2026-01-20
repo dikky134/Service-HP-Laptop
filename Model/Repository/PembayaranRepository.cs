@@ -18,12 +18,13 @@ namespace AplikasiService.Model.Repository
                 conn.Open();
 
                 string sql = @"INSERT INTO Pembayaran
-                (ServisId, TanggalBayar, Total, Metode, Status)
-                VALUES (@sid,@tgl,@total,@metode, @status)";
+                (ServisId, TanggalBayar, TanggalBuat, Total, Metode, Status)
+                VALUES (@sid,@tglbyr, @tglbuat ,@total,@metode, @status)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@sid", p.ServisId);
-                cmd.Parameters.AddWithValue("@tgl", p.TanggalBayar);
+                cmd.Parameters.AddWithValue("@tglbyr", p.TanggalBayar);
+                cmd.Parameters.AddWithValue("@tglbuat", p.TanggalBuat);
                 cmd.Parameters.AddWithValue("@total", p.Total);
                 cmd.Parameters.AddWithValue("@metode", p.Metode);
                 cmd.Parameters.AddWithValue("@status", p.Status);
@@ -52,6 +53,7 @@ namespace AplikasiService.Model.Repository
                         Id = int.Parse(rd["Id"].ToString()),
                         ServisId = int.Parse(rd["ServisId"].ToString()),
                         TanggalBayar = rd["TanggalBayar"].ToString(),
+                        TanggalBuat = rd["TanggalBuat"].ToString(),
                         Total = int.Parse(rd["Total"].ToString()),
                         Metode = rd["Metode"].ToString(),
                         Status = rd["Status"].ToString()
