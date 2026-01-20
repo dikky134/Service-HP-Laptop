@@ -128,7 +128,7 @@
             // btnDataService
             // 
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(-1, 134);
+            this.btnDataService.Location = new System.Drawing.Point(-1, 178);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -158,7 +158,7 @@
             // btnKerusakan
             // 
             this.btnKerusakan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKerusakan.Location = new System.Drawing.Point(-1, 177);
+            this.btnKerusakan.Location = new System.Drawing.Point(-1, 136);
             this.btnKerusakan.Name = "btnKerusakan";
             this.btnKerusakan.Size = new System.Drawing.Size(230, 43);
             this.btnKerusakan.TabIndex = 6;

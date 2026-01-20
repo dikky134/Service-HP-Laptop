@@ -22,11 +22,11 @@ namespace AplikasiService.View
         private void btnDaftar_Click_1(object sender, EventArgs e)
         {
             if (txtUsername.Text == "" ||
-        txtPassword.Text == "" ||
-        txtKonfirmasi.Text == "" ||
-        txtNama.Text == "" ||
-        txtAlamat.Text == "" ||
-        txtNoHp.Text == "")
+            txtPassword.Text == "" ||
+            txtKonfirmasi.Text == "" ||
+            txtNama.Text == "" ||
+            txtAlamat.Text == "" ||
+            txtNoHp.Text == "")
             {
                 MessageBox.Show("Semua data wajib diisi");
                 return;
@@ -58,8 +58,8 @@ namespace AplikasiService.View
 
                 // 2️⃣ INSERT USER
                 string insertUser = @"INSERT INTO Users 
-            (Username, Password, Role)
-            VALUES (@u,@p,'Pelanggan')";
+                (Username, Password, Role)
+                VALUES (@u,@p,'Pelanggan')";
 
                 using (SQLiteCommand userCmd = new SQLiteCommand(insertUser, conn))
                 {
@@ -72,8 +72,8 @@ namespace AplikasiService.View
 
                 // 3️⃣ INSERT PELANGGAN
                 string insertPel = @"INSERT INTO Pelanggan
-            (UserId, Nama, Alamat, NoHP)
-            VALUES (@uid,@n,@a,@hp)";
+                (UserId, Nama, Alamat, NoHP)
+                VALUES (@uid,@n,@a,@hp)";
 
                 using (SQLiteCommand pelCmd = new SQLiteCommand(insertPel, conn))
                 {

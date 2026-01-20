@@ -39,10 +39,9 @@
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.btnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlJK2 = new System.Windows.Forms.Panel();
-            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.lvwKerusakan = new System.Windows.Forms.ListView();
+            this.btnTambah = new System.Windows.Forms.Button();
             this.txtBiaya = new System.Windows.Forms.TextBox();
-            this.txtKerusakan = new System.Windows.Forms.TextBox();
-            this.txtIdService = new System.Windows.Forms.TextBox();
             this.lblJK10 = new System.Windows.Forms.Label();
             this.lblJK9 = new System.Windows.Forms.Label();
             this.lblJK8 = new System.Windows.Forms.Label();
@@ -52,10 +51,10 @@
             this.lblJK4 = new System.Windows.Forms.Label();
             this.lblJK3 = new System.Windows.Forms.Label();
             this.lblJK2 = new System.Windows.Forms.Label();
-            this.btnTambah = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnHapus = new System.Windows.Forms.Button();
-            this.lvwKerusakan = new System.Windows.Forms.ListView();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.cmbPerangkat = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.txtKerusakan = new System.Windows.Forms.TextBox();
             this.pnlJK1.SuspendLayout();
             this.pnlJK3.SuspendLayout();
             this.pnlJK2.SuspendLayout();
@@ -67,7 +66,7 @@
             this.pnlJK1.Controls.Add(this.lblJK1);
             this.pnlJK1.Location = new System.Drawing.Point(3, 1);
             this.pnlJK1.Name = "pnlJK1";
-            this.pnlJK1.Size = new System.Drawing.Size(882, 65);
+            this.pnlJK1.Size = new System.Drawing.Size(1118, 65);
             this.pnlJK1.TabIndex = 15;
             // 
             // lblJK1
@@ -83,6 +82,7 @@
             // 
             // pnlJK3
             // 
+            this.pnlJK3.Controls.Add(this.btnDashboard);
             this.pnlJK3.Controls.Add(this.btnPembayaran);
             this.pnlJK3.Controls.Add(this.btnKerusakan);
             this.pnlJK3.Controls.Add(this.TxtJK);
@@ -98,7 +98,7 @@
             // btnPembayaran
             // 
             this.btnPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPembayaran.Location = new System.Drawing.Point(0, 209);
+            this.btnPembayaran.Location = new System.Drawing.Point(0, 250);
             this.btnPembayaran.Name = "btnPembayaran";
             this.btnPembayaran.Size = new System.Drawing.Size(230, 43);
             this.btnPembayaran.TabIndex = 7;
@@ -141,7 +141,7 @@
             // btnService
             // 
             this.btnService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnService.Location = new System.Drawing.Point(0, 123);
+            this.btnService.Location = new System.Drawing.Point(0, 208);
             this.btnService.Name = "btnService";
             this.btnService.Size = new System.Drawing.Size(230, 43);
             this.btnService.TabIndex = 2;
@@ -153,7 +153,7 @@
             // btnDataPerangkat
             // 
             this.btnDataPerangkat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPerangkat.Location = new System.Drawing.Point(0, 83);
+            this.btnDataPerangkat.Location = new System.Drawing.Point(0, 124);
             this.btnDataPerangkat.Name = "btnDataPerangkat";
             this.btnDataPerangkat.Size = new System.Drawing.Size(230, 43);
             this.btnDataPerangkat.TabIndex = 1;
@@ -165,7 +165,7 @@
             // btnDataPelanggan
             // 
             this.btnDataPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPelanggan.Location = new System.Drawing.Point(0, 42);
+            this.btnDataPelanggan.Location = new System.Drawing.Point(0, 83);
             this.btnDataPelanggan.Name = "btnDataPelanggan";
             this.btnDataPelanggan.Size = new System.Drawing.Size(230, 43);
             this.btnDataPelanggan.TabIndex = 0;
@@ -177,14 +177,12 @@
             // pnlJK2
             // 
             this.pnlJK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlJK2.Controls.Add(this.lvwKerusakan);
-            this.pnlJK2.Controls.Add(this.btnHapus);
-            this.pnlJK2.Controls.Add(this.btnEdit);
-            this.pnlJK2.Controls.Add(this.btnTambah);
-            this.pnlJK2.Controls.Add(this.txtStatus);
-            this.pnlJK2.Controls.Add(this.txtBiaya);
             this.pnlJK2.Controls.Add(this.txtKerusakan);
-            this.pnlJK2.Controls.Add(this.txtIdService);
+            this.pnlJK2.Controls.Add(this.cmbStatus);
+            this.pnlJK2.Controls.Add(this.cmbPerangkat);
+            this.pnlJK2.Controls.Add(this.lvwKerusakan);
+            this.pnlJK2.Controls.Add(this.btnTambah);
+            this.pnlJK2.Controls.Add(this.txtBiaya);
             this.pnlJK2.Controls.Add(this.lblJK10);
             this.pnlJK2.Controls.Add(this.lblJK9);
             this.pnlJK2.Controls.Add(this.lblJK8);
@@ -196,36 +194,34 @@
             this.pnlJK2.Controls.Add(this.lblJK2);
             this.pnlJK2.Location = new System.Drawing.Point(279, 109);
             this.pnlJK2.Name = "pnlJK2";
-            this.pnlJK2.Size = new System.Drawing.Size(569, 341);
+            this.pnlJK2.Size = new System.Drawing.Size(819, 341);
             this.pnlJK2.TabIndex = 16;
             // 
-            // txtStatus
+            // lvwKerusakan
             // 
-            this.txtStatus.Location = new System.Drawing.Point(160, 120);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(100, 22);
-            this.txtStatus.TabIndex = 14;
+            this.lvwKerusakan.HideSelection = false;
+            this.lvwKerusakan.Location = new System.Drawing.Point(3, 189);
+            this.lvwKerusakan.Name = "lvwKerusakan";
+            this.lvwKerusakan.Size = new System.Drawing.Size(813, 149);
+            this.lvwKerusakan.TabIndex = 18;
+            this.lvwKerusakan.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.Location = new System.Drawing.Point(28, 157);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(75, 23);
+            this.btnTambah.TabIndex = 15;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // txtBiaya
             // 
-            this.txtBiaya.Location = new System.Drawing.Point(160, 91);
+            this.txtBiaya.Location = new System.Drawing.Point(160, 95);
             this.txtBiaya.Name = "txtBiaya";
-            this.txtBiaya.Size = new System.Drawing.Size(100, 22);
+            this.txtBiaya.Size = new System.Drawing.Size(268, 22);
             this.txtBiaya.TabIndex = 13;
-            // 
-            // txtKerusakan
-            // 
-            this.txtKerusakan.Location = new System.Drawing.Point(160, 64);
-            this.txtKerusakan.Name = "txtKerusakan";
-            this.txtKerusakan.Size = new System.Drawing.Size(100, 22);
-            this.txtKerusakan.TabIndex = 12;
-            // 
-            // txtIdService
-            // 
-            this.txtIdService.Location = new System.Drawing.Point(160, 37);
-            this.txtIdService.Name = "txtIdService";
-            this.txtIdService.Size = new System.Drawing.Size(100, 22);
-            this.txtIdService.TabIndex = 11;
             // 
             // lblJK10
             // 
@@ -295,9 +291,9 @@
             this.lblJK3.AutoSize = true;
             this.lblJK3.Location = new System.Drawing.Point(9, 40);
             this.lblJK3.Name = "lblJK3";
-            this.lblJK3.Size = new System.Drawing.Size(69, 16);
+            this.lblJK3.Size = new System.Drawing.Size(85, 16);
             this.lblJK3.TabIndex = 1;
-            this.lblJK3.Text = "ID Service";
+            this.lblJK3.Text = "ID Perangkat";
             // 
             // lblJK2
             // 
@@ -308,47 +304,46 @@
             this.lblJK2.TabIndex = 0;
             this.lblJK2.Text = "Tambahkan Detail Kerusakan:";
             // 
-            // btnTambah
+            // btnDashboard
             // 
-            this.btnTambah.Location = new System.Drawing.Point(28, 157);
-            this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(75, 23);
-            this.btnTambah.TabIndex = 15;
-            this.btnTambah.Text = "Tambah";
-            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 43);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDashboard.TabIndex = 8;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // btnEdit
+            // cmbPerangkat
             // 
-            this.btnEdit.Location = new System.Drawing.Point(109, 157);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.cmbPerangkat.FormattingEnabled = true;
+            this.cmbPerangkat.Location = new System.Drawing.Point(160, 34);
+            this.cmbPerangkat.Name = "cmbPerangkat";
+            this.cmbPerangkat.Size = new System.Drawing.Size(268, 24);
+            this.cmbPerangkat.TabIndex = 19;
             // 
-            // btnHapus
+            // cmbStatus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(190, 157);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(75, 23);
-            this.btnHapus.TabIndex = 17;
-            this.btnHapus.Text = "Hapus";
-            this.btnHapus.UseVisualStyleBackColor = true;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(160, 123);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(268, 24);
+            this.cmbStatus.TabIndex = 20;
             // 
-            // lvwKerusakan
+            // txtKerusakan
             // 
-            this.lvwKerusakan.HideSelection = false;
-            this.lvwKerusakan.Location = new System.Drawing.Point(3, 189);
-            this.lvwKerusakan.Name = "lvwKerusakan";
-            this.lvwKerusakan.Size = new System.Drawing.Size(563, 149);
-            this.lvwKerusakan.TabIndex = 18;
-            this.lvwKerusakan.UseCompatibleStateImageBehavior = false;
+            this.txtKerusakan.Location = new System.Drawing.Point(160, 67);
+            this.txtKerusakan.Name = "txtKerusakan";
+            this.txtKerusakan.Size = new System.Drawing.Size(268, 22);
+            this.txtKerusakan.TabIndex = 21;
             // 
             // Jenis_Kerusakan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 477);
+            this.ClientSize = new System.Drawing.Size(1126, 477);
             this.Controls.Add(this.pnlJK2);
             this.Controls.Add(this.pnlJK1);
             this.Controls.Add(this.pnlJK3);
@@ -383,17 +378,16 @@
         private System.Windows.Forms.Label lblJK4;
         private System.Windows.Forms.Label lblJK3;
         private System.Windows.Forms.Label lblJK2;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtBiaya;
-        private System.Windows.Forms.TextBox txtKerusakan;
-        private System.Windows.Forms.TextBox txtIdService;
         private System.Windows.Forms.Label lblJK10;
         private System.Windows.Forms.Label lblJK9;
         private System.Windows.Forms.Label lblJK8;
         private System.Windows.Forms.Label lblJK7;
         private System.Windows.Forms.ListView lvwKerusakan;
-        private System.Windows.Forms.Button btnHapus;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnTambah;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.ComboBox cmbPerangkat;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.TextBox txtKerusakan;
     }
 }

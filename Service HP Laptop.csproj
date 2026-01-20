@@ -59,6 +59,7 @@
     <Compile Include="Controller\ServiceController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Model\Context\DbContext.cs" />
+    <Compile Include="Model\Entity\ComboItem.cs" />
     <Compile Include="Model\Entity\Pelanggan.cs" />
     <Compile Include="Model\Entity\Pembayaran.cs" />
     <Compile Include="Model\Entity\Perangkat.cs" />

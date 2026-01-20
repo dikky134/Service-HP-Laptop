@@ -39,24 +39,10 @@
             this.btnDataService = new System.Windows.Forms.Button();
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.btnDataPelanggan = new System.Windows.Forms.Button();
-            this.pnlDP3 = new System.Windows.Forms.Panel();
-            this.BtnBatal = new System.Windows.Forms.Button();
-            this.BtnSimpan = new System.Windows.Forms.Button();
-            this.BoxAlamat = new System.Windows.Forms.TextBox();
-            this.BoxNoHP = new System.Windows.Forms.TextBox();
-            this.boxNama = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblAmltDp = new System.Windows.Forms.Label();
-            this.lblNHDp = new System.Windows.Forms.Label();
-            this.lblNamaDp = new System.Windows.Forms.Label();
-            this.lblTPDP = new System.Windows.Forms.Label();
             this.pnlDP4 = new System.Windows.Forms.Panel();
             this.lvwDataPelanggan = new System.Windows.Forms.ListView();
             this.pnlDP1.SuspendLayout();
             this.pnlDP2.SuspendLayout();
-            this.pnlDP3.SuspendLayout();
             this.pnlDP4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +108,7 @@
             // btnKerusakan
             // 
             this.btnKerusakan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKerusakan.Location = new System.Drawing.Point(0, 184);
+            this.btnKerusakan.Location = new System.Drawing.Point(0, 141);
             this.btnKerusakan.Name = "btnKerusakan";
             this.btnKerusakan.Size = new System.Drawing.Size(230, 43);
             this.btnKerusakan.TabIndex = 6;
@@ -152,7 +138,7 @@
             // btnDataService
             // 
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(0, 141);
+            this.btnDataService.Location = new System.Drawing.Point(0, 184);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -185,135 +171,13 @@
             this.btnDataPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDataPelanggan.UseVisualStyleBackColor = false;
             // 
-            // pnlDP3
-            // 
-            this.pnlDP3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlDP3.Controls.Add(this.BtnBatal);
-            this.pnlDP3.Controls.Add(this.BtnSimpan);
-            this.pnlDP3.Controls.Add(this.BoxAlamat);
-            this.pnlDP3.Controls.Add(this.BoxNoHP);
-            this.pnlDP3.Controls.Add(this.boxNama);
-            this.pnlDP3.Controls.Add(this.label8);
-            this.pnlDP3.Controls.Add(this.label7);
-            this.pnlDP3.Controls.Add(this.label6);
-            this.pnlDP3.Controls.Add(this.lblAmltDp);
-            this.pnlDP3.Controls.Add(this.lblNHDp);
-            this.pnlDP3.Controls.Add(this.lblNamaDp);
-            this.pnlDP3.Controls.Add(this.lblTPDP);
-            this.pnlDP3.Location = new System.Drawing.Point(279, 105);
-            this.pnlDP3.Name = "pnlDP3";
-            this.pnlDP3.Size = new System.Drawing.Size(538, 172);
-            this.pnlDP3.TabIndex = 10;
-            // 
-            // BtnBatal
-            // 
-            this.BtnBatal.Location = new System.Drawing.Point(269, 139);
-            this.BtnBatal.Name = "BtnBatal";
-            this.BtnBatal.Size = new System.Drawing.Size(75, 23);
-            this.BtnBatal.TabIndex = 11;
-            this.BtnBatal.Text = "Batal";
-            this.BtnBatal.UseVisualStyleBackColor = true;
-            // 
-            // BtnSimpan
-            // 
-            this.BtnSimpan.Location = new System.Drawing.Point(130, 139);
-            this.BtnSimpan.Name = "BtnSimpan";
-            this.BtnSimpan.Size = new System.Drawing.Size(75, 23);
-            this.BtnSimpan.TabIndex = 10;
-            this.BtnSimpan.Text = "Simpan";
-            this.BtnSimpan.UseVisualStyleBackColor = true;
-            // 
-            // BoxAlamat
-            // 
-            this.BoxAlamat.Location = new System.Drawing.Point(126, 99);
-            this.BoxAlamat.Name = "BoxAlamat";
-            this.BoxAlamat.Size = new System.Drawing.Size(100, 22);
-            this.BoxAlamat.TabIndex = 9;
-            // 
-            // BoxNoHP
-            // 
-            this.BoxNoHP.Location = new System.Drawing.Point(126, 71);
-            this.BoxNoHP.Name = "BoxNoHP";
-            this.BoxNoHP.Size = new System.Drawing.Size(100, 22);
-            this.BoxNoHP.TabIndex = 8;
-            // 
-            // boxNama
-            // 
-            this.boxNama.Location = new System.Drawing.Point(126, 44);
-            this.boxNama.Name = "boxNama";
-            this.boxNama.Size = new System.Drawing.Size(100, 22);
-            this.boxNama.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(110, 101);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(10, 16);
-            this.label8.TabIndex = 6;
-            this.label8.Text = ":";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(110, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(10, 16);
-            this.label7.TabIndex = 5;
-            this.label7.Text = ":";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(10, 16);
-            this.label6.TabIndex = 4;
-            this.label6.Text = ":";
-            // 
-            // lblAmltDp
-            // 
-            this.lblAmltDp.AutoSize = true;
-            this.lblAmltDp.Location = new System.Drawing.Point(60, 101);
-            this.lblAmltDp.Name = "lblAmltDp";
-            this.lblAmltDp.Size = new System.Drawing.Size(49, 16);
-            this.lblAmltDp.TabIndex = 3;
-            this.lblAmltDp.Text = "Alamat";
-            // 
-            // lblNHDp
-            // 
-            this.lblNHDp.AutoSize = true;
-            this.lblNHDp.Location = new System.Drawing.Point(60, 75);
-            this.lblNHDp.Name = "lblNHDp";
-            this.lblNHDp.Size = new System.Drawing.Size(47, 16);
-            this.lblNHDp.TabIndex = 2;
-            this.lblNHDp.Text = "No HP";
-            // 
-            // lblNamaDp
-            // 
-            this.lblNamaDp.AutoSize = true;
-            this.lblNamaDp.Location = new System.Drawing.Point(60, 46);
-            this.lblNamaDp.Name = "lblNamaDp";
-            this.lblNamaDp.Size = new System.Drawing.Size(44, 16);
-            this.lblNamaDp.TabIndex = 1;
-            this.lblNamaDp.Text = "Nama";
-            // 
-            // lblTPDP
-            // 
-            this.lblTPDP.AutoSize = true;
-            this.lblTPDP.Location = new System.Drawing.Point(237, 12);
-            this.lblTPDP.Name = "lblTPDP";
-            this.lblTPDP.Size = new System.Drawing.Size(127, 16);
-            this.lblTPDP.TabIndex = 0;
-            this.lblTPDP.Text = "Tambah Pelanggan";
-            // 
             // pnlDP4
             // 
             this.pnlDP4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnlDP4.Controls.Add(this.lvwDataPelanggan);
-            this.pnlDP4.Location = new System.Drawing.Point(279, 301);
+            this.pnlDP4.Location = new System.Drawing.Point(279, 90);
             this.pnlDP4.Name = "pnlDP4";
-            this.pnlDP4.Size = new System.Drawing.Size(538, 172);
+            this.pnlDP4.Size = new System.Drawing.Size(538, 383);
             this.pnlDP4.TabIndex = 12;
             // 
             // lvwDataPelanggan
@@ -321,7 +185,7 @@
             this.lvwDataPelanggan.HideSelection = false;
             this.lvwDataPelanggan.Location = new System.Drawing.Point(3, 3);
             this.lvwDataPelanggan.Name = "lvwDataPelanggan";
-            this.lvwDataPelanggan.Size = new System.Drawing.Size(532, 166);
+            this.lvwDataPelanggan.Size = new System.Drawing.Size(532, 377);
             this.lvwDataPelanggan.TabIndex = 0;
             this.lvwDataPelanggan.UseCompatibleStateImageBehavior = false;
             // 
@@ -331,7 +195,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 495);
             this.Controls.Add(this.pnlDP4);
-            this.Controls.Add(this.pnlDP3);
             this.Controls.Add(this.pnlDP1);
             this.Controls.Add(this.pnlDP2);
             this.Name = "Data_Pelanggan_Karyawan";
@@ -341,8 +204,6 @@
             this.pnlDP1.PerformLayout();
             this.pnlDP2.ResumeLayout(false);
             this.pnlDP2.PerformLayout();
-            this.pnlDP3.ResumeLayout(false);
-            this.pnlDP3.PerformLayout();
             this.pnlDP4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -360,19 +221,6 @@
         private System.Windows.Forms.Button btnDataService;
         private System.Windows.Forms.Button btnDataPerangkat;
         private System.Windows.Forms.Button btnDataPelanggan;
-        private System.Windows.Forms.Panel pnlDP3;
-        private System.Windows.Forms.Label lblAmltDp;
-        private System.Windows.Forms.Label lblNHDp;
-        private System.Windows.Forms.Label lblNamaDp;
-        private System.Windows.Forms.Label lblTPDP;
-        private System.Windows.Forms.TextBox BoxAlamat;
-        private System.Windows.Forms.TextBox BoxNoHP;
-        private System.Windows.Forms.TextBox boxNama;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button BtnBatal;
-        private System.Windows.Forms.Button BtnSimpan;
         private System.Windows.Forms.Panel pnlDP4;
         private System.Windows.Forms.ListView lvwDataPelanggan;
         private System.Windows.Forms.Button btnDasboard;

@@ -49,7 +49,7 @@ namespace AplikasiService.View
                     d.Keterangan
                 FROM DetailService d
                 JOIN Servis s ON d.ServiceId = s.Id
-                WHERE s.Perangkat = @pid
+                WHERE s.PerangkatId = @pid
                 ORDER BY d.Tanggal ASC";
 
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
