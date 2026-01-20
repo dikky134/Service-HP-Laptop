@@ -177,14 +177,14 @@ namespace AplikasiService.View
         {
             if (lvwPerangkat.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Pilih perangkat terlebih dahulu");
+                MessageBox.Show("Pilih data service terlebih dahulu");
                 return;
             }
 
-            int perangkatId = int.Parse(lvwPerangkat.SelectedItems[0].Text);
+            int serviceId = int.Parse(lvwPerangkat.SelectedItems[0].Text);
 
-            Detail_service_pelanggan detail = new Detail_service_pelanggan(perangkatId);
-            detail.Show();
+            Detail_service_pelanggan frm = new Detail_service_pelanggan(serviceId);
+            frm.Show();
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {

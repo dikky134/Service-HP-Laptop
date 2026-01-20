@@ -67,9 +67,9 @@
             // 
             this.pnldshP2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnldshP2.Controls.Add(this.lvwDashboard);
-            this.pnldshP2.Location = new System.Drawing.Point(294, 105);
+            this.pnldshP2.Location = new System.Drawing.Point(237, 105);
             this.pnldshP2.Name = "pnldshP2";
-            this.pnldshP2.Size = new System.Drawing.Size(644, 341);
+            this.pnldshP2.Size = new System.Drawing.Size(778, 341);
             this.pnldshP2.TabIndex = 11;
             // 
             // lvwDashboard
@@ -77,7 +77,7 @@
             this.lvwDashboard.HideSelection = false;
             this.lvwDashboard.Location = new System.Drawing.Point(20, 21);
             this.lvwDashboard.Name = "lvwDashboard";
-            this.lvwDashboard.Size = new System.Drawing.Size(606, 302);
+            this.lvwDashboard.Size = new System.Drawing.Size(729, 302);
             this.lvwDashboard.TabIndex = 0;
             this.lvwDashboard.UseCompatibleStateImageBehavior = false;
             // 
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 477);
+            this.ClientSize = new System.Drawing.Size(1062, 477);
             this.Controls.Add(this.pnldshP3);
             this.Controls.Add(this.pnldshP1);
             this.Controls.Add(this.pnldshP2);

@@ -32,7 +32,6 @@ namespace AplikasiService.View
             lvwDashboard.Columns.Add("Pelanggan", 100);
             lvwDashboard.Columns.Add("Perangkat", 150);
             lvwDashboard.Columns.Add("Kerusakan", 100);
-            lvwDashboard.Columns.Add("Status", 90);
             lvwDashboard.Columns.Add("Tanggal", 90);
             lvwDashboard.Columns.Add("Biaya", 80);
         }
@@ -48,7 +47,6 @@ namespace AplikasiService.View
                            pl.Nama AS Pelanggan,
                            p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
                            k.NamaKerusakan,
-                           k.Status,
                            k.Tanggal,
                            k.Biaya
                     FROM JenisKerusakan k
@@ -65,7 +63,6 @@ namespace AplikasiService.View
                     item.SubItems.Add(rd["Pelanggan"].ToString());
                     item.SubItems.Add(rd["Perangkat"].ToString());
                     item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                    item.SubItems.Add(rd["Status"].ToString());
                     item.SubItems.Add(rd["Tanggal"].ToString());
                     item.SubItems.Add(rd["Biaya"].ToString());
                     lvwDashboard.Items.Add(item);

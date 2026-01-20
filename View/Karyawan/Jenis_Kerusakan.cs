@@ -22,11 +22,6 @@ namespace AplikasiService.View
             SetupListView();
             LoadPerangkat();
             LoadData();
-
-            cmbStatus.Items.Add("Menunggu");
-            cmbStatus.Items.Add("Diproses");
-            cmbStatus.Items.Add("Selesai");
-            cmbStatus.SelectedIndex = 0;
         }
         private void SetupListView()
         {
@@ -39,7 +34,6 @@ namespace AplikasiService.View
             lvwKerusakan.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
             lvwKerusakan.Columns.Add("Biaya", 120, HorizontalAlignment.Center);
             lvwKerusakan.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
-            lvwKerusakan.Columns.Add("Status", 100, HorizontalAlignment.Center);
             lvwKerusakan.Columns.Add("Tanggal", 100, HorizontalAlignment.Center);
         }
         private void LoadData()
@@ -68,7 +62,6 @@ namespace AplikasiService.View
                     item.SubItems.Add(rd["Perangkat"].ToString());
                     item.SubItems.Add(rd["NamaKerusakan"].ToString());
                     item.SubItems.Add(rd["Biaya"].ToString());
-                    item.SubItems.Add(rd["Status"].ToString());
                     item.SubItems.Add(rd["Tanggal"].ToString());
                     lvwKerusakan.Items.Add(item);
                 }
@@ -104,8 +97,7 @@ namespace AplikasiService.View
         {
             if (cmbPerangkat.SelectedItem == null ||
                 txtKerusakan.Text == "" ||
-                txtBiaya.Text == "" ||
-                cmbStatus.Text == "")
+                txtBiaya.Text == "" )
             {
                 MessageBox.Show("Lengkapi data");
                 return;
@@ -118,14 +110,13 @@ namespace AplikasiService.View
                 conn.Open();
                 string sql = @"
                     INSERT INTO JenisKerusakan
-                    (PerangkatId, NamaKerusakan, Biaya, Status, Tanggal)
-                    VALUES (@pid, @k, @b, @s, @t)";
+                    (PerangkatId, NamaKerusakan, Biaya, Tanggal)
+                    VALUES (@pid, @k, @b, @t)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@pid", perangkat.Value);
                 cmd.Parameters.AddWithValue("@k", txtKerusakan.Text);
                 cmd.Parameters.AddWithValue("@b", int.Parse(txtBiaya.Text));
-                cmd.Parameters.AddWithValue("@s", cmbStatus.Text);
                 cmd.Parameters.AddWithValue("@t", DateTime.Now.ToString("yyyy-MM-dd"));
                 cmd.ExecuteNonQuery();
             }

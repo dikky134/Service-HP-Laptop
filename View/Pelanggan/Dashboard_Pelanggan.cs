@@ -31,7 +31,6 @@ namespace AplikasiService.View
             lvwDashboard.Columns.Add("ID", 50, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
-            lvwDashboard.Columns.Add("Status", 80, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Tanggal", 100, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Biaya", 100, HorizontalAlignment.Center);
         }
@@ -62,7 +61,6 @@ namespace AplikasiService.View
                     SELECT k.Id,
                            p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
                            k.NamaKerusakan,
-                           k.Status,
                            k.Tanggal,
                            k.Biaya
                     FROM JenisKerusakan k
@@ -79,7 +77,6 @@ namespace AplikasiService.View
                     ListViewItem item = new ListViewItem(rd["Id"].ToString());
                     item.SubItems.Add(rd["Perangkat"].ToString());
                     item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                    item.SubItems.Add(rd["Status"].ToString());
                     item.SubItems.Add(rd["Tanggal"].ToString());
                     item.SubItems.Add(rd["Biaya"].ToString());
                     lvwDashboard.Items.Add(item);
