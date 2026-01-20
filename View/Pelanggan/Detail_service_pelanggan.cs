@@ -15,13 +15,29 @@ namespace AplikasiService.View
 {
     public partial class Detail_service_pelanggan : Form
     {
+        int _ServisId;
         private int _perangkatId;
-        public Detail_service_pelanggan(int perangkatId)
+        public Detail_service_pelanggan(int ServisId)
         {
             InitializeComponent();
-            _perangkatId = perangkatId;
+            _ServisId = ServisId;
+            lblNama.Text = "Pelanggan : " + GetNamaPelanggan();
             SetupListView();
-            LoadRiwayat();
+            LoadData();
+        }
+        private string GetNamaPelanggan()
+        {
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = "SELECT Nama FROM Pelanggan WHERE UserId=@uid";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@uid", Session.UserId);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : "-";
+            }
         }
         private void SetupListView()
         {
@@ -30,45 +46,45 @@ namespace AplikasiService.View
             lvwDetail.GridLines = true;
 
             lvwDetail.Columns.Clear();
+            lvwDetail.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
             lvwDetail.Columns.Add("Tanggal", 120, HorizontalAlignment.Center);
             lvwDetail.Columns.Add("Status", 120, HorizontalAlignment.Center);
             lvwDetail.Columns.Add("Keterangan", 250, HorizontalAlignment.Center);
         }
-        private void LoadRiwayat()
+        private void LoadData()
         {
             lvwDetail.Items.Clear();
+
+            int pelangganId = Session.PelangganId;
 
             using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
 
                 string sql = @"
-                SELECT 
-                    d.Tanggal,
-                    d.Status,
-                    d.Keterangan
-                FROM DetailService d
-                JOIN Servis s ON d.ServiceId = s.Id
-                WHERE s.PerangkatId = @pid
-                ORDER BY d.Tanggal ASC";
+                    SELECT 
+                        p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS NamaPerangkat,
+                        d.Tanggal,
+                        d.Status,
+                        d.Keterangan
+                    FROM DetailService d
+                    JOIN Servis s ON d.ServiceId = s.Id
+                    JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                    JOIN Perangkat p ON k.PerangkatId = p.Id
+                    WHERE p.PelangganId = @pid
+                    ORDER BY d.Tanggal DESC";
 
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@pid", pelangganId);
+
+                SQLiteDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
                 {
-                    cmd.Parameters.AddWithValue("@pid", _perangkatId);
-
-                    using (SQLiteDataReader rd = cmd.ExecuteReader())
-                    {
-                        while (rd.Read())
-                        {
-                            ListViewItem item = new ListViewItem(
-                                Convert.ToDateTime(rd["Tanggal"]).ToString("dd-MM-yyyy")
-                            );
-                            item.SubItems.Add(rd["Status"].ToString());
-                            item.SubItems.Add(rd["Keterangan"].ToString());
-
-                            lvwDetail.Items.Add(item);
-                        }
-                    }
+                    ListViewItem item = new ListViewItem(rd["NamaPerangkat"].ToString());
+                    item.SubItems.Add(rd["Tanggal"].ToString());
+                    item.SubItems.Add(rd["Status"].ToString());
+                    item.SubItems.Add(rd["Keterangan"].ToString());
+                    lvwDetail.Items.Add(item);
                 }
             }
         }
@@ -110,7 +126,6 @@ namespace AplikasiService.View
                 // Kembali ke login
                 Login login = new Login();
                 login.Show();
-
                 this.Close();
             }
         }

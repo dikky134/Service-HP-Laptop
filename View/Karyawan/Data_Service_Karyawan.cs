@@ -113,25 +113,42 @@ namespace AplikasiService.View
             }
 
             var kerusakan = (ComboItem)cmbKerusakan.SelectedItem;
+            long serviceId;
 
             using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
-                string sql = @"
-                    INSERT INTO Servis
-                    (KerusakanId, Status, Keterangan, TanggalServis)
-                    VALUES (@kid, @s, @k, @t)";
 
-                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@kid", kerusakan.Value);
-                cmd.Parameters.AddWithValue("@s", cmbStatus.Text);
-                cmd.Parameters.AddWithValue("@k", txtKeterangan.Text);
-                cmd.Parameters.AddWithValue("@t", DateTime.Now.ToString("yyyy-MM-dd"));
+                // 1️⃣ INSERT ke tabel Servis
+                string sqlServis = @"
+            INSERT INTO Servis
+            (KerusakanId, Status, Keterangan, TanggalServis)
+            VALUES (@kid, @s, @k, @t);
+            SELECT last_insert_rowid();";
 
-                cmd.ExecuteNonQuery();
+                SQLiteCommand cmdServis = new SQLiteCommand(sqlServis, conn);
+                cmdServis.Parameters.AddWithValue("@kid", kerusakan.Value);
+                cmdServis.Parameters.AddWithValue("@s", cmbStatus.Text);
+                cmdServis.Parameters.AddWithValue("@k", txtKeterangan.Text);
+                cmdServis.Parameters.AddWithValue("@t", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                serviceId = (long)cmdServis.ExecuteScalar();
+
+                string sqlDetail = @"
+                INSERT INTO DetailService
+                (ServiceId, Tanggal, Status, Keterangan)
+                VALUES (@sid, @tgl, @status, @ket)";
+
+                SQLiteCommand cmdDetail = new SQLiteCommand(sqlDetail, conn);
+                cmdDetail.Parameters.AddWithValue("@sid", serviceId);
+                cmdDetail.Parameters.AddWithValue("@tgl", DateTime.Now.ToString("yyyy-MM-dd"));
+                cmdDetail.Parameters.AddWithValue("@status", cmbStatus.Text);
+                cmdDetail.Parameters.AddWithValue("@ket", txtKeterangan.Text);
+
+                cmdDetail.ExecuteNonQuery();
             }
 
-            MessageBox.Show("Status servis ditambahkan");
+            MessageBox.Show("Servis dan detail servis berhasil ditambahkan");
             LoadData();
             txtKeterangan.Clear();
         }
