@@ -21,51 +21,54 @@ namespace AplikasiService.View
             SetupListView();
             LoadData();
         }
-        private void SetupListView()
+        void SetupListView()
         {
             lvwDashboard.View = System.Windows.Forms.View.Details;
             lvwDashboard.FullRowSelect = true;
             lvwDashboard.GridLines = true;
             lvwDashboard.Columns.Clear();
 
-            lvwDashboard.Columns.Add("ID", 50, HorizontalAlignment.Center);
-            lvwDashboard.Columns.Add("Pelanggan", 120, HorizontalAlignment.Center);
-            lvwDashboard.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
-            lvwDashboard.Columns.Add("Status", 70, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("ID", 40);
+            lvwDashboard.Columns.Add("Pelanggan", 100);
+            lvwDashboard.Columns.Add("Perangkat", 150);
+            lvwDashboard.Columns.Add("Kerusakan", 100);
+            lvwDashboard.Columns.Add("Status", 90);
+            lvwDashboard.Columns.Add("Tanggal", 90);
+            lvwDashboard.Columns.Add("Biaya", 80);
         }
         private void LoadData()
         {
             lvwDashboard.Items.Clear();
 
-            using (var conn = DbContext.GetConnection()) 
+            using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
-
                 string sql = @"
-                SELECT
-                    s.Id,
-                    pl.Nama,
-                    p.Jenis || ' ' || p.Merk AS Perangkat,
-                    k.NamaKerusakan,
-                    s.Status
-                FROM Servis s
-                JOIN Pelanggan pl ON s.PelangganId = pl.Id
-                JOIN Perangkat p ON s.PerangkatId = p.Id
-                JOIN JenisKerusakan k ON s.KerusakanId = k.Id";
+                    SELECT k.Id,
+                           pl.Nama AS Pelanggan,
+                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+                           k.NamaKerusakan,
+                           k.Status,
+                           k.Tanggal,
+                           k.Biaya
+                    FROM JenisKerusakan k
+                    JOIN Perangkat p ON k.PerangkatId = p.Id
+                    JOIN Pelanggan pl ON p.PelangganId = pl.Id
+                    ORDER BY k.Id DESC";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                using (SQLiteDataReader rd = cmd.ExecuteReader())
-                {
-                    while (rd.Read())
-                    {
-                        ListViewItem item = new ListViewItem(rd["Id"].ToString());
-                        item.SubItems.Add(rd["Nama"].ToString());
-                        item.SubItems.Add(rd["Perangkat"].ToString());
-                        item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                        item.SubItems.Add(rd["Status"].ToString());
+                SQLiteDataReader rd = cmd.ExecuteReader();
 
-                        lvwDashboard.Items.Add(item);
-                    }
+                while (rd.Read())
+                {
+                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                    item.SubItems.Add(rd["Pelanggan"].ToString());
+                    item.SubItems.Add(rd["Perangkat"].ToString());
+                    item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                    item.SubItems.Add(rd["Status"].ToString());
+                    item.SubItems.Add(rd["Tanggal"].ToString());
+                    item.SubItems.Add(rd["Biaya"].ToString());
+                    lvwDashboard.Items.Add(item);
                 }
             }
         }

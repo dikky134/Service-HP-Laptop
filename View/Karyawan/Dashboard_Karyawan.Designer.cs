@@ -158,7 +158,7 @@
             this.pnldshk1.Controls.Add(this.lbldsh);
             this.pnldshk1.Location = new System.Drawing.Point(0, 2);
             this.pnldshk1.Name = "pnldshk1";
-            this.pnldshk1.Size = new System.Drawing.Size(882, 65);
+            this.pnldshk1.Size = new System.Drawing.Size(1125, 65);
             this.pnldshk1.TabIndex = 7;
             // 
             // lbldsh
@@ -176,9 +176,9 @@
             // 
             this.pnldshk2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnldshk2.Controls.Add(this.lvwDashboard);
-            this.pnldshk2.Location = new System.Drawing.Point(293, 106);
+            this.pnldshk2.Location = new System.Drawing.Point(236, 106);
             this.pnldshk2.Name = "pnldshk2";
-            this.pnldshk2.Size = new System.Drawing.Size(538, 332);
+            this.pnldshk2.Size = new System.Drawing.Size(869, 332);
             this.pnldshk2.TabIndex = 8;
             // 
             // lvwDashboard
@@ -186,7 +186,7 @@
             this.lvwDashboard.HideSelection = false;
             this.lvwDashboard.Location = new System.Drawing.Point(15, 14);
             this.lvwDashboard.Name = "lvwDashboard";
-            this.lvwDashboard.Size = new System.Drawing.Size(511, 307);
+            this.lvwDashboard.Size = new System.Drawing.Size(836, 307);
             this.lvwDashboard.TabIndex = 0;
             this.lvwDashboard.UseCompatibleStateImageBehavior = false;
             // 
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 477);
+            this.ClientSize = new System.Drawing.Size(1130, 477);
             this.Controls.Add(this.pnldshk2);
             this.Controls.Add(this.pnldshk1);
             this.Controls.Add(this.pnldshk3);

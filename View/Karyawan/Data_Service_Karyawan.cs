@@ -1,8 +1,11 @@
-﻿using AplikasiService.Model.Session;
+﻿using AplikasiService.Model.Context;
+using AplikasiService.Model.Entity;
+using AplikasiService.Model.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +19,121 @@ namespace AplikasiService.View
         public Data_Service_Karyawan()
         {
             InitializeComponent();
+            LoadKerusakan();
+            SetupListView();
+            LoadData();
+
+            cmbStatus.Items.Add("Pending");
+            cmbStatus.Items.Add("Diproses");
+            cmbStatus.Items.Add("Selesai");
+            cmbStatus.SelectedIndex = 0;
+        }
+        private void SetupListView()
+        {
+            lvwService.View = System.Windows.Forms.View.Details;
+            lvwService.FullRowSelect = true;
+            lvwService.GridLines = true;
+            lvwService.Columns.Clear();
+
+            lvwService.Columns.Add("ID", 40);
+            lvwService.Columns.Add("Perangkat & Kerusakan", 150);
+            lvwService.Columns.Add("Status", 100);
+            lvwService.Columns.Add("Tanggal", 100);
+            lvwService.Columns.Add("Keterangan", 200);
+        }
+        private void LoadKerusakan()
+        {
+            cmbKerusakan.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+                    SELECT k.Id,
+                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe || 
+                           ' - ' || k.NamaKerusakan AS Info
+                    FROM JenisKerusakan k
+                    JOIN Perangkat p ON k.PerangkatId = p.Id";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    cmbKerusakan.Items.Add(new ComboItem
+                    {
+                        Text = rd["Info"].ToString(),
+                        Value = Convert.ToInt32(rd["Id"])
+                    });
+                }
+            }
+
+            if (cmbKerusakan.Items.Count > 0)
+                cmbKerusakan.SelectedIndex = 0;
+        }
+        private void LoadData()
+        {
+            lvwService.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+                    SELECT s.Id,
+                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe || 
+                           ' - ' || k.NamaKerusakan AS Info,
+                           s.Status,
+                           s.TanggalServis,
+                           s.Keterangan
+                    FROM Servis s
+                    JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                    JOIN Perangkat p ON k.PerangkatId = p.Id
+                    ORDER BY s.Id DESC";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                SQLiteDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                    item.SubItems.Add(rd["Info"].ToString());
+                    item.SubItems.Add(rd["Status"].ToString());
+                    item.SubItems.Add(rd["TanggalServis"].ToString());
+                    item.SubItems.Add(rd["Keterangan"].ToString());
+                    lvwService.Items.Add(item);
+                }
+            }
+        }
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            if (cmbKerusakan.SelectedItem == null || txtKeterangan.Text == "")
+            {
+                MessageBox.Show("Lengkapi data");
+                return;
+            }
+
+            var kerusakan = (ComboItem)cmbKerusakan.SelectedItem;
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+                string sql = @"
+                    INSERT INTO Servis
+                    (KerusakanId, Status, Keterangan, TanggalServis)
+                    VALUES (@kid, @s, @k, @t)";
+
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@kid", kerusakan.Value);
+                cmd.Parameters.AddWithValue("@s", cmbStatus.Text);
+                cmd.Parameters.AddWithValue("@k", txtKeterangan.Text);
+                cmd.Parameters.AddWithValue("@t", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                cmd.ExecuteNonQuery();
+            }
+
+            MessageBox.Show("Status servis ditambahkan");
+            LoadData();
+            txtKeterangan.Clear();
         }
         private void btnDasboard_Click(object sender, EventArgs e)
         {

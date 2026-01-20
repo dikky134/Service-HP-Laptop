@@ -40,9 +40,7 @@
             this.BtnDataPerangkat = new System.Windows.Forms.Button();
             this.BtnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDSK2 = new System.Windows.Forms.Panel();
-            this.txtTipe = new System.Windows.Forms.TextBox();
-            this.txtMerk = new System.Windows.Forms.TextBox();
-            this.txtJenis = new System.Windows.Forms.TextBox();
+            this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.lbl8 = new System.Windows.Forms.Label();
             this.lbl7 = new System.Windows.Forms.Label();
             this.lbl6 = new System.Windows.Forms.Label();
@@ -51,6 +49,9 @@
             this.lblNamaDp = new System.Windows.Forms.Label();
             this.lblTPDPP = new System.Windows.Forms.Label();
             this.lvwService = new System.Windows.Forms.ListView();
+            this.cmbKerusakan = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.btnTambah = new System.Windows.Forms.Button();
             this.pnlDSK1.SuspendLayout();
             this.pnlDSK3.SuspendLayout();
             this.pnlDSK2.SuspendLayout();
@@ -185,9 +186,10 @@
             // pnlDSK2
             // 
             this.pnlDSK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlDSK2.Controls.Add(this.txtTipe);
-            this.pnlDSK2.Controls.Add(this.txtMerk);
-            this.pnlDSK2.Controls.Add(this.txtJenis);
+            this.pnlDSK2.Controls.Add(this.btnTambah);
+            this.pnlDSK2.Controls.Add(this.cmbStatus);
+            this.pnlDSK2.Controls.Add(this.cmbKerusakan);
+            this.pnlDSK2.Controls.Add(this.txtKeterangan);
             this.pnlDSK2.Controls.Add(this.lbl8);
             this.pnlDSK2.Controls.Add(this.lbl7);
             this.pnlDSK2.Controls.Add(this.lbl6);
@@ -198,29 +200,15 @@
             this.pnlDSK2.Controls.Add(this.lvwService);
             this.pnlDSK2.Location = new System.Drawing.Point(278, 110);
             this.pnlDSK2.Name = "pnlDSK2";
-            this.pnlDSK2.Size = new System.Drawing.Size(569, 323);
+            this.pnlDSK2.Size = new System.Drawing.Size(569, 349);
             this.pnlDSK2.TabIndex = 14;
             // 
-            // txtTipe
+            // txtKeterangan
             // 
-            this.txtTipe.Location = new System.Drawing.Point(178, 102);
-            this.txtTipe.Name = "txtTipe";
-            this.txtTipe.Size = new System.Drawing.Size(143, 22);
-            this.txtTipe.TabIndex = 30;
-            // 
-            // txtMerk
-            // 
-            this.txtMerk.Location = new System.Drawing.Point(178, 74);
-            this.txtMerk.Name = "txtMerk";
-            this.txtMerk.Size = new System.Drawing.Size(143, 22);
-            this.txtMerk.TabIndex = 29;
-            // 
-            // txtJenis
-            // 
-            this.txtJenis.Location = new System.Drawing.Point(177, 47);
-            this.txtJenis.Name = "txtJenis";
-            this.txtJenis.Size = new System.Drawing.Size(143, 22);
-            this.txtJenis.TabIndex = 28;
+            this.txtKeterangan.Location = new System.Drawing.Point(178, 105);
+            this.txtKeterangan.Name = "txtKeterangan";
+            this.txtKeterangan.Size = new System.Drawing.Size(238, 22);
+            this.txtKeterangan.TabIndex = 30;
             // 
             // lbl8
             // 
@@ -254,45 +242,71 @@
             this.lblAmltDp.AutoSize = true;
             this.lblAmltDp.Location = new System.Drawing.Point(15, 104);
             this.lblAmltDp.Name = "lblAmltDp";
-            this.lblAmltDp.Size = new System.Drawing.Size(35, 16);
+            this.lblAmltDp.Size = new System.Drawing.Size(76, 16);
             this.lblAmltDp.TabIndex = 24;
-            this.lblAmltDp.Text = "Tipe";
+            this.lblAmltDp.Text = "Keterangan";
             // 
             // lblNHDp
             // 
             this.lblNHDp.AutoSize = true;
             this.lblNHDp.Location = new System.Drawing.Point(15, 78);
             this.lblNHDp.Name = "lblNHDp";
-            this.lblNHDp.Size = new System.Drawing.Size(37, 16);
+            this.lblNHDp.Size = new System.Drawing.Size(44, 16);
             this.lblNHDp.TabIndex = 23;
-            this.lblNHDp.Text = "Merk";
+            this.lblNHDp.Text = "Status";
             // 
             // lblNamaDp
             // 
             this.lblNamaDp.AutoSize = true;
             this.lblNamaDp.Location = new System.Drawing.Point(15, 49);
             this.lblNamaDp.Name = "lblNamaDp";
-            this.lblNamaDp.Size = new System.Drawing.Size(39, 16);
+            this.lblNamaDp.Size = new System.Drawing.Size(106, 16);
             this.lblNamaDp.TabIndex = 22;
-            this.lblNamaDp.Text = "Jenis";
+            this.lblNamaDp.Text = "Jenis Kerusakan";
             // 
             // lblTPDPP
             // 
             this.lblTPDPP.AutoSize = true;
             this.lblTPDPP.Location = new System.Drawing.Point(11, 14);
             this.lblTPDPP.Name = "lblTPDPP";
-            this.lblTPDPP.Size = new System.Drawing.Size(123, 16);
+            this.lblTPDPP.Size = new System.Drawing.Size(99, 16);
             this.lblTPDPP.TabIndex = 21;
-            this.lblTPDPP.Text = "Tambah Perangkat";
+            this.lblTPDPP.Text = "Tambah Servis";
             // 
             // lvwService
             // 
             this.lvwService.HideSelection = false;
-            this.lvwService.Location = new System.Drawing.Point(0, 150);
+            this.lvwService.Location = new System.Drawing.Point(3, 171);
             this.lvwService.Name = "lvwService";
-            this.lvwService.Size = new System.Drawing.Size(569, 172);
+            this.lvwService.Size = new System.Drawing.Size(563, 175);
             this.lvwService.TabIndex = 0;
             this.lvwService.UseCompatibleStateImageBehavior = false;
+            // 
+            // cmbKerusakan
+            // 
+            this.cmbKerusakan.FormattingEnabled = true;
+            this.cmbKerusakan.Location = new System.Drawing.Point(178, 45);
+            this.cmbKerusakan.Name = "cmbKerusakan";
+            this.cmbKerusakan.Size = new System.Drawing.Size(238, 24);
+            this.cmbKerusakan.TabIndex = 31;
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(178, 75);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(238, 24);
+            this.cmbStatus.TabIndex = 32;
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.Location = new System.Drawing.Point(178, 133);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(82, 28);
+            this.btnTambah.TabIndex = 33;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // Data_Service_Karyawan
             // 
@@ -330,9 +344,7 @@
         private System.Windows.Forms.Panel pnlDSK2;
         private System.Windows.Forms.ListView lvwService;
         private System.Windows.Forms.Button btnDasboard;
-        private System.Windows.Forms.TextBox txtTipe;
-        private System.Windows.Forms.TextBox txtMerk;
-        private System.Windows.Forms.TextBox txtJenis;
+        private System.Windows.Forms.TextBox txtKeterangan;
         private System.Windows.Forms.Label lbl8;
         private System.Windows.Forms.Label lbl7;
         private System.Windows.Forms.Label lbl6;
@@ -340,5 +352,8 @@
         private System.Windows.Forms.Label lblNHDp;
         private System.Windows.Forms.Label lblNamaDp;
         private System.Windows.Forms.Label lblTPDPP;
+        private System.Windows.Forms.Button btnTambah;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.ComboBox cmbKerusakan;
     }
 }

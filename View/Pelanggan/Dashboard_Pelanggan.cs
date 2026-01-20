@@ -32,7 +32,8 @@ namespace AplikasiService.View
             lvwDashboard.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Status", 80, HorizontalAlignment.Center);
-            lvwDashboard.Columns.Add("Total", 100, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Tanggal", 100, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Biaya", 100, HorizontalAlignment.Center);
         }
 
         private string GetNamaPelanggan()
@@ -57,36 +58,31 @@ namespace AplikasiService.View
             using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
-
                 string sql = @"
-                SELECT 
-                    s.Id,
-                    p.Jenis || ' ' || p.Merk AS Perangkat,
-                    k.NamaKerusakan,
-                    s.Status,
-                    s.Biaya
-                FROM Servis s
-                JOIN Perangkat p ON s.PerangkatId = p.Id
-                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
-                WHERE s.PelangganId = @pid";
+                    SELECT k.Id,
+                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+                           k.NamaKerusakan,
+                           k.Status,
+                           k.Tanggal,
+                           k.Biaya
+                    FROM JenisKerusakan k
+                    JOIN Perangkat p ON k.PerangkatId = p.Id
+                    WHERE p.PelangganId = @pid
+                    ORDER BY k.Id DESC";
 
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
+                SQLiteDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
                 {
-                    cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
-
-                    using (SQLiteDataReader rd = cmd.ExecuteReader())
-                    {
-                        while (rd.Read())
-                        {
-                            ListViewItem item = new ListViewItem(rd["Id"].ToString());
-                            item.SubItems.Add(rd["Perangkat"].ToString());
-                            item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                            item.SubItems.Add(rd["Status"].ToString());
-                            item.SubItems.Add("Rp " + rd["Biaya"].ToString());
-
-                            lvwDashboard.Items.Add(item);
-                        }
-                    }
+                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
+                    item.SubItems.Add(rd["Perangkat"].ToString());
+                    item.SubItems.Add(rd["NamaKerusakan"].ToString());
+                    item.SubItems.Add(rd["Status"].ToString());
+                    item.SubItems.Add(rd["Tanggal"].ToString());
+                    item.SubItems.Add(rd["Biaya"].ToString());
+                    lvwDashboard.Items.Add(item);
                 }
             }
         }

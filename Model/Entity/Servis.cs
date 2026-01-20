@@ -13,6 +13,7 @@ namespace AplikasiService.Model.Entity
         public int KerusakanId { get; set; }
         public string Status { get; set; }
         public int Biaya { get; set; }
+        public string Keterangan { get; set; }
 
     }
 }

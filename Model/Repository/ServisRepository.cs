@@ -57,7 +57,8 @@ namespace AplikasiService.Model.Repository
                         PerangkatId = int.Parse(rd["PerangkatId"].ToString()),
                         KerusakanId = int.Parse(rd["KerusakanId"].ToString()),
                         Status = rd["Status"].ToString(),
-                        Biaya = int.Parse(rd["Biaya"].ToString())
+                        Biaya = int.Parse(rd["Biaya"].ToString()),
+                        Keterangan = rd["Keterangan"].ToString()
                     });
                 }
             }
