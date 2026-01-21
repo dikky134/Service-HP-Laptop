@@ -53,7 +53,7 @@
             this.pnlDP1.Controls.Add(this.lblDPP);
             this.pnlDP1.Location = new System.Drawing.Point(1, 2);
             this.pnlDP1.Name = "pnlDP1";
-            this.pnlDP1.Size = new System.Drawing.Size(882, 65);
+            this.pnlDP1.Size = new System.Drawing.Size(1044, 65);
             this.pnlDP1.TabIndex = 9;
             // 
             // lblDPP
@@ -192,7 +192,7 @@
             this.pnlDP4.Controls.Add(this.lvwDataPelanggan);
             this.pnlDP4.Location = new System.Drawing.Point(279, 90);
             this.pnlDP4.Name = "pnlDP4";
-            this.pnlDP4.Size = new System.Drawing.Size(538, 383);
+            this.pnlDP4.Size = new System.Drawing.Size(742, 383);
             this.pnlDP4.TabIndex = 12;
             // 
             // lvwDataPelanggan
@@ -200,7 +200,7 @@
             this.lvwDataPelanggan.HideSelection = false;
             this.lvwDataPelanggan.Location = new System.Drawing.Point(3, 3);
             this.lvwDataPelanggan.Name = "lvwDataPelanggan";
-            this.lvwDataPelanggan.Size = new System.Drawing.Size(532, 377);
+            this.lvwDataPelanggan.Size = new System.Drawing.Size(736, 377);
             this.lvwDataPelanggan.TabIndex = 0;
             this.lvwDataPelanggan.UseCompatibleStateImageBehavior = false;
             // 
@@ -208,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 495);
+            this.ClientSize = new System.Drawing.Size(1046, 495);
             this.Controls.Add(this.pnlDP4);
             this.Controls.Add(this.pnlDP1);
             this.Controls.Add(this.pnlDP2);

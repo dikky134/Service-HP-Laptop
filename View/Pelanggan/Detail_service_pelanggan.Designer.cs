@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.pnlSDP2 = new System.Windows.Forms.Panel();
+            this.lblNama = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlSDP1 = new System.Windows.Forms.Panel();
             this.lblDSP = new System.Windows.Forms.Label();
-            this.lblNama = new System.Windows.Forms.Label();
             this.lvwDetail = new System.Windows.Forms.ListView();
             this.pnlSDP2.SuspendLayout();
             this.pnlSDP1.SuspendLayout();
@@ -53,6 +53,15 @@
             this.pnlSDP2.Name = "pnlSDP2";
             this.pnlSDP2.Size = new System.Drawing.Size(230, 392);
             this.pnlSDP2.TabIndex = 1;
+            // 
+            // lblNama
+            // 
+            this.lblNama.AutoSize = true;
+            this.lblNama.Location = new System.Drawing.Point(5, 16);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(82, 16);
+            this.lblNama.TabIndex = 5;
+            this.lblNama.Text = "Pelanggan : ";
             // 
             // btnLogOut
             // 
@@ -108,7 +117,7 @@
             this.pnlSDP1.Controls.Add(this.lblDSP);
             this.pnlSDP1.Location = new System.Drawing.Point(0, 2);
             this.pnlSDP1.Name = "pnlSDP1";
-            this.pnlSDP1.Size = new System.Drawing.Size(882, 65);
+            this.pnlSDP1.Size = new System.Drawing.Size(1001, 65);
             this.pnlSDP1.TabIndex = 2;
             // 
             // lblDSP
@@ -122,21 +131,12 @@
             this.lblDSP.Text = "Detail Service Pelanggan";
             this.lblDSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblNama
-            // 
-            this.lblNama.AutoSize = true;
-            this.lblNama.Location = new System.Drawing.Point(5, 16);
-            this.lblNama.Name = "lblNama";
-            this.lblNama.Size = new System.Drawing.Size(82, 16);
-            this.lblNama.TabIndex = 5;
-            this.lblNama.Text = "Pelanggan : ";
-            // 
             // lvwDetail
             // 
             this.lvwDetail.HideSelection = false;
-            this.lvwDetail.Location = new System.Drawing.Point(254, 77);
+            this.lvwDetail.Location = new System.Drawing.Point(239, 77);
             this.lvwDetail.Name = "lvwDetail";
-            this.lvwDetail.Size = new System.Drawing.Size(616, 364);
+            this.lvwDetail.Size = new System.Drawing.Size(750, 364);
             this.lvwDetail.TabIndex = 3;
             this.lvwDetail.UseCompatibleStateImageBehavior = false;
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(882, 453);
+            this.ClientSize = new System.Drawing.Size(1001, 453);
             this.Controls.Add(this.lvwDetail);
             this.Controls.Add(this.pnlSDP1);
             this.Controls.Add(this.pnlSDP2);

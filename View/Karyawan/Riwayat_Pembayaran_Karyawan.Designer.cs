@@ -50,17 +50,17 @@
             // 
             this.pnlSK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnlSK2.Controls.Add(this.lvwRiwayat);
-            this.pnlSK2.Location = new System.Drawing.Point(277, 109);
+            this.pnlSK2.Location = new System.Drawing.Point(241, 109);
             this.pnlSK2.Name = "pnlSK2";
-            this.pnlSK2.Size = new System.Drawing.Size(569, 323);
+            this.pnlSK2.Size = new System.Drawing.Size(1003, 323);
             this.pnlSK2.TabIndex = 19;
             // 
             // lvwRiwayat
             // 
             this.lvwRiwayat.HideSelection = false;
-            this.lvwRiwayat.Location = new System.Drawing.Point(0, 0);
+            this.lvwRiwayat.Location = new System.Drawing.Point(3, 4);
             this.lvwRiwayat.Name = "lvwRiwayat";
-            this.lvwRiwayat.Size = new System.Drawing.Size(568, 322);
+            this.lvwRiwayat.Size = new System.Drawing.Size(997, 316);
             this.lvwRiwayat.TabIndex = 0;
             this.lvwRiwayat.UseCompatibleStateImageBehavior = false;
             // 
@@ -70,7 +70,7 @@
             this.pnlSK1.Controls.Add(this.lblSK1);
             this.pnlSK1.Location = new System.Drawing.Point(1, 1);
             this.pnlSK1.Name = "pnlSK1";
-            this.pnlSK1.Size = new System.Drawing.Size(882, 65);
+            this.pnlSK1.Size = new System.Drawing.Size(1253, 65);
             this.pnlSK1.TabIndex = 18;
             // 
             // lblSK1
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 462);
+            this.ClientSize = new System.Drawing.Size(1256, 462);
             this.Controls.Add(this.pnlSK2);
             this.Controls.Add(this.pnlSK1);
             this.Controls.Add(this.pnlSK3);

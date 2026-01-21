@@ -28,12 +28,12 @@ namespace AplikasiService.View
             lvwDashboard.GridLines = true;
             lvwDashboard.Columns.Clear();
 
-            lvwDashboard.Columns.Add("ID", 40);
-            lvwDashboard.Columns.Add("Pelanggan", 100);
-            lvwDashboard.Columns.Add("Perangkat", 150);
-            lvwDashboard.Columns.Add("Kerusakan", 100);
-            lvwDashboard.Columns.Add("Tanggal", 90);
-            lvwDashboard.Columns.Add("Biaya", 80);
+            lvwDashboard.Columns.Add("ID", 40, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Pelanggan", 100, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Perangkat", 150, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Kerusakan", 100, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Tanggal", 90, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Biaya", 80, HorizontalAlignment.Center);
         }
         private void LoadData()
         {
@@ -43,16 +43,17 @@ namespace AplikasiService.View
             {
                 conn.Open();
                 string sql = @"
-                    SELECT k.Id,
-                           pl.Nama AS Pelanggan,
-                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
-                           k.NamaKerusakan,
-                           k.Tanggal,
-                           k.Biaya
-                    FROM JenisKerusakan k
-                    JOIN Perangkat p ON k.PerangkatId = p.Id
-                    JOIN Pelanggan pl ON p.PelangganId = pl.Id
-                    ORDER BY k.Id DESC";
+                SELECT s.Id,
+                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe || 
+                       ' - ' || k.NamaKerusakan AS Info,
+                       s.Status,
+                       s.TanggalServis,
+                       s.Keterangan
+                FROM Servis s
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                JOIN Perangkat p ON k.PerangkatId = p.Id
+                WHERE s.Id NOT IN (SELECT ServisId FROM Pembayaran WHERE Status = 'Lunas')
+                ORDER BY s.Id DESC";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 SQLiteDataReader rd = cmd.ExecuteReader();

@@ -32,12 +32,12 @@ namespace AplikasiService.View
             lvwPembayaran.GridLines = true;
             lvwPembayaran.Columns.Clear();
 
-            lvwPembayaran.Columns.Add("ID", 50);
-            lvwPembayaran.Columns.Add("Perangkat", 160);
-            lvwPembayaran.Columns.Add("Kerusakan", 120);
-            lvwPembayaran.Columns.Add("Biaya Service", 100);
-            lvwPembayaran.Columns.Add("Harga Jasa", 100);
-            lvwPembayaran.Columns.Add("Total", 100);
+            lvwPembayaran.Columns.Add("ID", 50, HorizontalAlignment.Center);
+            lvwPembayaran.Columns.Add("Perangkat", 160, HorizontalAlignment.Center);
+            lvwPembayaran.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
+            lvwPembayaran.Columns.Add("Biaya Service", 100, HorizontalAlignment.Center);
+            lvwPembayaran.Columns.Add("Harga Jasa", 100, HorizontalAlignment.Center);
+            lvwPembayaran.Columns.Add("Total", 100, HorizontalAlignment.Center);
         }
         private void LoadServis()
         {
@@ -217,6 +217,12 @@ namespace AplikasiService.View
                 }
             }
         }
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard_Karyawan dashboard = new Dashboard_Karyawan();
+            dashboard.Show();
+            this.Close();
+        }
         private void btnDataPerangkat_Click(object sender, EventArgs e)
         {
             Data_Perangkat_Karyawan dataPerangkat = new Data_Perangkat_Karyawan();
@@ -271,7 +277,5 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
-
-        
     }
 }

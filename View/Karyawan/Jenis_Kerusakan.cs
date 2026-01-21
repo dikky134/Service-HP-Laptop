@@ -1,6 +1,6 @@
 ﻿using AplikasiService.Model.Context;
-using AplikasiService.Model.Session;
 using AplikasiService.Model.Entity;
+using AplikasiService.Model.Session;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,16 +45,22 @@ namespace AplikasiService.View
             {
                 conn.Open();
                 string sql = @"
-                    SELECT k.Id,
-                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
-                           k.NamaKerusakan,
-                           k.Biaya,
-                           k.Status,
-                           k.Tanggal
-                    FROM JenisKerusakan k
-                    JOIN Perangkat p ON k.PerangkatId = p.Id";
+        SELECT k.Id,
+               p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+               k.NamaKerusakan,
+               k.Tanggal,
+               k.Biaya
+        FROM JenisKerusakan k
+        JOIN Perangkat p ON k.PerangkatId = p.Id
+        JOIN Servis s ON s.KerusakanId = k.Id
+        LEFT JOIN Pembayaran pb ON pb.ServisId = s.Id
+        WHERE p.PelangganId = @pid
+          AND (pb.Status IS NULL OR pb.Status != 'Lunas')
+        ORDER BY k.Id DESC";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@pid", Session.PelangganId);
+
                 SQLiteDataReader rd = cmd.ExecuteReader();
 
                 while (rd.Read())
@@ -67,6 +74,7 @@ namespace AplikasiService.View
                 }
             }
         }
+
         private void LoadPerangkat()
         {
             cmbPerangkat.Items.Clear();

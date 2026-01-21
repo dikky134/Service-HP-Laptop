@@ -80,7 +80,7 @@ namespace AplikasiService.View
                     ListViewItem item = new ListViewItem(rd["Id"].ToString());
                     item.SubItems.Add(rd["Perangkat"].ToString());
                     item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                    item.SubItems.Add(rd["Tanggal"].ToString());
+                    item.SubItems.Add(rd["TanggalServis"].ToString());
                     item.SubItems.Add(rd["Biaya"].ToString());
                     lvwDashboard.Items.Add(item);
                 }

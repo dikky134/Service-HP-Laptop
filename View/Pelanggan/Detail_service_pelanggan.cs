@@ -49,7 +49,7 @@ namespace AplikasiService.View
             lvwDetail.Columns.Add("Perangkat", 120, HorizontalAlignment.Center);
             lvwDetail.Columns.Add("Tanggal", 120, HorizontalAlignment.Center);
             lvwDetail.Columns.Add("Status", 120, HorizontalAlignment.Center);
-            lvwDetail.Columns.Add("Keterangan", 250, HorizontalAlignment.Center);
+            lvwDetail.Columns.Add("Keterangan", 120, HorizontalAlignment.Center);
         }
         private void LoadData()
         {

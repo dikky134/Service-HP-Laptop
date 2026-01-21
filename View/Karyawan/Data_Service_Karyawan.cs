@@ -35,11 +35,11 @@ namespace AplikasiService.View
             lvwService.GridLines = true;
             lvwService.Columns.Clear();
 
-            lvwService.Columns.Add("ID", 40);
-            lvwService.Columns.Add("Perangkat & Kerusakan", 150);
-            lvwService.Columns.Add("Status", 100);
-            lvwService.Columns.Add("Tanggal", 100);
-            lvwService.Columns.Add("Keterangan", 200);
+            lvwService.Columns.Add("ID", 40, HorizontalAlignment.Center);
+            lvwService.Columns.Add("Perangkat & Kerusakan", 150, HorizontalAlignment.Center);
+            lvwService.Columns.Add("Status", 100, HorizontalAlignment.Center);
+            lvwService.Columns.Add("Tanggal", 100, HorizontalAlignment.Center);
+            lvwService.Columns.Add("Keterangan", 120, HorizontalAlignment.Center);
         }
         private void LoadKerusakan()
         {

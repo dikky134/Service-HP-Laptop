@@ -58,8 +58,8 @@
             this.btnSimpan = new System.Windows.Forms.Button();
             this.lvwPembayaran = new System.Windows.Forms.ListView();
             this.pnlPK3 = new System.Windows.Forms.Panel();
-            this.btnDashboard = new System.Windows.Forms.Button();
             this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlPK1.SuspendLayout();
             this.pnlPK2.SuspendLayout();
             this.pnlPK3.SuspendLayout();
@@ -211,7 +211,7 @@
             this.pnlPK1.Controls.Add(this.lblPK1);
             this.pnlPK1.Location = new System.Drawing.Point(0, 1);
             this.pnlPK1.Name = "pnlPK1";
-            this.pnlPK1.Size = new System.Drawing.Size(882, 65);
+            this.pnlPK1.Size = new System.Drawing.Size(1137, 65);
             this.pnlPK1.TabIndex = 21;
             // 
             // lblPK3
@@ -266,9 +266,9 @@
             this.pnlPK2.Controls.Add(this.lblPK4);
             this.pnlPK2.Controls.Add(this.lblPK3);
             this.pnlPK2.Controls.Add(this.lblPK2);
-            this.pnlPK2.Location = new System.Drawing.Point(276, 109);
+            this.pnlPK2.Location = new System.Drawing.Point(248, 109);
             this.pnlPK2.Name = "pnlPK2";
-            this.pnlPK2.Size = new System.Drawing.Size(569, 395);
+            this.pnlPK2.Size = new System.Drawing.Size(866, 423);
             this.pnlPK2.TabIndex = 22;
             // 
             // label5
@@ -353,9 +353,9 @@
             // lvwPembayaran
             // 
             this.lvwPembayaran.HideSelection = false;
-            this.lvwPembayaran.Location = new System.Drawing.Point(0, 241);
+            this.lvwPembayaran.Location = new System.Drawing.Point(3, 241);
             this.lvwPembayaran.Name = "lvwPembayaran";
-            this.lvwPembayaran.Size = new System.Drawing.Size(568, 152);
+            this.lvwPembayaran.Size = new System.Drawing.Size(860, 179);
             this.lvwPembayaran.TabIndex = 14;
             this.lvwPembayaran.UseCompatibleStateImageBehavior = false;
             // 
@@ -375,18 +375,6 @@
             this.pnlPK3.Size = new System.Drawing.Size(230, 405);
             this.pnlPK3.TabIndex = 20;
             // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 61);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(230, 43);
-            this.btnDashboard.TabIndex = 8;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            // 
             // btnRiwayatPembayaran
             // 
             this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -400,11 +388,24 @@
             this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
             this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 61);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDashboard.TabIndex = 8;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
             // Pembayaran_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 544);
+            this.ClientSize = new System.Drawing.Size(1138, 544);
             this.Controls.Add(this.pnlPK1);
             this.Controls.Add(this.pnlPK2);
             this.Controls.Add(this.pnlPK3);

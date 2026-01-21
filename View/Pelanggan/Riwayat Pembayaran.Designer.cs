@@ -119,7 +119,7 @@
             this.pnlRP1.Controls.Add(this.lblRP1);
             this.pnlRP1.Location = new System.Drawing.Point(3, 3);
             this.pnlRP1.Name = "pnlRP1";
-            this.pnlRP1.Size = new System.Drawing.Size(882, 65);
+            this.pnlRP1.Size = new System.Drawing.Size(1263, 65);
             this.pnlRP1.TabIndex = 6;
             // 
             // lblRP1
@@ -139,7 +139,7 @@
             this.pnlRP2.Controls.Add(this.lvwRiwayat);
             this.pnlRP2.Location = new System.Drawing.Point(283, 114);
             this.pnlRP2.Name = "pnlRP2";
-            this.pnlRP2.Size = new System.Drawing.Size(590, 332);
+            this.pnlRP2.Size = new System.Drawing.Size(974, 332);
             this.pnlRP2.TabIndex = 7;
             // 
             // lvwRiwayat
@@ -147,7 +147,7 @@
             this.lvwRiwayat.HideSelection = false;
             this.lvwRiwayat.Location = new System.Drawing.Point(3, 3);
             this.lvwRiwayat.Name = "lvwRiwayat";
-            this.lvwRiwayat.Size = new System.Drawing.Size(584, 326);
+            this.lvwRiwayat.Size = new System.Drawing.Size(968, 326);
             this.lvwRiwayat.TabIndex = 0;
             this.lvwRiwayat.UseCompatibleStateImageBehavior = false;
             // 
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 502);
+            this.ClientSize = new System.Drawing.Size(1269, 502);
             this.Controls.Add(this.pnlRP2);
             this.Controls.Add(this.pnlRP1);
             this.Controls.Add(this.pnlRP3);

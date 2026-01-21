@@ -31,6 +31,7 @@
             this.pnlDPP1 = new System.Windows.Forms.Panel();
             this.lblDPP = new System.Windows.Forms.Label();
             this.pnlDPP3 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lvwPerangkat = new System.Windows.Forms.ListView();
@@ -51,7 +52,6 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlDPP2 = new System.Windows.Forms.Panel();
             this.lblNama = new System.Windows.Forms.Label();
-            this.btnDetail = new System.Windows.Forms.Button();
             this.pnlDPP1.SuspendLayout();
             this.pnlDPP3.SuspendLayout();
             this.pnlDPP2.SuspendLayout();
@@ -100,6 +100,16 @@
             this.pnlDPP3.Size = new System.Drawing.Size(565, 358);
             this.pnlDPP3.TabIndex = 14;
             // 
+            // btnDetail
+            // 
+            this.btnDetail.Location = new System.Drawing.Point(223, 329);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(75, 23);
+            this.btnDetail.TabIndex = 25;
+            this.btnDetail.Text = "Detail";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
             // btnHapus
             // 
             this.btnHapus.Location = new System.Drawing.Point(119, 329);
@@ -141,23 +151,23 @@
             // 
             // txtTipe
             // 
-            this.txtTipe.Location = new System.Drawing.Point(119, 110);
+            this.txtTipe.Location = new System.Drawing.Point(119, 111);
             this.txtTipe.Name = "txtTipe";
-            this.txtTipe.Size = new System.Drawing.Size(100, 22);
+            this.txtTipe.Size = new System.Drawing.Size(222, 22);
             this.txtTipe.TabIndex = 20;
             // 
             // txtMerk
             // 
-            this.txtMerk.Location = new System.Drawing.Point(119, 82);
+            this.txtMerk.Location = new System.Drawing.Point(119, 83);
             this.txtMerk.Name = "txtMerk";
-            this.txtMerk.Size = new System.Drawing.Size(100, 22);
+            this.txtMerk.Size = new System.Drawing.Size(222, 22);
             this.txtMerk.TabIndex = 19;
             // 
             // txtJenis
             // 
-            this.txtJenis.Location = new System.Drawing.Point(118, 55);
+            this.txtJenis.Location = new System.Drawing.Point(119, 54);
             this.txtJenis.Name = "txtJenis";
-            this.txtJenis.Size = new System.Drawing.Size(100, 22);
+            this.txtJenis.Size = new System.Drawing.Size(222, 22);
             this.txtJenis.TabIndex = 18;
             // 
             // lbl8
@@ -291,16 +301,6 @@
             this.lblNama.Size = new System.Drawing.Size(82, 16);
             this.lblNama.TabIndex = 4;
             this.lblNama.Text = "Pelanggan : ";
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.Location = new System.Drawing.Point(223, 329);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(75, 23);
-            this.btnDetail.TabIndex = 25;
-            this.btnDetail.Text = "Detail";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // Data_perangkat_pelanggan
             // 

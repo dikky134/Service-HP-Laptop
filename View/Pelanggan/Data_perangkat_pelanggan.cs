@@ -185,6 +185,7 @@ namespace AplikasiService.View
 
             Detail_service_pelanggan frm = new Detail_service_pelanggan(serviceId);
             frm.Show();
+            this.Close();
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {

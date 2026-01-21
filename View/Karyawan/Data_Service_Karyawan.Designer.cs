@@ -31,6 +31,7 @@
             this.pnlDSK1 = new System.Windows.Forms.Panel();
             this.lblDSK = new System.Windows.Forms.Label();
             this.pnlDSK3 = new System.Windows.Forms.Panel();
+            this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
             this.btnDasboard = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnKerusakan = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.BtnDataPerangkat = new System.Windows.Forms.Button();
             this.BtnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDSK2 = new System.Windows.Forms.Panel();
+            this.btnHapus = new System.Windows.Forms.Button();
             this.btnTambah = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.cmbKerusakan = new System.Windows.Forms.ComboBox();
@@ -52,8 +54,6 @@
             this.lblNamaDp = new System.Windows.Forms.Label();
             this.lblTPDPP = new System.Windows.Forms.Label();
             this.lvwService = new System.Windows.Forms.ListView();
-            this.btnHapus = new System.Windows.Forms.Button();
-            this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
             this.pnlDSK1.SuspendLayout();
             this.pnlDSK3.SuspendLayout();
             this.pnlDSK2.SuspendLayout();
@@ -65,7 +65,7 @@
             this.pnlDSK1.Controls.Add(this.lblDSK);
             this.pnlDSK1.Location = new System.Drawing.Point(2, 3);
             this.pnlDSK1.Name = "pnlDSK1";
-            this.pnlDSK1.Size = new System.Drawing.Size(882, 65);
+            this.pnlDSK1.Size = new System.Drawing.Size(1058, 65);
             this.pnlDSK1.TabIndex = 13;
             // 
             // lblDSK
@@ -74,9 +74,9 @@
             this.lblDSK.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDSK.Location = new System.Drawing.Point(593, 17);
             this.lblDSK.Name = "lblDSK";
-            this.lblDSK.Size = new System.Drawing.Size(161, 31);
+            this.lblDSK.Size = new System.Drawing.Size(147, 31);
             this.lblDSK.TabIndex = 2;
-            this.lblDSK.Text = "Detail Service";
+            this.lblDSK.Text = "Data Service";
             this.lblDSK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlDSK3
@@ -94,6 +94,19 @@
             this.pnlDSK3.Name = "pnlDSK3";
             this.pnlDSK3.Size = new System.Drawing.Size(230, 405);
             this.pnlDSK3.TabIndex = 12;
+            // 
+            // btnRiwayatPembayaran
+            // 
+            this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRiwayatPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatPembayaran.Location = new System.Drawing.Point(0, 276);
+            this.btnRiwayatPembayaran.Name = "btnRiwayatPembayaran";
+            this.btnRiwayatPembayaran.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayatPembayaran.TabIndex = 15;
+            this.btnRiwayatPembayaran.Text = "Riwayat Pembayaran";
+            this.btnRiwayatPembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
+            this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
             // btnDasboard
             // 
@@ -204,8 +217,17 @@
             this.pnlDSK2.Controls.Add(this.lvwService);
             this.pnlDSK2.Location = new System.Drawing.Point(278, 110);
             this.pnlDSK2.Name = "pnlDSK2";
-            this.pnlDSK2.Size = new System.Drawing.Size(569, 349);
+            this.pnlDSK2.Size = new System.Drawing.Size(735, 349);
             this.pnlDSK2.TabIndex = 14;
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(310, 133);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(82, 28);
+            this.btnHapus.TabIndex = 34;
+            this.btnHapus.Text = "hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
             // 
             // btnTambah
             // 
@@ -308,37 +330,15 @@
             this.lvwService.HideSelection = false;
             this.lvwService.Location = new System.Drawing.Point(3, 171);
             this.lvwService.Name = "lvwService";
-            this.lvwService.Size = new System.Drawing.Size(563, 175);
+            this.lvwService.Size = new System.Drawing.Size(729, 175);
             this.lvwService.TabIndex = 0;
             this.lvwService.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnHapus
-            // 
-            this.btnHapus.Location = new System.Drawing.Point(310, 133);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(82, 28);
-            this.btnHapus.TabIndex = 34;
-            this.btnHapus.Text = "hapus";
-            this.btnHapus.UseVisualStyleBackColor = true;
-            // 
-            // btnRiwayatPembayaran
-            // 
-            this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRiwayatPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRiwayatPembayaran.Location = new System.Drawing.Point(0, 276);
-            this.btnRiwayatPembayaran.Name = "btnRiwayatPembayaran";
-            this.btnRiwayatPembayaran.Size = new System.Drawing.Size(230, 43);
-            this.btnRiwayatPembayaran.TabIndex = 15;
-            this.btnRiwayatPembayaran.Text = "Riwayat Pembayaran";
-            this.btnRiwayatPembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
-            this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
             // Data_Service_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 471);
+            this.ClientSize = new System.Drawing.Size(1063, 471);
             this.Controls.Add(this.pnlDSK2);
             this.Controls.Add(this.pnlDSK1);
             this.Controls.Add(this.pnlDSK3);

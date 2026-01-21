@@ -43,13 +43,13 @@ namespace AplikasiService.View
             lvwRiwayat.GridLines = true;
             lvwRiwayat.Columns.Clear();
 
-            lvwRiwayat.Columns.Add("ID", 50);
-            lvwRiwayat.Columns.Add("Perangkat", 150);
-            lvwRiwayat.Columns.Add("Kerusakan", 120);
-            lvwRiwayat.Columns.Add("Total", 100);
-            lvwRiwayat.Columns.Add("Metode", 100);
-            lvwRiwayat.Columns.Add("Tanggal", 120);
-            lvwRiwayat.Columns.Add("Status", 80);
+            lvwRiwayat.Columns.Add("ID", 50, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("Perangkat", 150, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("Kerusakan", 120, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("Total", 100, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("Metode", 100, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("Tanggal", 120, HorizontalAlignment.Center);
+            lvwRiwayat.Columns.Add("Status", 80, HorizontalAlignment.Center);
         }
         private void LoadData()
         {
