@@ -47,14 +47,14 @@ namespace AplikasiService.View
             {
                 conn.Open();
                 string sql = @"
-            SELECT s.Id,
+                SELECT s.Id,
                    p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
                    k.NamaKerusakan,
                    k.Biaya
-            FROM Servis s
-            JOIN JenisKerusakan k ON s.KerusakanId = k.Id
-            JOIN Perangkat p ON k.PerangkatId = p.Id
-            WHERE s.Id NOT IN (SELECT ServisId FROM Pembayaran)";
+                FROM Servis s
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                JOIN Perangkat p ON k.PerangkatId = p.Id
+                WHERE s.Id NOT IN (SELECT ServisId FROM Pembayaran)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 SQLiteDataReader rd = cmd.ExecuteReader();
@@ -72,40 +72,6 @@ namespace AplikasiService.View
 
             if (cmbServis.Items.Count > 0)
                 cmbServis.SelectedIndex = 0;
-        }
-        private void LoadData()
-        {
-            lvwPembayaran.Items.Clear();
-
-            using (var conn = DbContext.GetConnection())
-            {
-                conn.Open();
-                string sql = @"
-                SELECT pb.Id,
-                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe,
-                       k.NamaKerusakan,
-                       k.Biaya,
-                       pb.HargaJasa,
-                       pb.Total
-                FROM Pembayaran pb
-                JOIN Servis s ON pb.ServisId = s.Id
-                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
-                JOIN Perangkat p ON k.PerangkatId = p.Id";
-
-                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                SQLiteDataReader rd = cmd.ExecuteReader();
-
-                while (rd.Read())
-                {
-                    ListViewItem item = new ListViewItem(rd["Id"].ToString());
-                    item.SubItems.Add(rd[1].ToString());
-                    item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                    item.SubItems.Add(rd["Biaya"].ToString());
-                    item.SubItems.Add(rd["HargaJasa"].ToString());
-                    item.SubItems.Add(rd["Total"].ToString());
-                    lvwPembayaran.Items.Add(item);
-                }
-            }
         }
         private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -169,9 +135,9 @@ namespace AplikasiService.View
                 conn.Open();
 
                 string sql = @"
-            INSERT INTO Pembayaran
-            (ServisId, TanggalBayar, PelangganId, HargaJasa, Total, Status)
-            VALUES (@sid, @tgl, @pid, @hj, @t, 'Menunggu')";
+                INSERT INTO Pembayaran
+                (ServisId, TanggalBayar, PelangganId, HargaJasa, Total, Status)
+                VALUES (@sid, @tgl, @pid, @hj, @t, 'Menunggu')";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@sid", servisId);
