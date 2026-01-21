@@ -48,10 +48,11 @@
             this.lblPK2 = new System.Windows.Forms.Label();
             this.btnDataPerangkat = new System.Windows.Forms.Button();
             this.pnlPK2 = new System.Windows.Forms.Panel();
-            this.pnlPK3 = new System.Windows.Forms.Panel();
-            this.lvwPembayaran = new System.Windows.Forms.ListView();
-            this.btnTambah = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnTambah = new System.Windows.Forms.Button();
+            this.lvwPembayaran = new System.Windows.Forms.ListView();
+            this.pnlPK3 = new System.Windows.Forms.Panel();
+            this.btnRiwayat = new System.Windows.Forms.Button();
             this.pnlPK1.SuspendLayout();
             this.pnlPK2.SuspendLayout();
             this.pnlPK3.SuspendLayout();
@@ -243,6 +244,7 @@
             // pnlPK2
             // 
             this.pnlPK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlPK2.Controls.Add(this.btnRiwayat);
             this.pnlPK2.Controls.Add(this.btnEdit);
             this.pnlPK2.Controls.Add(this.btnTambah);
             this.pnlPK2.Controls.Add(this.lvwPembayaran);
@@ -261,6 +263,33 @@
             this.pnlPK2.Size = new System.Drawing.Size(569, 323);
             this.pnlPK2.TabIndex = 22;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(333, 136);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 16;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.Location = new System.Drawing.Point(99, 136);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(75, 23);
+            this.btnTambah.TabIndex = 15;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            // 
+            // lvwPembayaran
+            // 
+            this.lvwPembayaran.HideSelection = false;
+            this.lvwPembayaran.Location = new System.Drawing.Point(0, 170);
+            this.lvwPembayaran.Name = "lvwPembayaran";
+            this.lvwPembayaran.Size = new System.Drawing.Size(568, 152);
+            this.lvwPembayaran.TabIndex = 14;
+            this.lvwPembayaran.UseCompatibleStateImageBehavior = false;
+            // 
             // pnlPK3
             // 
             this.pnlPK3.Controls.Add(this.btnPembayaran);
@@ -275,32 +304,14 @@
             this.pnlPK3.Size = new System.Drawing.Size(230, 405);
             this.pnlPK3.TabIndex = 20;
             // 
-            // lvwPembayaran
+            // btnRiwayat
             // 
-            this.lvwPembayaran.HideSelection = false;
-            this.lvwPembayaran.Location = new System.Drawing.Point(0, 170);
-            this.lvwPembayaran.Name = "lvwPembayaran";
-            this.lvwPembayaran.Size = new System.Drawing.Size(568, 152);
-            this.lvwPembayaran.TabIndex = 14;
-            this.lvwPembayaran.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnTambah
-            // 
-            this.btnTambah.Location = new System.Drawing.Point(99, 136);
-            this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(75, 23);
-            this.btnTambah.TabIndex = 15;
-            this.btnTambah.Text = "Tambah";
-            this.btnTambah.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(333, 136);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Location = new System.Drawing.Point(190, 117);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(128, 47);
+            this.btnRiwayat.TabIndex = 17;
+            this.btnRiwayat.Text = "Riwayat";
+            this.btnRiwayat.UseVisualStyleBackColor = true;
             // 
             // Pembayaran_Karyawan
             // 
@@ -349,5 +360,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.ListView lvwPembayaran;
+        private System.Windows.Forms.Button btnRiwayat;
     }
 }

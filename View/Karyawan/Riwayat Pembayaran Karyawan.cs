@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AplikasiService.View
+namespace AplikasiService.View.Karyawan
 {
-    public partial class Sparepart_Karyawan : Form
+    public partial class Riwayat_Pembayaran_Karyawan : Form
     {
-        public Sparepart_Karyawan()
+        public Riwayat_Pembayaran_Karyawan()
         {
             InitializeComponent();
         }

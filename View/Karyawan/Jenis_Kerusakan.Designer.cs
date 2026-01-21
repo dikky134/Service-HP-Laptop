@@ -52,6 +52,7 @@
             this.lblJK4 = new System.Windows.Forms.Label();
             this.lblJK3 = new System.Windows.Forms.Label();
             this.lblJK2 = new System.Windows.Forms.Label();
+            this.btnHapus = new System.Windows.Forms.Button();
             this.pnlJK1.SuspendLayout();
             this.pnlJK3.SuspendLayout();
             this.pnlJK2.SuspendLayout();
@@ -186,6 +187,7 @@
             // pnlJK2
             // 
             this.pnlJK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlJK2.Controls.Add(this.btnHapus);
             this.pnlJK2.Controls.Add(this.txtKerusakan);
             this.pnlJK2.Controls.Add(this.cmbPerangkat);
             this.pnlJK2.Controls.Add(this.lvwKerusakan);
@@ -307,6 +309,15 @@
             this.lblJK2.TabIndex = 0;
             this.lblJK2.Text = "Tambahkan Detail Kerusakan:";
             // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(147, 134);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(75, 23);
+            this.btnHapus.TabIndex = 22;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            // 
             // Jenis_Kerusakan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,5 +365,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.ComboBox cmbPerangkat;
         private System.Windows.Forms.TextBox txtKerusakan;
+        private System.Windows.Forms.Button btnHapus;
     }
 }

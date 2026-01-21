@@ -20,7 +20,77 @@ namespace AplikasiService.View
             InitializeComponent();
             lblNama.Text = "Pelanggan : " + GetNamaPelanggan();
             SetupListView();
+            LoadRiwayatPembayaran();
         }
+
+        private void LoadRiwayatPembayaran()
+        {
+            lvwRiwayatPembayaran.Items.Clear();
+
+            using (var conn = DbContext.GetConnection())
+            {
+                conn.Open();
+
+                string sql = @"
+            SELECT 
+                p.Id_Pembayaran,
+                p.Tanggal_Pembayaran,
+                p.Total_Bayar,
+                p.Metode_Pembayaran,
+                p.Status_Pembayaran
+            FROM Pembayaran p
+            WHERE p.UserId = @uid
+            ORDER BY p.Tanggal_Pembayaran DESC
+        ";
+
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@uid", Session.UserId);
+
+                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ListViewItem item = new ListViewItem(
+                                reader["Id_Pembayaran"].ToString()
+                            );
+
+                            item.SubItems.Add(
+                                Convert.ToDateTime(reader["Tanggal_Pembayaran"])
+                                .ToString("dd/MM/yyyy")
+                            );
+
+                            item.SubItems.Add(
+                                "Rp. " + reader["Total_Bayar"].ToString()
+                            );
+
+                            item.SubItems.Add(
+                                reader["Metode_Pembayaran"].ToString()
+                            );
+
+                            item.SubItems.Add(
+                                reader["Status_Pembayaran"].ToString()
+                            );
+
+                            lvwRiwayatPembayaran.Items.Add(item);
+
+                            if (item.SubItems[4].Text == "Lunas")
+                            {
+                                item.ForeColor = Color.Green;
+                            }
+                            else
+                            {
+                                item.ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
         private string GetNamaPelanggan()
         {
             using (var conn = DbContext.GetConnection())
