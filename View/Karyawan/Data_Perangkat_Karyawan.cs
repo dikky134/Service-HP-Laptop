@@ -115,6 +115,13 @@ namespace AplikasiService.View
             this.Close();
         }
 
+       
+        private void btnRiwayatPembayaran_Click_1(object sender, EventArgs e)
+        {
+            RiwayatPembayaranKaryawan riwayat = new RiwayatPembayaranKaryawan();
+            riwayat.Show();
+            this.Close();
+        }
         private void BtnlogoutDPK_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -136,5 +143,7 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
+
+       
     }
 }

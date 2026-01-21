@@ -52,7 +52,8 @@
             this.lblJK4 = new System.Windows.Forms.Label();
             this.lblJK3 = new System.Windows.Forms.Label();
             this.lblJK2 = new System.Windows.Forms.Label();
-            this.btnRiwayat = new System.Windows.Forms.Button();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
             this.pnlJK1.SuspendLayout();
             this.pnlJK3.SuspendLayout();
             this.pnlJK2.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // pnlJK3
             // 
-            this.pnlJK3.Controls.Add(this.btnRiwayat);
+            this.pnlJK3.Controls.Add(this.btnRiwayatPembayaran);
             this.pnlJK3.Controls.Add(this.btnDashboard);
             this.pnlJK3.Controls.Add(this.btnPembayaran);
             this.pnlJK3.Controls.Add(this.btnKerusakan);
@@ -141,7 +142,7 @@
             // BtnlogoutJK
             // 
             this.BtnlogoutJK.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnlogoutJK.Location = new System.Drawing.Point(36, 341);
+            this.BtnlogoutJK.Location = new System.Drawing.Point(28, 354);
             this.BtnlogoutJK.Name = "BtnlogoutJK";
             this.BtnlogoutJK.Size = new System.Drawing.Size(131, 28);
             this.BtnlogoutJK.TabIndex = 3;
@@ -188,6 +189,7 @@
             // pnlJK2
             // 
             this.pnlJK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlJK2.Controls.Add(this.btnHapus);
             this.pnlJK2.Controls.Add(this.txtKerusakan);
             this.pnlJK2.Controls.Add(this.cmbPerangkat);
             this.pnlJK2.Controls.Add(this.lvwKerusakan);
@@ -309,17 +311,27 @@
             this.lblJK2.TabIndex = 0;
             this.lblJK2.Text = "Tambahkan Detail Kerusakan:";
             // 
-            // btnRiwayat
+            // btnHapus
             // 
-            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRiwayat.Location = new System.Drawing.Point(0, 292);
-            this.btnRiwayat.Name = "btnRiwayat";
-            this.btnRiwayat.Size = new System.Drawing.Size(230, 43);
-            this.btnRiwayat.TabIndex = 17;
-            this.btnRiwayat.Text = "Riwayat Pembayaran";
-            this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayat.UseVisualStyleBackColor = true;
-            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
+            this.btnHapus.Location = new System.Drawing.Point(160, 134);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(75, 23);
+            this.btnHapus.TabIndex = 22;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            // 
+            // btnRiwayatPembayaran
+            // 
+            this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRiwayatPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatPembayaran.Location = new System.Drawing.Point(0, 292);
+            this.btnRiwayatPembayaran.Name = "btnRiwayatPembayaran";
+            this.btnRiwayatPembayaran.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayatPembayaran.TabIndex = 11;
+            this.btnRiwayatPembayaran.Text = "Riwayat Pembayaran";
+            this.btnRiwayatPembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
+            this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
             // Jenis_Kerusakan
             // 
@@ -368,6 +380,7 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.ComboBox cmbPerangkat;
         private System.Windows.Forms.TextBox txtKerusakan;
-        private System.Windows.Forms.Button btnRiwayat;
+        private System.Windows.Forms.Button btnHapus;
+        private System.Windows.Forms.Button btnRiwayatPembayaran;
     }
 }

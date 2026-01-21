@@ -33,7 +33,7 @@
             this.txtHargaService = new System.Windows.Forms.TextBox();
             this.lblPK8 = new System.Windows.Forms.Label();
             this.TxtPK1 = new System.Windows.Forms.TextBox();
-            this.BtnlogoutPK = new System.Windows.Forms.Button();
+            this.Btnlogout = new System.Windows.Forms.Button();
             this.btnDataService = new System.Windows.Forms.Button();
             this.lblPK7 = new System.Windows.Forms.Label();
             this.lblPK6 = new System.Windows.Forms.Label();
@@ -58,7 +58,8 @@
             this.btnSimpan = new System.Windows.Forms.Button();
             this.lvwPembayaran = new System.Windows.Forms.ListView();
             this.pnlPK3 = new System.Windows.Forms.Panel();
-            this.btnRiwayat = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
             this.pnlPK1.SuspendLayout();
             this.pnlPK2.SuspendLayout();
             this.pnlPK3.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.btnPembayaran.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPembayaran.Location = new System.Drawing.Point(-1, 220);
+            this.btnPembayaran.Location = new System.Drawing.Point(-1, 271);
             this.btnPembayaran.Name = "btnPembayaran";
             this.btnPembayaran.Size = new System.Drawing.Size(230, 43);
             this.btnPembayaran.TabIndex = 7;
@@ -109,21 +110,21 @@
             this.TxtPK1.Size = new System.Drawing.Size(227, 22);
             this.TxtPK1.TabIndex = 5;
             // 
-            // BtnlogoutPK
+            // Btnlogout
             // 
-            this.BtnlogoutPK.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnlogoutPK.Location = new System.Drawing.Point(33, 347);
-            this.BtnlogoutPK.Name = "BtnlogoutPK";
-            this.BtnlogoutPK.Size = new System.Drawing.Size(131, 28);
-            this.BtnlogoutPK.TabIndex = 3;
-            this.BtnlogoutPK.Text = "Logout";
-            this.BtnlogoutPK.UseVisualStyleBackColor = false;
-            this.BtnlogoutPK.Click += new System.EventHandler(this.BtnlogoutPK_Click);
+            this.Btnlogout.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btnlogout.Location = new System.Drawing.Point(33, 368);
+            this.Btnlogout.Name = "Btnlogout";
+            this.Btnlogout.Size = new System.Drawing.Size(131, 28);
+            this.Btnlogout.TabIndex = 3;
+            this.Btnlogout.Text = "Logout";
+            this.Btnlogout.UseVisualStyleBackColor = false;
+            this.Btnlogout.Click += new System.EventHandler(this.BtnlogoutPK_Click);
             // 
             // btnDataService
             // 
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(-1, 178);
+            this.btnDataService.Location = new System.Drawing.Point(-1, 229);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -153,7 +154,7 @@
             // btnKerusakan
             // 
             this.btnKerusakan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKerusakan.Location = new System.Drawing.Point(-1, 136);
+            this.btnKerusakan.Location = new System.Drawing.Point(-1, 187);
             this.btnKerusakan.Name = "btnKerusakan";
             this.btnKerusakan.Size = new System.Drawing.Size(230, 43);
             this.btnKerusakan.TabIndex = 6;
@@ -173,14 +174,15 @@
             // 
             // btnDataPelanggan
             // 
+            this.btnDataPelanggan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDataPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPelanggan.Location = new System.Drawing.Point(-1, 53);
+            this.btnDataPelanggan.Location = new System.Drawing.Point(-1, 103);
             this.btnDataPelanggan.Name = "btnDataPelanggan";
             this.btnDataPelanggan.Size = new System.Drawing.Size(230, 43);
             this.btnDataPelanggan.TabIndex = 0;
             this.btnDataPelanggan.Text = "Data Pelanggan";
             this.btnDataPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataPelanggan.UseVisualStyleBackColor = true;
+            this.btnDataPelanggan.UseVisualStyleBackColor = false;
             this.btnDataPelanggan.Click += new System.EventHandler(this.btnDataPelanggan_Click);
             // 
             // lblPK4
@@ -233,7 +235,7 @@
             // btnDataPerangkat
             // 
             this.btnDataPerangkat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataPerangkat.Location = new System.Drawing.Point(-1, 94);
+            this.btnDataPerangkat.Location = new System.Drawing.Point(-1, 145);
             this.btnDataPerangkat.Name = "btnDataPerangkat";
             this.btnDataPerangkat.Size = new System.Drawing.Size(230, 43);
             this.btnDataPerangkat.TabIndex = 1;
@@ -359,11 +361,12 @@
             // 
             // pnlPK3
             // 
-            this.pnlPK3.Controls.Add(this.btnRiwayat);
+            this.pnlPK3.Controls.Add(this.btnRiwayatPembayaran);
+            this.pnlPK3.Controls.Add(this.btnDashboard);
             this.pnlPK3.Controls.Add(this.btnPembayaran);
             this.pnlPK3.Controls.Add(this.btnKerusakan);
             this.pnlPK3.Controls.Add(this.TxtPK1);
-            this.pnlPK3.Controls.Add(this.BtnlogoutPK);
+            this.pnlPK3.Controls.Add(this.Btnlogout);
             this.pnlPK3.Controls.Add(this.btnDataService);
             this.pnlPK3.Controls.Add(this.btnDataPerangkat);
             this.pnlPK3.Controls.Add(this.btnDataPelanggan);
@@ -372,16 +375,30 @@
             this.pnlPK3.Size = new System.Drawing.Size(230, 405);
             this.pnlPK3.TabIndex = 20;
             // 
-            // btnRiwayat
+            // btnDashboard
             // 
-            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRiwayat.Location = new System.Drawing.Point(0, 262);
-            this.btnRiwayat.Name = "btnRiwayat";
-            this.btnRiwayat.Size = new System.Drawing.Size(230, 43);
-            this.btnRiwayat.TabIndex = 23;
-            this.btnRiwayat.Text = "Riwayat Pembayaran";
-            this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnDashboard.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 61);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(230, 43);
+            this.btnDashboard.TabIndex = 8;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            // 
+            // btnRiwayatPembayaran
+            // 
+            this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRiwayatPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatPembayaran.Location = new System.Drawing.Point(-3, 313);
+            this.btnRiwayatPembayaran.Name = "btnRiwayatPembayaran";
+            this.btnRiwayatPembayaran.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayatPembayaran.TabIndex = 23;
+            this.btnRiwayatPembayaran.Text = "Riwayat Pembayaran";
+            this.btnRiwayatPembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
+            this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
             // Pembayaran_Karyawan
             // 
@@ -411,7 +428,7 @@
         private System.Windows.Forms.TextBox txtHargaService;
         private System.Windows.Forms.Label lblPK8;
         private System.Windows.Forms.TextBox TxtPK1;
-        private System.Windows.Forms.Button BtnlogoutPK;
+        private System.Windows.Forms.Button Btnlogout;
         private System.Windows.Forms.Button btnDataService;
         private System.Windows.Forms.Label lblPK7;
         private System.Windows.Forms.Label lblPK6;
@@ -436,6 +453,7 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnRiwayat;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnRiwayatPembayaran;
     }
 }

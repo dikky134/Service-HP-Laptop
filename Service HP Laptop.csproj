@@ -151,6 +151,18 @@
     <Compile Include="View\Pelanggan\Riwayat Pembayaran.Designer.cs">
       <DependentUpon>Riwayat Pembayaran.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Sparepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sparepart.Designer.cs">
+      <DependentUpon>Sparepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Karyawan\Riwayat Pembayaran Karyawan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Karyawan\Riwayat Pembayaran Karyawan.Designer.cs">
+      <DependentUpon>Riwayat Pembayaran Karyawan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -199,6 +211,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Pelanggan\Riwayat Pembayaran.resx">
       <DependentUpon>Riwayat Pembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sparepart.resx">
+      <DependentUpon>Sparepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Karyawan\Riwayat Pembayaran Karyawan.resx">
+      <DependentUpon>Riwayat Pembayaran Karyawan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -41,7 +41,7 @@
             this.btnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDP4 = new System.Windows.Forms.Panel();
             this.lvwDataPelanggan = new System.Windows.Forms.ListView();
-            this.btnRiwayat = new System.Windows.Forms.Button();
+            this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
             this.pnlDP1.SuspendLayout();
             this.pnlDP2.SuspendLayout();
             this.pnlDP4.SuspendLayout();
@@ -69,7 +69,7 @@
             // 
             // pnlDP2
             // 
-            this.pnlDP2.Controls.Add(this.btnRiwayat);
+            this.pnlDP2.Controls.Add(this.btnRiwayatPembayaran);
             this.pnlDP2.Controls.Add(this.btnDasboard);
             this.pnlDP2.Controls.Add(this.btnPembayaran);
             this.pnlDP2.Controls.Add(this.btnKerusakan);
@@ -98,7 +98,7 @@
             // btnPembayaran
             // 
             this.btnPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPembayaran.Location = new System.Drawing.Point(0, 227);
+            this.btnPembayaran.Location = new System.Drawing.Point(0, 224);
             this.btnPembayaran.Name = "btnPembayaran";
             this.btnPembayaran.Size = new System.Drawing.Size(230, 43);
             this.btnPembayaran.TabIndex = 7;
@@ -140,7 +140,7 @@
             // btnDataService
             // 
             this.btnDataService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataService.Location = new System.Drawing.Point(0, 184);
+            this.btnDataService.Location = new System.Drawing.Point(0, 183);
             this.btnDataService.Name = "btnDataService";
             this.btnDataService.Size = new System.Drawing.Size(230, 43);
             this.btnDataService.TabIndex = 2;
@@ -191,17 +191,18 @@
             this.lvwDataPelanggan.TabIndex = 0;
             this.lvwDataPelanggan.UseCompatibleStateImageBehavior = false;
             // 
-            // btnRiwayat
+            // btnRiwayatPembayaran
             // 
-            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRiwayat.Location = new System.Drawing.Point(0, 270);
-            this.btnRiwayat.Name = "btnRiwayat";
-            this.btnRiwayat.Size = new System.Drawing.Size(230, 43);
-            this.btnRiwayat.TabIndex = 9;
-            this.btnRiwayat.Text = "Riwayat Pembayaran";
-            this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRiwayat.UseVisualStyleBackColor = true;
-            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
+            this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnRiwayatPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatPembayaran.Location = new System.Drawing.Point(0, 266);
+            this.btnRiwayatPembayaran.Name = "btnRiwayatPembayaran";
+            this.btnRiwayatPembayaran.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayatPembayaran.TabIndex = 11;
+            this.btnRiwayatPembayaran.Text = "Riwayat Pembayaran";
+            this.btnRiwayatPembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
+            this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
             // Data_Pelanggan_Karyawan
             // 
@@ -238,6 +239,6 @@
         private System.Windows.Forms.Panel pnlDP4;
         private System.Windows.Forms.ListView lvwDataPelanggan;
         private System.Windows.Forms.Button btnDasboard;
-        private System.Windows.Forms.Button btnRiwayat;
+        private System.Windows.Forms.Button btnRiwayatPembayaran;
     }
 }

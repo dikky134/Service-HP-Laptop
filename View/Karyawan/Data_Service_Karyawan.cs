@@ -194,10 +194,10 @@ namespace AplikasiService.View
             pembayaran.Show();
             this.Close();
         }
-        private void btnRiwayat_Click(object sender, EventArgs e)
+        private void btnRiwayatPembayaran_Click_1(object sender, EventArgs e)
         {
-            RIwayat_pb_Karyawan Riwayat = new RIwayat_pb_Karyawan();
-            Riwayat.Show();
+            RiwayatPembayaranKaryawan riwayat = new RiwayatPembayaranKaryawan();
+            riwayat.Show();
             this.Close();
         }
         private void BtnlogoutDSK_Click(object sender, EventArgs e)
@@ -221,5 +221,7 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
+
+       
     }
 }
