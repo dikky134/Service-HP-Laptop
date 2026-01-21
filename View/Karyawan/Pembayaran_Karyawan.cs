@@ -139,42 +139,58 @@ namespace AplikasiService.View
         }
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            if (cmbServis.SelectedItem == null) return;
+            if (cmbServis.SelectedItem == null)
+            {
+                MessageBox.Show("Pilih servis terlebih dahulu");
+                return;
+            }
 
             var servis = (ComboItem)cmbServis.SelectedItem;
-            decimal hargaJasa = Convert.ToDecimal(txtHargaJasa.Text);
-            decimal total = Convert.ToDecimal(txtTotal.Text);
+
+            decimal hargaJasa = 0;
+            decimal.TryParse(txtHargaJasa.Text, out hargaJasa);
+
+            decimal total = 0;
+            decimal.TryParse(txtTotal.Text, out total);
+
+            string tanggalBayar = dtpTanggal.Value.ToString("yyyy-MM-dd");
+
+            int servisId = servis.Value;
+            int pelangganId = GetPelangganIdByServis(servisId);
+
+            if (pelangganId == 0)
+            {
+                MessageBox.Show("Pelanggan tidak ditemukan");
+                return;
+            }
 
             using (var conn = DbContext.GetConnection())
             {
                 conn.Open();
 
-                string qPelanggan = @"
-                SELECT p.PelangganId
-                FROM Servis s
-                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
-                JOIN Perangkat p ON k.PerangkatId = p.Id
-                WHERE s.Id = @sid";
-
-                SQLiteCommand c1 = new SQLiteCommand(qPelanggan, conn);
-                c1.Parameters.AddWithValue("@sid", servis.Value);
-                int servisId = ((ComboItem)cmbServis.SelectedItem).Value;
-                int pelangganId = GetPelangganIdByServis(servisId);
-
                 string sql = @"
-                INSERT INTO Pembayaran
-                (ServisId, PelangganId, Total, Status)
-                VALUES (@sid, @pid, @t, 'Menunggu')";
+            INSERT INTO Pembayaran
+            (ServisId, TanggalBayar, PelangganId, HargaJasa, Total, Status)
+            VALUES (@sid, @tgl, @pid, @hj, @t, 'Menunggu')";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@sid", servisId);
+                cmd.Parameters.AddWithValue("@tgl", tanggalBayar);
                 cmd.Parameters.AddWithValue("@pid", pelangganId);
+                cmd.Parameters.AddWithValue("@hj", hargaJasa);
                 cmd.Parameters.AddWithValue("@t", total);
-                cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Pembayaran berhasil ditambahkan");
-                LoadData();
+                cmd.ExecuteNonQuery();
             }
+
+            MessageBox.Show("Pembayaran berhasil ditambahkan");
+
+            LoadPembayaran();
+            LoadServis();
+
+            txtHargaJasa.Clear();
+            txtHargaService.Clear();
+            txtTotal.Clear();
         }
         private int GetPelangganIdByServis(int servisId)
         {
@@ -208,7 +224,7 @@ namespace AplikasiService.View
                     SELECT p.Id,
                            pr.Jenis || ' ' || pr.Merk || ' ' || pr.Tipe AS Perangkat,
                            k.NamaKerusakan,
-                           p.HargaService,
+                           k.biaya,
                            p.HargaJasa,
                            p.Total
                     FROM Pembayaran p
@@ -225,7 +241,7 @@ namespace AplikasiService.View
                     ListViewItem item = new ListViewItem(rd["Id"].ToString());
                     item.SubItems.Add(rd["Perangkat"].ToString());
                     item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                    item.SubItems.Add(rd["HargaService"].ToString());
+                    item.SubItems.Add(rd["Biaya"].ToString());
                     item.SubItems.Add(rd["HargaJasa"].ToString());
                     item.SubItems.Add(rd["Total"].ToString());
 
