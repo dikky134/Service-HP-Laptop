@@ -13,41 +13,16 @@ using System.Windows.Forms;
 
 namespace AplikasiService.View
 {
-    public partial class RiwayatPembayaranKaryawan : Form
+    public partial class Riwayat_Pembayaran_Karyawan : Form
     {
-        public RiwayatPembayaranKaryawan()
+        public Riwayat_Pembayaran_Karyawan()
         {
             InitializeComponent();
             // 1. Setup dulu kolomnya, baru load datanya
             SetupListView();
             LoadData();
-            txtSK1.Text = "Pelanggan : " + GetNamaPelanggan();  
-
-            // Set nama pelanggan di label
 
         }
-        private string GetNamaPelanggan()
-        {
-            try
-            {
-                using (var conn = DbContext.GetConnection())
-                {
-                    conn.Open();
-                    string sql = "SELECT Nama FROM Pelanggan WHERE UserId = @uid";
-                    SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@uid", Session.UserId);
-
-                    object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : "-";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal mengambil nama pelanggan: " + ex.Message);
-                return "-";
-            }
-        }
-
         private void SetupListView()
         {
             lvwRiwayat.View = System.Windows.Forms.View.Details;
@@ -204,17 +179,15 @@ namespace AplikasiService.View
             this.Close();
 
         }
-
         private void btnPembayaran_Click(object sender, EventArgs e)
         {
             Pembayaran_Karyawan pembayaran = new Pembayaran_Karyawan();
             pembayaran.Show();
             this.Close();
         }
-
         private void btnRiwayatPembayaran_Click(object sender, EventArgs e)
         {
-            RiwayatPembayaranKaryawan riwayat = new RiwayatPembayaranKaryawan();
+            Riwayat_Pembayaran_Karyawan riwayat = new Riwayat_Pembayaran_Karyawan();
             riwayat.Show();
             this.Close();
         }

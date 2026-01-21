@@ -1,6 +1,6 @@
 ﻿namespace AplikasiService.View
 {
-    partial class RiwayatPembayaranKaryawan
+    partial class Riwayat_Pembayaran_Karyawan
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,6 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnPembayaran = new System.Windows.Forms.Button();
             this.btnkerusakan = new System.Windows.Forms.Button();
-            this.txtSK1 = new System.Windows.Forms.TextBox();
             this.BtnlogoutSK = new System.Windows.Forms.Button();
             this.btnService = new System.Windows.Forms.Button();
             this.btnPerangkat = new System.Windows.Forms.Button();
@@ -91,7 +90,6 @@
             this.pnlSK3.Controls.Add(this.btnDashboard);
             this.pnlSK3.Controls.Add(this.btnPembayaran);
             this.pnlSK3.Controls.Add(this.btnkerusakan);
-            this.pnlSK3.Controls.Add(this.txtSK1);
             this.pnlSK3.Controls.Add(this.BtnlogoutSK);
             this.pnlSK3.Controls.Add(this.btnService);
             this.pnlSK3.Controls.Add(this.btnPerangkat);
@@ -151,13 +149,6 @@
             this.btnkerusakan.UseVisualStyleBackColor = true;
             this.btnkerusakan.Click += new System.EventHandler(this.btnkerusakan_Click);
             // 
-            // txtSK1
-            // 
-            this.txtSK1.Location = new System.Drawing.Point(1, 16);
-            this.txtSK1.Name = "txtSK1";
-            this.txtSK1.Size = new System.Drawing.Size(227, 22);
-            this.txtSK1.TabIndex = 5;
-            // 
             // BtnlogoutSK
             // 
             this.BtnlogoutSK.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -196,7 +187,7 @@
             // btnPelanggan
             // 
             this.btnPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPelanggan.Location = new System.Drawing.Point(-3, 88);
+            this.btnPelanggan.Location = new System.Drawing.Point(0, 88);
             this.btnPelanggan.Name = "btnPelanggan";
             this.btnPelanggan.Size = new System.Drawing.Size(230, 43);
             this.btnPelanggan.TabIndex = 0;
@@ -205,7 +196,7 @@
             this.btnPelanggan.UseVisualStyleBackColor = true;
             this.btnPelanggan.Click += new System.EventHandler(this.btnPelanggan_Click);
             // 
-            // RiwayatPembayaranKaryawan
+            // Riwayat_Pembayaran_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,14 +204,13 @@
             this.Controls.Add(this.pnlSK2);
             this.Controls.Add(this.pnlSK1);
             this.Controls.Add(this.pnlSK3);
-            this.Name = "RiwayatPembayaranKaryawan";
+            this.Name = "Riwayat_Pembayaran_Karyawan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Riwayat Pembayaran";
             this.pnlSK2.ResumeLayout(false);
             this.pnlSK1.ResumeLayout(false);
             this.pnlSK1.PerformLayout();
             this.pnlSK3.ResumeLayout(false);
-            this.pnlSK3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -233,7 +223,6 @@
         private System.Windows.Forms.Panel pnlSK3;
         private System.Windows.Forms.Button btnPembayaran;
         private System.Windows.Forms.Button btnkerusakan;
-        private System.Windows.Forms.TextBox txtSK1;
         private System.Windows.Forms.Button BtnlogoutSK;
         private System.Windows.Forms.Button btnService;
         private System.Windows.Forms.Button btnPerangkat;

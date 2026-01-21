@@ -167,7 +167,7 @@ namespace AplikasiService.View
         }
         private void btnRiwayatPembayaran_Click_1(object sender, EventArgs e)
         {
-            RiwayatPembayaranKaryawan riwayat = new RiwayatPembayaranKaryawan();
+            Riwayat_Pembayaran_Karyawan riwayat = new Riwayat_Pembayaran_Karyawan();
             riwayat.Show();
             this.Close();
         }
