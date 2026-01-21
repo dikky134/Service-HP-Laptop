@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnlDDP.SuspendLayout();
             this.pnlDPP.SuspendLayout();
             this.SuspendLayout();
@@ -58,92 +59,99 @@
             // lblNamaDP
             // 
             this.lblNamaDP.AutoSize = true;
-            this.lblNamaDP.Location = new System.Drawing.Point(38, 147);
+            this.lblNamaDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNamaDP.Location = new System.Drawing.Point(42, 141);
             this.lblNamaDP.Name = "lblNamaDP";
-            this.lblNamaDP.Size = new System.Drawing.Size(44, 16);
+            this.lblNamaDP.Size = new System.Drawing.Size(53, 20);
             this.lblNamaDP.TabIndex = 0;
             this.lblNamaDP.Text = "Nama";
             // 
             // lblNohpDP
             // 
             this.lblNohpDP.AutoSize = true;
-            this.lblNohpDP.Location = new System.Drawing.Point(38, 186);
+            this.lblNohpDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNohpDP.Location = new System.Drawing.Point(42, 180);
             this.lblNohpDP.Name = "lblNohpDP";
-            this.lblNohpDP.Size = new System.Drawing.Size(47, 16);
+            this.lblNohpDP.Size = new System.Drawing.Size(59, 20);
             this.lblNohpDP.TabIndex = 1;
             this.lblNohpDP.Text = "No HP";
             // 
             // lblAlmtDP
             // 
             this.lblAlmtDP.AutoSize = true;
-            this.lblAlmtDP.Location = new System.Drawing.Point(38, 230);
+            this.lblAlmtDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlmtDP.Location = new System.Drawing.Point(42, 224);
             this.lblAlmtDP.Name = "lblAlmtDP";
-            this.lblAlmtDP.Size = new System.Drawing.Size(49, 16);
+            this.lblAlmtDP.Size = new System.Drawing.Size(61, 20);
             this.lblAlmtDP.TabIndex = 2;
             this.lblAlmtDP.Text = "Alamat";
             // 
             // lbldaftar
             // 
             this.lbldaftar.AutoSize = true;
-            this.lbldaftar.Location = new System.Drawing.Point(625, 28);
+            this.lbldaftar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldaftar.Location = new System.Drawing.Point(562, 28);
             this.lbldaftar.Name = "lbldaftar";
-            this.lbldaftar.Size = new System.Drawing.Size(43, 16);
+            this.lbldaftar.Size = new System.Drawing.Size(62, 20);
             this.lbldaftar.TabIndex = 3;
             this.lbldaftar.Text = "Daftar";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 147);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(216, 141);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(10, 16);
+            this.label5.Size = new System.Drawing.Size(14, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = ":";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(184, 186);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(216, 180);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(10, 16);
+            this.label6.Size = new System.Drawing.Size(14, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = ":";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(184, 230);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(216, 224);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(10, 16);
+            this.label7.Size = new System.Drawing.Size(14, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = ":";
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(220, 141);
+            this.txtNama.Location = new System.Drawing.Point(267, 141);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(214, 22);
             this.txtNama.TabIndex = 7;
             // 
             // txtNoHp
             // 
-            this.txtNoHp.Location = new System.Drawing.Point(220, 180);
+            this.txtNoHp.Location = new System.Drawing.Point(267, 180);
             this.txtNoHp.Name = "txtNoHp";
             this.txtNoHp.Size = new System.Drawing.Size(214, 22);
             this.txtNoHp.TabIndex = 8;
             // 
             // txtAlamat
             // 
-            this.txtAlamat.Location = new System.Drawing.Point(220, 224);
+            this.txtAlamat.Location = new System.Drawing.Point(267, 224);
             this.txtAlamat.Name = "txtAlamat";
             this.txtAlamat.Size = new System.Drawing.Size(214, 22);
             this.txtAlamat.TabIndex = 9;
             // 
             // btnDaftar
             // 
-            this.btnDaftar.Location = new System.Drawing.Point(155, 274);
+            this.btnDaftar.Location = new System.Drawing.Point(288, 274);
             this.btnDaftar.Name = "btnDaftar";
-            this.btnDaftar.Size = new System.Drawing.Size(69, 25);
+            this.btnDaftar.Size = new System.Drawing.Size(87, 32);
             this.btnDaftar.TabIndex = 10;
             this.btnDaftar.Text = "Daftar";
             this.btnDaftar.UseVisualStyleBackColor = true;
@@ -151,9 +159,9 @@
             // 
             // btnMasuk
             // 
-            this.btnMasuk.Location = new System.Drawing.Point(155, 323);
+            this.btnMasuk.Location = new System.Drawing.Point(283, 328);
             this.btnMasuk.Name = "btnMasuk";
-            this.btnMasuk.Size = new System.Drawing.Size(69, 25);
+            this.btnMasuk.Size = new System.Drawing.Size(92, 32);
             this.btnMasuk.TabIndex = 11;
             this.btnMasuk.Text = "Masuk";
             this.btnMasuk.UseVisualStyleBackColor = true;
@@ -171,6 +179,7 @@
             // pnlDPP
             // 
             this.pnlDPP.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlDPP.Controls.Add(this.label10);
             this.pnlDPP.Controls.Add(this.txtKonfirmasi);
             this.pnlDPP.Controls.Add(this.label8);
             this.pnlDPP.Controls.Add(this.label9);
@@ -198,7 +207,7 @@
             // 
             // txtKonfirmasi
             // 
-            this.txtKonfirmasi.Location = new System.Drawing.Point(220, 105);
+            this.txtKonfirmasi.Location = new System.Drawing.Point(267, 105);
             this.txtKonfirmasi.Name = "txtKonfirmasi";
             this.txtKonfirmasi.Size = new System.Drawing.Size(214, 22);
             this.txtKonfirmasi.TabIndex = 20;
@@ -206,31 +215,33 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(184, 111);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(216, 105);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(10, 16);
+            this.label8.Size = new System.Drawing.Size(14, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = ":";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 111);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(42, 105);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 16);
+            this.label9.Size = new System.Drawing.Size(168, 20);
             this.label9.TabIndex = 18;
             this.label9.Text = "Konfirmasi Password";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(220, 67);
+            this.txtPassword.Location = new System.Drawing.Point(267, 67);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(214, 22);
             this.txtPassword.TabIndex = 17;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(220, 28);
+            this.txtUsername.Location = new System.Drawing.Point(267, 28);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(214, 22);
             this.txtUsername.TabIndex = 16;
@@ -238,38 +249,52 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 73);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(216, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(10, 16);
+            this.label1.Size = new System.Drawing.Size(14, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = ":";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 34);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(216, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 16);
+            this.label2.Size = new System.Drawing.Size(14, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = ":";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 73);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(42, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 13;
             this.label3.Text = "Password";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 34);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(42, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Username";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(241, 309);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(174, 18);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Sudah mempunyai akun?";
             // 
             // SignUp
             // 
@@ -314,5 +339,6 @@
         private System.Windows.Forms.TextBox txtKonfirmasi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

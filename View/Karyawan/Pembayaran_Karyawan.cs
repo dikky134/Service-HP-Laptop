@@ -197,7 +197,9 @@ namespace AplikasiService.View
                     JOIN Servis s ON p.ServisId = s.Id
                     JOIN JenisKerusakan k ON s.KerusakanId = k.Id
                     JOIN Perangkat pr ON k.PerangkatId = pr.Id
+                    WHERE p.Status = 'Menunggu'
                     ORDER BY p.Id DESC";
+
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 SQLiteDataReader rd = cmd.ExecuteReader();
@@ -242,7 +244,12 @@ namespace AplikasiService.View
             pembayaran.Show();
             this.Close();
         }
-
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            RIwayat_pb_Karyawan Riwayat = new RIwayat_pb_Karyawan();
+            Riwayat.Show();
+            this.Close();
+        }
         private void BtnlogoutPK_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(

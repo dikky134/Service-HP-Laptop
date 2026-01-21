@@ -52,6 +52,7 @@
             this.lblJK4 = new System.Windows.Forms.Label();
             this.lblJK3 = new System.Windows.Forms.Label();
             this.lblJK2 = new System.Windows.Forms.Label();
+            this.btnRiwayat = new System.Windows.Forms.Button();
             this.pnlJK1.SuspendLayout();
             this.pnlJK3.SuspendLayout();
             this.pnlJK2.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // pnlJK3
             // 
+            this.pnlJK3.Controls.Add(this.btnRiwayat);
             this.pnlJK3.Controls.Add(this.btnDashboard);
             this.pnlJK3.Controls.Add(this.btnPembayaran);
             this.pnlJK3.Controls.Add(this.btnKerusakan);
@@ -139,7 +141,7 @@
             // BtnlogoutJK
             // 
             this.BtnlogoutJK.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnlogoutJK.Location = new System.Drawing.Point(28, 337);
+            this.BtnlogoutJK.Location = new System.Drawing.Point(36, 341);
             this.BtnlogoutJK.Name = "BtnlogoutJK";
             this.BtnlogoutJK.Size = new System.Drawing.Size(131, 28);
             this.BtnlogoutJK.TabIndex = 3;
@@ -307,6 +309,18 @@
             this.lblJK2.TabIndex = 0;
             this.lblJK2.Text = "Tambahkan Detail Kerusakan:";
             // 
+            // btnRiwayat
+            // 
+            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayat.Location = new System.Drawing.Point(0, 292);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayat.TabIndex = 17;
+            this.btnRiwayat.Text = "Riwayat Pembayaran";
+            this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
+            // 
             // Jenis_Kerusakan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,5 +368,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.ComboBox cmbPerangkat;
         private System.Windows.Forms.TextBox txtKerusakan;
+        private System.Windows.Forms.Button btnRiwayat;
     }
 }

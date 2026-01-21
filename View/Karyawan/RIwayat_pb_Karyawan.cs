@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AplikasiService.View
 {
-    public partial class Sparepart : Form
+    public partial class RIwayat_pb_Karyawan : Form
     {
-        public Sparepart()
+        public RIwayat_pb_Karyawan()
         {
             InitializeComponent();
         }

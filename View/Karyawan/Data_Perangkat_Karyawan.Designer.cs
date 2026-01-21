@@ -41,6 +41,7 @@
             this.btnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDPK3 = new System.Windows.Forms.Panel();
             this.lvwPerangkat = new System.Windows.Forms.ListView();
+            this.btnRiwayat = new System.Windows.Forms.Button();
             this.pnlDPK1.SuspendLayout();
             this.pnlDPK2.SuspendLayout();
             this.pnlDPK3.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // pnlDPK2
             // 
+            this.pnlDPK2.Controls.Add(this.btnRiwayat);
             this.pnlDPK2.Controls.Add(this.btnDasboard);
             this.pnlDPK2.Controls.Add(this.btnPembayaran);
             this.pnlDPK2.Controls.Add(this.btnKerusakan);
@@ -190,6 +192,17 @@
             this.lvwPerangkat.TabIndex = 0;
             this.lvwPerangkat.UseCompatibleStateImageBehavior = false;
             // 
+            // btnRiwayat
+            // 
+            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayat.Location = new System.Drawing.Point(0, 273);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayat.TabIndex = 13;
+            this.btnRiwayat.Text = "Riwayat Pembayaran";
+            this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayat.UseVisualStyleBackColor = true;
+            // 
             // Data_Perangkat_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,5 +238,6 @@
         private System.Windows.Forms.Panel pnlDPK3;
         private System.Windows.Forms.ListView lvwPerangkat;
         private System.Windows.Forms.Button btnDasboard;
+        private System.Windows.Forms.Button btnRiwayat;
     }
 }

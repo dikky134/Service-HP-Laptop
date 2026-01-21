@@ -80,14 +80,16 @@ namespace AplikasiService.View
                 conn.Open();
                 string sql = @"
                     SELECT s.Id,
-                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe || 
-                           ' - ' || k.NamaKerusakan AS Info,
-                           s.Status,
-                           s.TanggalServis,
-                           s.Keterangan
+                        p.Jenis || ' ' || p.Merk || ' ' || p.Tipe || 
+                        ' - ' || k.NamaKerusakan AS Info,
+                        s.Status,
+                        s.TanggalServis,
+                        s.Keterangan
                     FROM Servis s
                     JOIN JenisKerusakan k ON s.KerusakanId = k.Id
                     JOIN Perangkat p ON k.PerangkatId = p.Id
+                    WHERE s.Id NOT IN (
+                    SELECT ServisId FROM Pembayaran WHERE Status = 'Lunas')
                     ORDER BY s.Id DESC";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
@@ -192,7 +194,12 @@ namespace AplikasiService.View
             pembayaran.Show();
             this.Close();
         }
-
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            RIwayat_pb_Karyawan Riwayat = new RIwayat_pb_Karyawan();
+            Riwayat.Show();
+            this.Close();
+        }
         private void BtnlogoutDSK_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(

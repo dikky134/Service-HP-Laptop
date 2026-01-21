@@ -41,6 +41,7 @@
             this.lbldsh = new System.Windows.Forms.Label();
             this.pnldshk2 = new System.Windows.Forms.Panel();
             this.lvwDashboard = new System.Windows.Forms.ListView();
+            this.btnRiwayat = new System.Windows.Forms.Button();
             this.pnldshk3.SuspendLayout();
             this.pnldshk1.SuspendLayout();
             this.pnldshk2.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // pnldshk3
             // 
+            this.pnldshk3.Controls.Add(this.btnRiwayat);
             this.pnldshk3.Controls.Add(this.btnDasboard);
             this.pnldshk3.Controls.Add(this.btnPembayaran);
             this.pnldshk3.Controls.Add(this.btnKerusakan);
@@ -190,6 +192,18 @@
             this.lvwDashboard.TabIndex = 0;
             this.lvwDashboard.UseCompatibleStateImageBehavior = false;
             // 
+            // btnRiwayat
+            // 
+            this.btnRiwayat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayat.Location = new System.Drawing.Point(0, 274);
+            this.btnRiwayat.Name = "btnRiwayat";
+            this.btnRiwayat.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayat.TabIndex = 10;
+            this.btnRiwayat.Text = "Riwayat Pembayaran";
+            this.btnRiwayat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayat.UseVisualStyleBackColor = true;
+            this.btnRiwayat.Click += new System.EventHandler(this.btnRiwayat_Click);
+            // 
             // Dashboard_Karyawan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -225,5 +239,6 @@
         private System.Windows.Forms.Panel pnldshk2;
         private System.Windows.Forms.ListView lvwDashboard;
         private System.Windows.Forms.Button btnDasboard;
+        private System.Windows.Forms.Button btnRiwayat;
     }
 }
