@@ -197,7 +197,9 @@ namespace AplikasiService.View
                     JOIN Servis s ON p.ServisId = s.Id
                     JOIN JenisKerusakan k ON s.KerusakanId = k.Id
                     JOIN Perangkat pr ON k.PerangkatId = pr.Id
+                    WHERE p.Status = 'Menunggu'
                     ORDER BY p.Id DESC";
+
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 SQLiteDataReader rd = cmd.ExecuteReader();

@@ -73,9 +73,9 @@ namespace AplikasiService.View
 
         private void btnDaftar_Click(object sender, EventArgs e)
         {
-            SignUp signup = new SignUp();
-            signup.Show();
-            this.Close();
+            SignUp signUp = new SignUp();
+            signUp.Show();
+            this.Hide();
         }
     }
 }

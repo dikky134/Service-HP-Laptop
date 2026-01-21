@@ -104,7 +104,7 @@ namespace AplikasiService.View
                 string sql = @"
             UPDATE Pembayaran
             SET Metode = @m,
-                Status = 'Dibayar',
+                Status = 'Lunas',
                 TanggalBayar = @tgl
             WHERE Id = @id";
 

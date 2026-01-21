@@ -108,6 +108,12 @@ namespace AplikasiService.View
             pembayaran.Show();
             this.Close();
         }
+        private void btnRiwayat_Click(object sender, EventArgs e)
+        {
+            RIwayat_pb_Karyawan Riwayat = new RIwayat_pb_Karyawan();
+            Riwayat.Show();
+            this.Close();
+        }
 
        
         private void btnRiwayatPembayaran_Click_1(object sender, EventArgs e)

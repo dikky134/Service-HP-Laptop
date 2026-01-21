@@ -138,7 +138,5 @@ namespace AplikasiService.View
                 this.Close();
             }
         }
-
-        
     }
 }

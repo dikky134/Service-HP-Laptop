@@ -58,15 +58,18 @@ namespace AplikasiService.View
             {
                 conn.Open();
                 string sql = @"
-                    SELECT k.Id,
-                           p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
-                           k.NamaKerusakan,
-                           k.Tanggal,
-                           k.Biaya
-                    FROM JenisKerusakan k
-                    JOIN Perangkat p ON k.PerangkatId = p.Id
-                    WHERE p.PelangganId = @pid
-                    ORDER BY k.Id DESC";
+                SELECT s.Id,
+                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+                       k.NamaKerusakan,
+                       s.TanggalServis,
+                       k.Biaya
+                FROM Servis s
+                JOIN JenisKerusakan k ON s.KerusakanId = k.Id
+                JOIN Perangkat p ON k.PerangkatId = p.Id
+                LEFT JOIN Pembayaran pb ON pb.ServisId = s.Id
+                WHERE p.PelangganId = @pid
+                  AND (pb.Status IS NULL OR pb.Status != 'Lunas')
+                ORDER BY s.Id DESC";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@pid", Session.PelangganId);

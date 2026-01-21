@@ -62,10 +62,11 @@
             // btnDaftar
             // 
             this.btnDaftar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDaftar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDaftar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDaftar.Location = new System.Drawing.Point(113, 219);
+            this.btnDaftar.Location = new System.Drawing.Point(292, 226);
             this.btnDaftar.Name = "btnDaftar";
-            this.btnDaftar.Size = new System.Drawing.Size(86, 25);
+            this.btnDaftar.Size = new System.Drawing.Size(124, 33);
             this.btnDaftar.TabIndex = 16;
             this.btnDaftar.Text = "Daftar";
             this.btnDaftar.UseVisualStyleBackColor = false;
@@ -74,9 +75,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 200);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(270, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.Size = new System.Drawing.Size(159, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Belum Punya Akun?";
             // 
@@ -101,29 +103,31 @@
             // lblLK3
             // 
             this.lblLK3.AutoSize = true;
-            this.lblLK3.Location = new System.Drawing.Point(14, 89);
+            this.lblLK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLK3.Location = new System.Drawing.Point(296, 89);
             this.lblLK3.Name = "lblLK3";
-            this.lblLK3.Size = new System.Drawing.Size(67, 16);
+            this.lblLK3.Size = new System.Drawing.Size(120, 29);
             this.lblLK3.TabIndex = 12;
             this.lblLK3.Text = "Password";
             // 
             // lblLK2
             // 
             this.lblLK2.AutoSize = true;
-            this.lblLK2.Font = new System.Drawing.Font("Times New Roman", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLK2.Location = new System.Drawing.Point(14, 53);
+            this.lblLK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLK2.Location = new System.Drawing.Point(281, 28);
             this.lblLK2.Name = "lblLK2";
-            this.lblLK2.Size = new System.Drawing.Size(80, 18);
+            this.lblLK2.Size = new System.Drawing.Size(135, 29);
             this.lblLK2.TabIndex = 11;
             this.lblLK2.Text = "User Name";
             // 
             // btnMasuk
             // 
             this.btnMasuk.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMasuk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMasuk.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMasuk.Location = new System.Drawing.Point(113, 144);
+            this.btnMasuk.Location = new System.Drawing.Point(292, 154);
             this.btnMasuk.Name = "btnMasuk";
-            this.btnMasuk.Size = new System.Drawing.Size(86, 25);
+            this.btnMasuk.Size = new System.Drawing.Size(124, 41);
             this.btnMasuk.TabIndex = 7;
             this.btnMasuk.Text = "Masuk";
             this.btnMasuk.UseVisualStyleBackColor = false;
@@ -131,24 +135,28 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(158, 83);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(247, 121);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(226, 22);
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(226, 27);
             this.txtPassword.TabIndex = 4;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(158, 47);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(247, 60);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(226, 22);
+            this.txtUsername.Size = new System.Drawing.Size(226, 27);
             this.txtUsername.TabIndex = 3;
             // 
             // lblLK1
             // 
             this.lblLK1.AutoSize = true;
-            this.lblLK1.Location = new System.Drawing.Point(702, 38);
+            this.lblLK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLK1.Location = new System.Drawing.Point(685, 34);
             this.lblLK1.Name = "lblLK1";
-            this.lblLK1.Size = new System.Drawing.Size(47, 16);
+            this.lblLK1.Size = new System.Drawing.Size(63, 20);
             this.lblLK1.TabIndex = 16;
             this.lblLK1.Text = "Masuk";
             // 
