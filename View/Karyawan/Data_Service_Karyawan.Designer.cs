@@ -40,6 +40,9 @@
             this.BtnDataPerangkat = new System.Windows.Forms.Button();
             this.BtnDataPelanggan = new System.Windows.Forms.Button();
             this.pnlDSK2 = new System.Windows.Forms.Panel();
+            this.btnTambah = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.cmbKerusakan = new System.Windows.Forms.ComboBox();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.lbl8 = new System.Windows.Forms.Label();
             this.lbl7 = new System.Windows.Forms.Label();
@@ -49,9 +52,8 @@
             this.lblNamaDp = new System.Windows.Forms.Label();
             this.lblTPDPP = new System.Windows.Forms.Label();
             this.lvwService = new System.Windows.Forms.ListView();
-            this.cmbKerusakan = new System.Windows.Forms.ComboBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.btnTambah = new System.Windows.Forms.Button();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.btnRiwayatPembayaran = new System.Windows.Forms.Button();
             this.pnlDSK1.SuspendLayout();
             this.pnlDSK3.SuspendLayout();
             this.pnlDSK2.SuspendLayout();
@@ -79,6 +81,7 @@
             // 
             // pnlDSK3
             // 
+            this.pnlDSK3.Controls.Add(this.btnRiwayatPembayaran);
             this.pnlDSK3.Controls.Add(this.btnDasboard);
             this.pnlDSK3.Controls.Add(this.btnPembayaran);
             this.pnlDSK3.Controls.Add(this.btnKerusakan);
@@ -186,6 +189,7 @@
             // pnlDSK2
             // 
             this.pnlDSK2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlDSK2.Controls.Add(this.btnHapus);
             this.pnlDSK2.Controls.Add(this.btnTambah);
             this.pnlDSK2.Controls.Add(this.cmbStatus);
             this.pnlDSK2.Controls.Add(this.cmbKerusakan);
@@ -202,6 +206,32 @@
             this.pnlDSK2.Name = "pnlDSK2";
             this.pnlDSK2.Size = new System.Drawing.Size(569, 349);
             this.pnlDSK2.TabIndex = 14;
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.Location = new System.Drawing.Point(178, 133);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(82, 28);
+            this.btnTambah.TabIndex = 33;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(178, 75);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(238, 24);
+            this.cmbStatus.TabIndex = 32;
+            // 
+            // cmbKerusakan
+            // 
+            this.cmbKerusakan.FormattingEnabled = true;
+            this.cmbKerusakan.Location = new System.Drawing.Point(178, 45);
+            this.cmbKerusakan.Name = "cmbKerusakan";
+            this.cmbKerusakan.Size = new System.Drawing.Size(238, 24);
+            this.cmbKerusakan.TabIndex = 31;
             // 
             // txtKeterangan
             // 
@@ -282,31 +312,27 @@
             this.lvwService.TabIndex = 0;
             this.lvwService.UseCompatibleStateImageBehavior = false;
             // 
-            // cmbKerusakan
+            // btnHapus
             // 
-            this.cmbKerusakan.FormattingEnabled = true;
-            this.cmbKerusakan.Location = new System.Drawing.Point(178, 45);
-            this.cmbKerusakan.Name = "cmbKerusakan";
-            this.cmbKerusakan.Size = new System.Drawing.Size(238, 24);
-            this.cmbKerusakan.TabIndex = 31;
+            this.btnHapus.Location = new System.Drawing.Point(310, 133);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(82, 28);
+            this.btnHapus.TabIndex = 34;
+            this.btnHapus.Text = "hapus";
+            this.btnHapus.UseVisualStyleBackColor = true;
             // 
-            // cmbStatus
+            // btnRiwayatPembayaran
             // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(178, 75);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(238, 24);
-            this.cmbStatus.TabIndex = 32;
-            // 
-            // btnTambah
-            // 
-            this.btnTambah.Location = new System.Drawing.Point(178, 133);
-            this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(82, 28);
-            this.btnTambah.TabIndex = 33;
-            this.btnTambah.Text = "Tambah";
-            this.btnTambah.UseVisualStyleBackColor = true;
-            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            this.btnRiwayatPembayaran.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRiwayatPembayaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiwayatPembayaran.Location = new System.Drawing.Point(0, 276);
+            this.btnRiwayatPembayaran.Name = "btnRiwayatPembayaran";
+            this.btnRiwayatPembayaran.Size = new System.Drawing.Size(230, 43);
+            this.btnRiwayatPembayaran.TabIndex = 15;
+            this.btnRiwayatPembayaran.Text = "Riwayat Pembayaran";
+            this.btnRiwayatPembayaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRiwayatPembayaran.UseVisualStyleBackColor = false;
+            this.btnRiwayatPembayaran.Click += new System.EventHandler(this.btnRiwayatPembayaran_Click_1);
             // 
             // Data_Service_Karyawan
             // 
@@ -355,5 +381,7 @@
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.ComboBox cmbKerusakan;
+        private System.Windows.Forms.Button btnHapus;
+        private System.Windows.Forms.Button btnRiwayatPembayaran;
     }
 }

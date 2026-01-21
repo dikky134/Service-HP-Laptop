@@ -110,6 +110,13 @@ namespace AplikasiService.View
             this.Close();
         }
 
+        private void btnRiwayatPembayaran_Click(object sender, EventArgs e)
+        {
+            RiwayatPembayaranKaryawan riwayat = new RiwayatPembayaranKaryawan();
+            riwayat.Show();
+            this.Close();
+        }
+
         private void BtnlogoutP_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
