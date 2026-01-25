@@ -25,7 +25,6 @@ namespace AplikasiService
                 new SQLiteCommand(sql, conn).ExecuteNonQuery();
             }
         }
-
         static void CreateAdmin()
         {
             using (var conn = DbContext.GetConnection())

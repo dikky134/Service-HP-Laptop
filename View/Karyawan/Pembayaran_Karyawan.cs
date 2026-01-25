@@ -48,13 +48,15 @@ namespace AplikasiService.View
                 conn.Open();
                 string sql = @"
                 SELECT s.Id,
-                   p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
-                   k.NamaKerusakan,
-                   k.Biaya
+                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe AS Perangkat,
+                       k.NamaKerusakan,
+                       k.Biaya
                 FROM Servis s
                 JOIN JenisKerusakan k ON s.KerusakanId = k.Id
                 JOIN Perangkat p ON k.PerangkatId = p.Id
-                WHERE s.Id NOT IN (SELECT ServisId FROM Pembayaran)";
+                LEFT JOIN Pembayaran pb ON pb.ServisId = s.Id
+                WHERE pb.Id IS NULL OR pb.Status != 'Lunas'
+                ORDER BY s.Id DESC";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, conn);
                 SQLiteDataReader rd = cmd.ExecuteReader();

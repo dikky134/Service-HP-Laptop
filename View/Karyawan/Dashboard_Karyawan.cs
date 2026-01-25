@@ -33,7 +33,7 @@ namespace AplikasiService.View
             lvwDashboard.Columns.Add("Perangkat", 150, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Kerusakan", 100, HorizontalAlignment.Center);
             lvwDashboard.Columns.Add("Tanggal", 90, HorizontalAlignment.Center);
-            lvwDashboard.Columns.Add("Biaya", 80, HorizontalAlignment.Center);
+            lvwDashboard.Columns.Add("Keterangan", 80, HorizontalAlignment.Center);
         }
         private void LoadData()
         {
@@ -44,14 +44,16 @@ namespace AplikasiService.View
                 conn.Open();
                 string sql = @"
                 SELECT s.Id,
-                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe || 
-                       ' - ' || k.NamaKerusakan AS Info,
+                       pl.Nama AS Pelanggan,
+                       p.Jenis || ' ' || p.Merk || ' ' || p.Tipe  AS Perangkat,
+                       k.NamaKerusakan,
                        s.Status,
                        s.TanggalServis,
                        s.Keterangan
                 FROM Servis s
                 JOIN JenisKerusakan k ON s.KerusakanId = k.Id
                 JOIN Perangkat p ON k.PerangkatId = p.Id
+                JOIN Pelanggan pl ON p.PelangganId = pl.Id
                 WHERE s.Id NOT IN (SELECT ServisId FROM Pembayaran WHERE Status = 'Lunas')
                 ORDER BY s.Id DESC";
 
@@ -64,8 +66,8 @@ namespace AplikasiService.View
                     item.SubItems.Add(rd["Pelanggan"].ToString());
                     item.SubItems.Add(rd["Perangkat"].ToString());
                     item.SubItems.Add(rd["NamaKerusakan"].ToString());
-                    item.SubItems.Add(rd["Tanggal"].ToString());
-                    item.SubItems.Add(rd["Biaya"].ToString());
+                    item.SubItems.Add(rd["TanggalServis"].ToString());
+                    item.SubItems.Add(rd["Keterangan"].ToString());
                     lvwDashboard.Items.Add(item);
                 }
             }
